@@ -1,0 +1,485 @@
+2017-11-18 14:26:02  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 14:26:02  [ main:14 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@19f99ea, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1efef64, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@17fd0e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1c62251, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6fa38a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@a3ffec]
+2017-11-18 14:26:02  [ main:84 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 14:26:02  [ main:159 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@e81285: startup date [Sat Nov 18 14:26:02 CST 2017]; root of context hierarchy
+2017-11-18 14:26:02  [ Thread-0:238 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@e81285: startup date [Sat Nov 18 14:26:02 CST 2017]; root of context hierarchy
+2017-11-18 14:29:33  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 14:29:33  [ main:10 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@19f99ea, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1efef64, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@17fd0e6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1c62251, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6fa38a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@a3ffec]
+2017-11-18 14:29:33  [ main:78 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 14:29:33  [ main:152 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@e81285: startup date [Sat Nov 18 14:29:33 CST 2017]; root of context hierarchy
+2017-11-18 14:29:33  [ Thread-0:229 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@e81285: startup date [Sat Nov 18 14:29:33 CST 2017]; root of context hierarchy
+2017-11-18 14:55:17  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 14:55:17  [ main:12 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 14:55:17  [ main:81 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 14:55:17  [ main:153 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 14:55:17 CST 2017]; root of context hierarchy
+2017-11-18 14:55:17  [ main:333 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 14:55:17  [ main:337 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 14:55:17  [ main:339 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 14:55:17  [ main:341 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 14:55:17  [ main:361 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 14:55:17  [ main:361 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 14:55:17  [ main:395 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 14:55:17  [ main:395 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 14:55:17  [ Thread-0:401 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 14:55:17 CST 2017]; root of context hierarchy
+2017-11-18 14:55:39  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 14:55:39  [ main:11 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 14:55:39  [ main:81 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 14:55:39  [ main:158 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 14:55:39 CST 2017]; root of context hierarchy
+2017-11-18 14:55:39  [ main:318 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 14:55:39  [ main:322 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 14:55:39  [ main:324 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 14:55:39  [ main:325 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 14:55:39  [ main:339 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 14:55:39  [ main:339 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 14:55:39  [ main:371 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 14:55:39  [ main:452 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 14:55:39  [ main:456 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 14:55:39  [ main:456 ] - [ INFO ]  HHH000046: Connection properties: {}
+2017-11-18 14:55:39  [ main:456 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 14:55:39  [ main:457 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 14:55:39  [ main:726 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 14:55:39  [ main:726 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 14:55:39  [ main:730 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 14:55:39  [ main:737 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 14:55:39  [ main:737 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 14:55:39  [ main:737 ] - [ INFO ]  HHH000046: Connection properties: {}
+2017-11-18 14:55:39  [ main:737 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 14:55:39  [ main:738 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 14:55:40  [ Thread-0:884 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 14:55:39 CST 2017]; root of context hierarchy
+2017-11-18 14:57:47  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 14:57:47  [ main:10 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 14:57:47  [ main:80 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 14:57:47  [ main:157 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 14:57:47 CST 2017]; root of context hierarchy
+2017-11-18 14:57:48  [ main:313 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 14:57:48  [ main:317 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 14:57:48  [ main:319 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 14:57:48  [ main:320 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 14:57:48  [ main:334 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 14:57:48  [ main:334 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 14:57:48  [ main:366 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 14:57:48  [ main:420 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 14:57:48  [ main:423 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 14:57:48  [ main:423 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 14:57:48  [ main:424 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 14:57:48  [ main:424 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 14:57:49  [ main:1266 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 14:57:49  [ main:1375 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 14:57:49  [ main:1378 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 14:57:49  [ main:1381 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 14:57:49  [ main:1381 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 14:57:49  [ main:1382 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 14:57:49  [ main:1385 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 14:57:49  [ main:1385 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 14:57:49  [ main:1385 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 14:57:49  [ main:1385 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 14:57:49  [ main:1385 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 14:57:49  [ main:1757 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 14:57:49  [ main:1758 ] - [ INFO ]  HHH000071: Duplicate import: main.com.ssh.shop.entity.User -> User
+2017-11-18 14:57:49  [ main:1758 ] - [ INFO ]  HHH000071: Duplicate import: main.com.ssh.shop.entity.User -> main.com.ssh.shop.entity.User
+2017-11-18 14:57:49  [ Thread-0:1765 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 14:57:47 CST 2017]; root of context hierarchy
+2017-11-18 14:59:15  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 14:59:15  [ main:10 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 14:59:15  [ main:75 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 14:59:15  [ main:150 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 14:59:15 CST 2017]; root of context hierarchy
+2017-11-18 14:59:15  [ main:301 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 14:59:15  [ main:304 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 14:59:15  [ main:306 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 14:59:15  [ main:307 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 14:59:15  [ main:319 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 14:59:15  [ main:319 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 14:59:15  [ main:352 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 14:59:15  [ main:404 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 14:59:15  [ main:407 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 14:59:15  [ main:408 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 14:59:15  [ main:408 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 14:59:15  [ main:408 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 14:59:16  [ main:1036 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 14:59:16  [ main:1229 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 14:59:16  [ main:1232 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 14:59:16  [ main:1676 ] - [ WARN ]  SQL Error: 1146, SQLState: 42S02
+2017-11-18 14:59:16  [ main:1676 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 14:59:16  [ org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(SqlExceptionHelper.java:146):org.hibernate.engine.jdbc.spi.SqlExceptionHelper:main:1676 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 14:59:16  [ main:1681 ] - [ INFO ]  HHH000010: On release of batch it still contained JDBC statements
+2017-11-18 14:59:16  [ main:1724 ] - [ WARN ]  SQL Warning Code: 1146, SQLState: 42S02
+2017-11-18 14:59:16  [ main:1724 ] - [ WARN ]  Table 'shop.User' doesn't exist
+2017-11-18 14:59:16  [ Thread-0:1783 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 14:59:15 CST 2017]; root of context hierarchy
+2017-11-18 15:09:45  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:09:45  [ main:11 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 15:09:45  [ main:77 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:09:45  [ main:157 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:09:45 CST 2017]; root of context hierarchy
+2017-11-18 15:09:45  [ main:310 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:09:45  [ main:313 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:09:45  [ main:314 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:09:45  [ main:314 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:09:45  [ main:328 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:09:45  [ main:328 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:09:45  [ main:357 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:09:46  [ main:417 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:09:46  [ main:420 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:09:46  [ main:421 ] - [ INFO ]  HHH000046: Connection properties: {}
+2017-11-18 15:09:46  [ main:421 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:09:46  [ main:421 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:09:46  [ main:763 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:09:46  [ main:763 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:09:46  [ main:768 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:09:46  [ main:778 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:09:46  [ main:778 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:09:46  [ main:778 ] - [ INFO ]  HHH000046: Connection properties: {}
+2017-11-18 15:09:46  [ main:778 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:09:46  [ main:778 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:09:46  [ Thread-0:927 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:09:45 CST 2017]; root of context hierarchy
+2017-11-18 15:10:25  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:10:25  [ main:10 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 15:10:25  [ main:83 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:10:25  [ main:168 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:10:25 CST 2017]; root of context hierarchy
+2017-11-18 15:10:25  [ main:327 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:10:25  [ main:332 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:10:25  [ main:333 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:10:25  [ main:334 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:10:25  [ main:350 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:10:25  [ main:350 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:10:25  [ main:380 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:10:25  [ main:435 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:10:25  [ main:439 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:10:25  [ main:439 ] - [ INFO ]  HHH000046: Connection properties: {}
+2017-11-18 15:10:25  [ main:439 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:10:25  [ main:440 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:10:25  [ main:690 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:10:25  [ main:690 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:10:25  [ main:693 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:10:25  [ main:699 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:10:25  [ main:699 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:10:25  [ main:699 ] - [ INFO ]  HHH000046: Connection properties: {}
+2017-11-18 15:10:25  [ main:699 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:10:25  [ main:699 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:10:26  [ Thread-0:883 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:10:25 CST 2017]; root of context hierarchy
+2017-11-18 15:10:58  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:10:58  [ main:10 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 15:10:58  [ main:77 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:10:58  [ main:146 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:10:58 CST 2017]; root of context hierarchy
+2017-11-18 15:10:58  [ main:294 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:10:58  [ main:298 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:10:58  [ main:300 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:10:58  [ main:301 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:10:58  [ main:312 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:10:58  [ main:313 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:10:58  [ main:344 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:10:58  [ main:398 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:10:58  [ main:401 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:10:58  [ main:402 ] - [ INFO ]  HHH000046: Connection properties: {}
+2017-11-18 15:10:58  [ main:402 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:10:58  [ main:403 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:10:59  [ main:760 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:10:59  [ main:760 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:10:59  [ main:764 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:10:59  [ main:772 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:10:59  [ main:772 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:10:59  [ main:773 ] - [ INFO ]  HHH000046: Connection properties: {}
+2017-11-18 15:10:59  [ main:773 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:10:59  [ main:773 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:10:59  [ Thread-0:908 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:10:58 CST 2017]; root of context hierarchy
+2017-11-18 15:12:14  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:12:14  [ main:11 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 15:12:14  [ main:77 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:12:14  [ main:153 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:12:14 CST 2017]; root of context hierarchy
+2017-11-18 15:12:14  [ main:318 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:12:14  [ main:322 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:12:14  [ main:323 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:12:14  [ main:324 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:12:14  [ main:337 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:12:14  [ main:337 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:12:14  [ main:371 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:12:14  [ main:430 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:12:14  [ main:434 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:12:14  [ main:434 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 15:12:14  [ main:434 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:12:14  [ main:435 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:12:15  [ main:1244 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:12:15  [ main:1330 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:12:15  [ main:1332 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:12:16  [ main:1834 ] - [ WARN ]  SQL Error: 1146, SQLState: 42S02
+2017-11-18 15:12:16  [ main:1834 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 15:12:16  [ org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(SqlExceptionHelper.java:146):org.hibernate.engine.jdbc.spi.SqlExceptionHelper:main:1834 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 15:12:16  [ main:1842 ] - [ INFO ]  HHH000010: On release of batch it still contained JDBC statements
+2017-11-18 15:12:16  [ main:1896 ] - [ WARN ]  SQL Warning Code: 1146, SQLState: 42S02
+2017-11-18 15:12:16  [ main:1896 ] - [ WARN ]  Table 'shop.User' doesn't exist
+2017-11-18 15:12:16  [ Thread-0:1976 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:12:14 CST 2017]; root of context hierarchy
+2017-11-18 15:13:39  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:13:39  [ main:10 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 15:13:39  [ main:82 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:13:39  [ main:161 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:13:39 CST 2017]; root of context hierarchy
+2017-11-18 15:13:39  [ main:319 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:13:39  [ main:323 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:13:39  [ main:324 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:13:39  [ main:325 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:13:39  [ main:340 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:13:39  [ main:340 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:13:39  [ main:372 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:13:39  [ main:427 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:13:39  [ main:430 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:13:39  [ main:431 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 15:13:39  [ main:431 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:13:39  [ main:431 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:13:40  [ main:1112 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:13:40  [ main:1237 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:13:40  [ main:1239 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:13:41  [ main:1787 ] - [ WARN ]  SQL Error: 1146, SQLState: 42S02
+2017-11-18 15:13:41  [ main:1787 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 15:13:41  [ org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(SqlExceptionHelper.java:146):org.hibernate.engine.jdbc.spi.SqlExceptionHelper:main:1787 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 15:13:41  [ main:1791 ] - [ INFO ]  HHH000010: On release of batch it still contained JDBC statements
+2017-11-18 15:13:41  [ main:1837 ] - [ WARN ]  SQL Warning Code: 1146, SQLState: 42S02
+2017-11-18 15:13:41  [ main:1837 ] - [ WARN ]  Table 'shop.User' doesn't exist
+2017-11-18 15:13:41  [ Thread-0:1912 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:13:39 CST 2017]; root of context hierarchy
+2017-11-18 15:14:03  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:14:03  [ main:11 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 15:14:03  [ main:78 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:14:03  [ main:149 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:14:03 CST 2017]; root of context hierarchy
+2017-11-18 15:14:04  [ main:313 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:14:04  [ main:317 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:14:04  [ main:318 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:14:04  [ main:320 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:14:04  [ main:332 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:14:04  [ main:332 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:14:04  [ main:362 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:14:04  [ main:421 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:14:04  [ main:425 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:14:04  [ main:425 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 15:14:04  [ main:425 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:14:04  [ main:426 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:14:04  [ main:1031 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:14:04  [ main:1125 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:14:04  [ main:1128 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:14:05  [ main:1662 ] - [ WARN ]  SQL Error: 1146, SQLState: 42S02
+2017-11-18 15:14:05  [ main:1663 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 15:14:05  [ org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(SqlExceptionHelper.java:146):org.hibernate.engine.jdbc.spi.SqlExceptionHelper:main:1663 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 15:14:05  [ main:1669 ] - [ INFO ]  HHH000010: On release of batch it still contained JDBC statements
+2017-11-18 15:14:05  [ main:1714 ] - [ WARN ]  SQL Warning Code: 1146, SQLState: 42S02
+2017-11-18 15:14:05  [ main:1715 ] - [ WARN ]  Table 'shop.User' doesn't exist
+2017-11-18 15:14:05  [ Thread-0:1788 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:14:03 CST 2017]; root of context hierarchy
+2017-11-18 15:17:27  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:17:27  [ main:10 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 15:17:27  [ main:80 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:17:27  [ main:153 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:17:27 CST 2017]; root of context hierarchy
+2017-11-18 15:17:27  [ main:311 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:17:27  [ main:314 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:17:27  [ main:315 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:17:27  [ main:316 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:17:27  [ main:330 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:17:27  [ main:330 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:17:27  [ main:357 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:17:27  [ main:413 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:17:27  [ main:416 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:17:27  [ main:416 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 15:17:27  [ main:416 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:17:27  [ main:417 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:17:28  [ main:1056 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:17:28  [ main:1154 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:17:28  [ main:1159 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:17:28  [ main:1853 ] - [ WARN ]  SQL Error: 1146, SQLState: 42S02
+2017-11-18 15:17:28  [ main:1853 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 15:17:28  [ org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(SqlExceptionHelper.java:146):org.hibernate.engine.jdbc.spi.SqlExceptionHelper:main:1853 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 15:17:28  [ main:1855 ] - [ INFO ]  HHH000010: On release of batch it still contained JDBC statements
+2017-11-18 15:17:28  [ main:1900 ] - [ WARN ]  SQL Warning Code: 1146, SQLState: 42S02
+2017-11-18 15:17:28  [ main:1900 ] - [ WARN ]  Table 'shop.User' doesn't exist
+2017-11-18 15:17:29  [ Thread-0:1959 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:17:27 CST 2017]; root of context hierarchy
+2017-11-18 15:22:43  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:22:43  [ main:9 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 15:22:43  [ main:74 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:22:43  [ main:151 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:22:43 CST 2017]; root of context hierarchy
+2017-11-18 15:22:43  [ main:302 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:22:43  [ main:306 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:22:43  [ main:308 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:22:43  [ main:309 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:22:43  [ main:321 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:22:43  [ main:321 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:22:43  [ main:358 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:22:43  [ main:422 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:22:43  [ main:427 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:22:43  [ main:427 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 15:22:43  [ main:427 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:22:43  [ main:428 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:22:44  [ main:1022 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:22:44  [ main:1109 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:22:44  [ main:1111 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:22:44  [ main:1476 ] - [ WARN ]  SQL Error: 1146, SQLState: 42S02
+2017-11-18 15:22:44  [ main:1476 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 15:22:44  [ org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(SqlExceptionHelper.java:146):org.hibernate.engine.jdbc.spi.SqlExceptionHelper:main:1476 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 15:22:44  [ main:1481 ] - [ INFO ]  HHH000010: On release of batch it still contained JDBC statements
+2017-11-18 15:22:44  [ main:1522 ] - [ WARN ]  SQL Warning Code: 1146, SQLState: 42S02
+2017-11-18 15:22:44  [ main:1522 ] - [ WARN ]  Table 'shop.User' doesn't exist
+2017-11-18 15:22:45  [ Thread-0:1586 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:22:43 CST 2017]; root of context hierarchy
+2017-11-18 15:24:24  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:24:24  [ main:10 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 15:24:24  [ main:74 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:24:24  [ main:144 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:24:24 CST 2017]; root of context hierarchy
+2017-11-18 15:24:24  [ main:300 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:24:24  [ main:303 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:24:24  [ main:305 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:24:24  [ main:306 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:24:24  [ main:318 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:24:24  [ main:318 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:24:24  [ main:352 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:24:25  [ main:405 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:24:25  [ main:409 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:24:25  [ main:409 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 15:24:25  [ main:409 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:24:25  [ main:409 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:24:25  [ main:1102 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:24:25  [ main:1183 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:24:25  [ main:1187 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:24:26  [ main:1564 ] - [ WARN ]  SQL Error: 1146, SQLState: 42S02
+2017-11-18 15:24:26  [ main:1564 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 15:24:26  [ org.hibernate.engine.jdbc.spi.SqlExceptionHelper.logExceptions(SqlExceptionHelper.java:146):org.hibernate.engine.jdbc.spi.SqlExceptionHelper:main:1564 ] - [ ERROR ]  Table 'shop.User' doesn't exist
+2017-11-18 15:24:26  [ main:1566 ] - [ INFO ]  HHH000010: On release of batch it still contained JDBC statements
+2017-11-18 15:24:26  [ main:1619 ] - [ WARN ]  SQL Warning Code: 1146, SQLState: 42S02
+2017-11-18 15:24:26  [ main:1619 ] - [ WARN ]  Table 'shop.User' doesn't exist
+2017-11-18 15:24:26  [ Thread-0:1687 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:24:24 CST 2017]; root of context hierarchy
+2017-11-18 15:26:14  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:26:14  [ main:13 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1efef64, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@17fd0e6, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1c62251, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6fa38a, org.springframework.test.context.transaction.TransactionalTestExecutionListener@a3ffec, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1caeb3e]
+2017-11-18 15:26:14  [ main:82 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:26:14  [ main:160 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:26:14 CST 2017]; root of context hierarchy
+2017-11-18 15:26:14  [ main:325 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:26:14  [ main:329 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:26:14  [ main:331 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:26:14  [ main:332 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:26:14  [ main:348 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:26:14  [ main:348 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:26:14  [ main:392 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:26:14  [ main:498 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:26:14  [ main:502 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:26:14  [ main:503 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 15:26:14  [ main:503 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:26:14  [ main:504 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:26:15  [ main:1189 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:26:15  [ main:1280 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:26:15  [ main:1282 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:26:16  [ Thread-0:1758 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@c03f1f: startup date [Sat Nov 18 15:26:14 CST 2017]; root of context hierarchy
+2017-11-18 15:37:46  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:37:46  [ main:10 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4f787b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5cb137, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@41eaa2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@d62f43, org.springframework.test.context.transaction.TransactionalTestExecutionListener@14b1c02, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@93dd95]
+2017-11-18 15:37:46  [ main:77 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:37:46  [ main:156 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@7740a2: startup date [Sat Nov 18 15:37:46 CST 2017]; root of context hierarchy
+2017-11-18 15:37:46  [ MLog-Init-Reporter:239 ] - [ INFO ]  MLog clients using log4j logging.
+2017-11-18 15:37:46  [ main:415 ] - [ INFO ]  Initializing c3p0-0.9.5-pre8 [built 04-April-2014 04:08:13 -0700; debug? true; trace: 10]
+2017-11-18 15:37:46  [ main:543 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:37:46  [ main:546 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:37:46  [ main:547 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:37:46  [ main:548 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:37:46  [ main:564 ] - [ INFO ]  HHH000044: Configuring from URL: file:/H:/JavaWebProject/S2HShop/target/classes/hibernate.cfg.xml
+2017-11-18 15:37:46  [ main:596 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:37:46  [ main:661 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2sm4zm9r1l6amog1wdqtp8|118837a, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceUseNamedDriverClass -> false, identityToken -> 2sm4zm9r1l6amog1wdqtp8|118837a, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2017-11-18 15:37:47  [ main:789 ] - [ WARN ]  HHH000342: Could not obtain connection to query metadata : Access denied for user 'root'@'localhost' (using password: YES)
+2017-11-18 15:37:47  [ main:793 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:37:47  [ main:797 ] - [ INFO ]  HHH000422: Disabling contextual LOB creation as connection was null
+2017-11-18 15:37:47  [ main:816 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:37:47  [ main:818 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:37:47  [ main:868 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:37:47  [ main:868 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:37:47  [ main:870 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:37:47  [ main:873 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:37:47  [ main:874 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:37:47  [ main:874 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 15:37:47  [ main:874 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:37:47  [ main:875 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:37:47  [ main:1418 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:37:47  [ main:1424 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:37:47  [ main:1424 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:37:47  [ Thread-5:1598 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@7740a2: startup date [Sat Nov 18 15:37:46 CST 2017]; root of context hierarchy
+2017-11-18 15:37:56  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:37:56  [ main:13 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4f787b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5cb137, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@41eaa2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@d62f43, org.springframework.test.context.transaction.TransactionalTestExecutionListener@14b1c02, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@93dd95]
+2017-11-18 15:37:56  [ main:78 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:37:56  [ main:157 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@7740a2: startup date [Sat Nov 18 15:37:56 CST 2017]; root of context hierarchy
+2017-11-18 15:37:56  [ MLog-Init-Reporter:236 ] - [ INFO ]  MLog clients using log4j logging.
+2017-11-18 15:37:56  [ main:407 ] - [ INFO ]  Initializing c3p0-0.9.5-pre8 [built 04-April-2014 04:08:13 -0700; debug? true; trace: 10]
+2017-11-18 15:37:57  [ main:540 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:37:57  [ main:543 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:37:57  [ main:544 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:37:57  [ main:545 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:37:57  [ main:558 ] - [ INFO ]  HHH000044: Configuring from URL: file:/H:/JavaWebProject/S2HShop/target/classes/hibernate.cfg.xml
+2017-11-18 15:37:57  [ main:595 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:37:57  [ main:658 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2sm4zm9r1l6auky5t4v3g|118837a, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceUseNamedDriverClass -> false, identityToken -> 2sm4zm9r1l6auky5t4v3g|118837a, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2017-11-18 15:37:57  [ main:862 ] - [ WARN ]  HHH000342: Could not obtain connection to query metadata : Access denied for user 'root'@'localhost' (using password: YES)
+2017-11-18 15:37:57  [ main:872 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:37:57  [ main:883 ] - [ INFO ]  HHH000422: Disabling contextual LOB creation as connection was null
+2017-11-18 15:37:57  [ main:1041 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:37:57  [ main:1050 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:37:57  [ main:1392 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:37:57  [ main:1392 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:37:57  [ main:1398 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:37:57  [ main:1407 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:37:57  [ main:1408 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:37:57  [ main:1408 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 15:37:57  [ main:1408 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:37:57  [ main:1410 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:37:58  [ main:1911 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:37:58  [ main:1918 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:37:58  [ main:1918 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:37:58  [ Thread-5:2174 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@7740a2: startup date [Sat Nov 18 15:37:56 CST 2017]; root of context hierarchy
+2017-11-18 15:43:45  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:43:45  [ main:12 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4f787b, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@5cb137, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@41eaa2, org.springframework.test.context.support.DirtiesContextTestExecutionListener@d62f43, org.springframework.test.context.transaction.TransactionalTestExecutionListener@14b1c02, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@93dd95]
+2017-11-18 15:43:45  [ main:91 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:43:45  [ main:171 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@7740a2: startup date [Sat Nov 18 15:43:45 CST 2017]; root of context hierarchy
+2017-11-18 15:43:45  [ MLog-Init-Reporter:249 ] - [ INFO ]  MLog clients using log4j logging.
+2017-11-18 15:43:46  [ main:420 ] - [ INFO ]  Initializing c3p0-0.9.5-pre8 [built 04-April-2014 04:08:13 -0700; debug? true; trace: 10]
+2017-11-18 15:43:46  [ main:553 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:43:46  [ main:556 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:43:46  [ main:557 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:43:46  [ main:558 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:43:46  [ main:574 ] - [ INFO ]  HHH000044: Configuring from URL: file:/H:/JavaWebProject/S2HShop/target/classes/hibernate.cfg.xml
+2017-11-18 15:43:46  [ main:608 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:43:46  [ main:670 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2sm4zm9r1l6ic12qaalxy|118837a, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceUseNamedDriverClass -> false, identityToken -> 2sm4zm9r1l6ic12qaalxy|118837a, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/shop?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2017-11-18 15:43:46  [ main:776 ] - [ WARN ]  HHH000342: Could not obtain connection to query metadata : Access denied for user 'root'@'localhost' (using password: YES)
+2017-11-18 15:43:46  [ main:780 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:43:46  [ main:784 ] - [ INFO ]  HHH000422: Disabling contextual LOB creation as connection was null
+2017-11-18 15:43:46  [ main:842 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:43:46  [ main:845 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:43:46  [ main:998 ] - [ INFO ]  HHH000043: Configuring from resource: /hibernate.cfg.xml
+2017-11-18 15:43:46  [ main:998 ] - [ INFO ]  HHH000040: Configuration resource: /hibernate.cfg.xml
+2017-11-18 15:43:46  [ main:1000 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:43:46  [ main:1003 ] - [ WARN ]  HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2017-11-18 15:43:46  [ main:1004 ] - [ INFO ]  HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://120.77.223.41:3306/shop]
+2017-11-18 15:43:46  [ main:1004 ] - [ INFO ]  HHH000046: Connection properties: {user=root, password=****}
+2017-11-18 15:43:46  [ main:1004 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2017-11-18 15:43:46  [ main:1005 ] - [ INFO ]  HHH000115: Hibernate connection pool size: 20 (min=1)
+2017-11-18 15:43:47  [ main:1501 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:43:47  [ main:1508 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:43:47  [ main:1508 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:43:47  [ Thread-5:1778 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@7740a2: startup date [Sat Nov 18 15:43:45 CST 2017]; root of context hierarchy
+2017-11-18 15:56:20  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:56:20  [ main:12 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5cb137, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@41eaa2, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@d62f43, org.springframework.test.context.support.DirtiesContextTestExecutionListener@14b1c02, org.springframework.test.context.transaction.TransactionalTestExecutionListener@93dd95, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1622fdf]
+2017-11-18 15:56:20  [ main:81 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:56:21  [ main:198 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@1a5fe33: startup date [Sat Nov 18 15:56:21 CST 2017]; root of context hierarchy
+2017-11-18 15:56:21  [ MLog-Init-Reporter:426 ] - [ INFO ]  MLog clients using log4j logging.
+2017-11-18 15:56:21  [ main:589 ] - [ INFO ]  Initializing c3p0-0.9.5-pre8 [built 04-April-2014 04:08:13 -0700; debug? true; trace: 10]
+2017-11-18 15:56:21  [ main:739 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:56:21  [ main:742 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:56:21  [ main:743 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:56:21  [ main:744 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:56:21  [ main:755 ] - [ INFO ]  HHH000044: Configuring from URL: file:/H:/JavaWebProject/S2HShop/target/classes/hibernate.cfg.xml
+2017-11-18 15:56:21  [ main:782 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:56:21  [ main:840 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2sm4zm9r1l6yitb1p859je|f278eb, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceUseNamedDriverClass -> false, identityToken -> 2sm4zm9r1l6yitb1p859je|f278eb, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://120.77.223.41:3306/shop?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2017-11-18 15:56:22  [ main:1629 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:56:22  [ main:1707 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:56:22  [ main:1710 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:56:22  [ main:1876 ] - [ INFO ]  Using DataSource [com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2sm4zm9r1l6yitb1p859je|f278eb, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceUseNamedDriverClass -> false, identityToken -> 2sm4zm9r1l6yitb1p859je|f278eb, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://120.77.223.41:3306/shop?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]] of Hibernate SessionFactory for HibernateTransactionManager
+2017-11-18 15:56:23  [ main:2179 ] - [ INFO ]  HHH000010: On release of batch it still contained JDBC statements
+2017-11-18 15:56:23  [ main:2231 ] - [ WARN ]  SQL Warning Code: 1196, SQLState: HY000
+2017-11-18 15:56:23  [ main:2231 ] - [ WARN ]  Some non-transactional changed tables couldn't be rolled back
+2017-11-18 15:56:23  [ Thread-5:2241 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@1a5fe33: startup date [Sat Nov 18 15:56:21 CST 2017]; root of context hierarchy
+2017-11-18 15:56:56  [ main:0 ] - [ INFO ]  Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2017-11-18 15:56:56  [ main:11 ] - [ INFO ]  Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5cb137, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@41eaa2, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@d62f43, org.springframework.test.context.support.DirtiesContextTestExecutionListener@14b1c02, org.springframework.test.context.transaction.TransactionalTestExecutionListener@93dd95, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1622fdf]
+2017-11-18 15:56:56  [ main:78 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-11-18 15:56:56  [ main:183 ] - [ INFO ]  Refreshing org.springframework.context.support.GenericApplicationContext@1a5fe33: startup date [Sat Nov 18 15:56:56 CST 2017]; root of context hierarchy
+2017-11-18 15:56:56  [ MLog-Init-Reporter:407 ] - [ INFO ]  MLog clients using log4j logging.
+2017-11-18 15:56:56  [ main:574 ] - [ INFO ]  Initializing c3p0-0.9.5-pre8 [built 04-April-2014 04:08:13 -0700; debug? true; trace: 10]
+2017-11-18 15:56:56  [ main:725 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2017-11-18 15:56:56  [ main:729 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.11.Final}
+2017-11-18 15:56:56  [ main:730 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2017-11-18 15:56:56  [ main:731 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2017-11-18 15:56:56  [ main:742 ] - [ INFO ]  HHH000044: Configuring from URL: file:/H:/JavaWebProject/S2HShop/target/classes/hibernate.cfg.xml
+2017-11-18 15:56:56  [ main:769 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2017-11-18 15:56:57  [ main:827 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2sm4zm9r1l6za32whx4sf|f278eb, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceUseNamedDriverClass -> false, identityToken -> 2sm4zm9r1l6za32whx4sf|f278eb, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://120.77.223.41:3306/shop?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2017-11-18 15:56:57  [ main:1436 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2017-11-18 15:56:57  [ main:1647 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-11-18 15:56:57  [ main:1654 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2017-11-18 15:56:58  [ main:2122 ] - [ INFO ]  Using DataSource [com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2sm4zm9r1l6za32whx4sf|f278eb, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceUseNamedDriverClass -> false, identityToken -> 2sm4zm9r1l6za32whx4sf|f278eb, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://120.77.223.41:3306/shop?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]] of Hibernate SessionFactory for HibernateTransactionManager
+2017-11-18 15:56:58  [ Thread-5:2605 ] - [ INFO ]  Closing org.springframework.context.support.GenericApplicationContext@1a5fe33: startup date [Sat Nov 18 15:56:56 CST 2017]; root of context hierarchy
