@@ -39,13 +39,20 @@ public class SSHTest {
 
     @Test  //测试Hibernate的开发环境，因为没有整合，可以直接new
     public void hihernate() {
-        UserService userService = new UserServiceImpl();
-        User user = new User("root","123");
+        User user = new User("roo23", "123");
         userService.save(user);
     }
 
     @Test //测试Hibernate和Spring整合后
     public void hibernateAndSpring() {
-        userService.update(new User("root", "456")); //categoryService通过Spring从上面注入进来的
+        userService.update(new User(1, "root", "4gga3", "asdasdasdsa")); //userService通过Spring从上面注入进来的
+    }
+
+    @Test //测试Hibernate和Spring整合后
+    public void testlogin() {
+        User user = userService.login(new User("root", "123"));
+        if (user != null) {
+            System.out.println(user.toString());
+        }
     }
 }

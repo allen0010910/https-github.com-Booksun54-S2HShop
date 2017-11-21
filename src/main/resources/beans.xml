@@ -14,9 +14,7 @@
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <bean id="date" class="java.util.Date"></bean>
-    <bean id="userAction" class="main.com.ssh.shop.action.UserAction" scope="prototype">
-        <property name="userService" ref="userService"/>
-    </bean>
+
 
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
@@ -36,10 +34,6 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
-    <bean id="userService" class="main.com.ssh.shop.service.impl.UserServiceImpl">
-        <property name="sessionFactory" ref="sessionFactory" /><!-- 依赖的sessionFactory用我们之前配好的sessionFactory-->
-    </bean>
-
     <tx:advice id="advice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="save*" propagation="REQUIRED"/>
@@ -55,7 +49,10 @@
         <aop:advisor advice-ref="advice" pointcut-ref="pointcut"/><!-- 连接了<span style="font-family:Microsoft YaHei;">上</span>面的advice和上面的pointcut -->
         <!-- aop:pointcut要写在aop:advisor上面，否则会报错 -->
     </aop:config>
-
+    <context:component-scan base-package="main.com.ssh.shop.entity"/>
+    <context:component-scan base-package="main.com.ssh.shop.action"/>
+    <context:component-scan base-package="main.com.ssh.shop.service"/>
+    <context:component-scan base-package="main.com.ssh.shop.*.*"/>
 
 
 </beans>

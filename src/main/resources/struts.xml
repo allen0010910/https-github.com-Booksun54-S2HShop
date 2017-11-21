@@ -4,10 +4,22 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
+
     <package name="shop" extends="struts-default">
         <!-- category_update.actiocan： 访问update方法 -->
+        <interceptors>
+            <interceptor name="checklogin"
+                         class="main.com.ssh.shop.interceptor.LoginInteceptor">
+            </interceptor>
+        </interceptors>
+
         <action name="user_*" class="main.com.ssh.shop.action.UserAction" method="{1}">
             <result name="index">/index.jsp</result>
+            <result name="login">/index.jsp</result>
+            <result name="success">WEB-INF/login/success.jsp</result>
+            <result name="error">WEB-INF/login/error.jsp</result>
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="checklogin"/>
         </action>
     </package>
 

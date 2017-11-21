@@ -5,25 +5,17 @@ import main.com.ssh.shop.service.UserService;
 import main.com.ssh.shop.util.HibernateSessionFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.stereotype.Service;
 
-public class UserServiceImpl implements UserService {
-    /*Spring和Hibernate整个后*/
-    private SessionFactory sessionFactory; //定义一个sessionFactory
+@Service("userService")
+public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
 
-    //当需要使用sessoinFactory的时候，Spring会将sessionFactory注入进来
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
-    }
-    protected Session getSession() {
-        //从当前线程获取session，如果没有则创建一个新的session
-        return sessionFactory.getCurrentSession();
-    }
-
-    public void save(User user) {
-        getSession().save(user);
-    }
-
-    public void update(User user) {
-        getSession().update(user);
+    @Override
+    public User login(User user) {
+        String hql = "from User u where u.userid=:userid and u.password=:password";
+        return (User) getSession().createQuery(hql) //
+                .setString("userid", user.getUserid()) //
+                .setString("password", user.getPassword()) //
+                .uniqueResult();
     }
 }

@@ -4,15 +4,62 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "USER" ,uniqueConstraints = {@UniqueConstraint(columnNames = {"userid","password"})})
+@Table(name = "USER")
 public class User implements Serializable {
+    private Integer id;
     private String userid;
     private String password;
+    private String pic;
+
+    public User(Integer id, String userid, String password, String pic) {
+        this.id = id;
+        this.userid = userid;
+        this.password = password;
+        this.pic = pic;
+    }
+
+    @Column(name = "PIC", unique = true, nullable = true)
+    public String getPic() {
+        return pic;
+    }
+
+    public void setPic(String pic) {
+        this.pic = pic;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userid='" + userid + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+    public User(Integer ID, String userid, String password) {
+        this.id = ID;
+        this.userid = userid;
+        this.password = password;
+    }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     @Column(name = "ID" ,unique = true,nullable = false)
-    private Integer ID;
+    public Integer getID() {
+        return id;
+    }
+
+    public void setID(Integer ID) {
+        this.id = ID;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public User(){
 
@@ -23,7 +70,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    @Id
     @Column(name = "USERID", nullable = false, length = 11)
     public String getUserid() {
         return userid;
