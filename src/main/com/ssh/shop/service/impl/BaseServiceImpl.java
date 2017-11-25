@@ -1,12 +1,14 @@
 package main.com.ssh.shop.service.impl;
 
+import main.com.ssh.shop.dao.BaseDao;
+import main.com.ssh.shop.dao.UserDao;
 import main.com.ssh.shop.service.BaseService;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+import java.lang.reflect.Field;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 
@@ -20,8 +22,6 @@ import java.util.List;
 public class BaseServiceImpl<T> implements BaseService<T> {
 
     private Class clazz; //clazz中存储了当前操作的类型，即泛型T
-    @Resource
-    private SessionFactory sessionFactory;
 
     public BaseServiceImpl() {
         //下面三个打印信息可以去掉，这里是给自己看的
@@ -33,43 +33,57 @@ public class BaseServiceImpl<T> implements BaseService<T> {
         clazz = (Class) type.getActualTypeArguments()[0];
     }
 
-    public void setSessionFactory(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory;
+
+    //实现初始化和销毁之前进行的操作
+    @PostConstruct
+    public void init() {
+        //根据clazz的类型，把不同的dao对象复制给baseDao对象
+        String clazzName = clazz.getSimpleName();
+        String clazzDao = clazzName.substring(0, 1).toLowerCase()
+                + clazzName.substring(1) + "Dao"; //例如Account==>accountDao
+        System.out.println(clazzDao);
+        try {
+//			Field clazzField = this.getClass().getField(clazzDao);
+//			Field baseField = this.getClass().getField("baseDao");
+            Field clazzField = this.getClass().getSuperclass().getDeclaredField(clazzDao);
+            Field baseField = this.getClass().getSuperclass().getDeclaredField("baseDao");
+            baseField.set(this, clazzField.get(this)); //baseDao就有值了
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 
-    protected Session getSession() {
-        //从当前线程获取session，如果没有则创建一个新的session
-        return sessionFactory.getCurrentSession();
-    }
+    //@Resource //baseDao是泛型，不能够注入只能通过上面的init方法赋值
+    protected BaseDao baseDao;
+
+    @Resource
+    protected UserDao userDao;
 
 
     public void save(T t) {
-        getSession().save(t);
+        baseDao.save(t);
     }
 
 
     public void update(T t) {
-        getSession().update(t);
+        baseDao.update(t);
     }
 
 
     public void delete(int id) {
-        System.out.println(clazz.getSimpleName());
-        String hql = "delete " + clazz.getSimpleName() + " as c where c.id=:id";
-        getSession().createQuery(hql) //
-                .setInteger("id", id) //
-                .executeUpdate();
+        baseDao.delete(id);
     }
 
 
     public T get(int id) {
-        return (T) getSession().get(clazz, id);
+        return (T) baseDao.get(id);
     }
 
 
     public List<T> query() {
-        String hql = "from " + clazz.getSimpleName();
-        return getSession().createQuery(hql).list();
+
+        return baseDao.query();
     }
 
 }

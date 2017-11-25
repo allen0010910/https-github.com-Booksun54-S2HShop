@@ -12,10 +12,6 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 
     @Override
     public User login(User user) {
-        String hql = "from User u where u.userid=:userid and u.password=:password";
-        return (User) getSession().createQuery(hql) //
-                .setString("userid", user.getUserid()) //
-                .setString("password", user.getPassword()) //
-                .uniqueResult();
+        return userDao.login(user);
     }
 }
