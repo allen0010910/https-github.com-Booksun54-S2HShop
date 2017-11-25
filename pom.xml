@@ -82,7 +82,13 @@
       <version>${struts-version}</version>
     </dependency>
 
-    <dependency>
+      <dependency>
+          <groupId>org.apache.struts</groupId>
+          <artifactId>struts2-json-plugin</artifactId>
+          <version>${struts-version}</version>
+      </dependency>
+
+      <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-core</artifactId>
       <version>${hibernate-version}</version>

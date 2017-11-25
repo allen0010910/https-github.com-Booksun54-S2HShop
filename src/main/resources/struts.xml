@@ -4,23 +4,34 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-
-    <package name="shop" extends="struts-default">
+    <constant name="struts.devMode" value="true"/>
+    <package name="shop" extends="json-default">
         <!-- category_update.actiocan： 访问update方法 -->
         <interceptors>
             <interceptor name="checklogin"
                          class="main.com.ssh.shop.interceptor.LoginInteceptor">
             </interceptor>
         </interceptors>
-
+        <global-results>
+            <result name="index">WEB-INF/main/main.jsp</result>
+        </global-results>
         <action name="user_*" class="main.com.ssh.shop.action.UserAction" method="{1}">
-            <result name="index">/index.jsp</result>
-            <result name="login">/index.jsp</result>
-            <result name="success">WEB-INF/login/success.jsp</result>
-            <result name="error">WEB-INF/login/error.jsp</result>
-            <interceptor-ref name="defaultStack"/>
-            <interceptor-ref name="checklogin"/>
+            <result name="login" type="redirect">/index.jsp</result>
+            <result name="error">/index.jsp</result>
+            <result name="goURL" type="redirect">
+                ${#session.goURL} <!-- 从值栈中取出session中的数据 -->
+            </result>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="checklogin"></interceptor-ref>
+
         </action>
+
+        <action name="getmenu" class="main.com.ssh.shop.action.MenuAction" method="getMenu">
+            <result name="jsonList" type="json">
+                <param name="root">jsonList</param>
+            </result>
+        </action>
+
     </package>
 
 </struts>

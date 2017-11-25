@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +45,12 @@
             <div class="tpl-login-logo">
 
             </div>
-
+            <c:if test="${not empty requestScope.tip}">
+                <div class="am-alert" data-am-alert>
+                    <button type="button" class="am-close">&times;</button>
+                    <p>${SessionScope.tip}</p>
+                </div>
+            </c:if>
 
             <form class="am-form tpl-form-line-form" action="user_login.action" method="post">
                 <div class="am-form-group">
@@ -73,6 +79,7 @@
 
                 </div>
             </form>
+
         </div>
     </div>
 </div>
