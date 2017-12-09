@@ -8,16 +8,17 @@ public class Provider {
     private int pno;
     private String pname;
     private String phone;
-    private String desc;
+    private String DESCE;
     private String address;
 
-    public Provider(int pno, String pname, String phone, String desc, String address) {
+    public Provider(int pno, String pname, String phone, String DESCE, String address) {
         this.pno = pno;
         this.pname = pname;
         this.phone = phone;
-        this.desc = desc;
+        this.DESCE = DESCE;
         this.address = address;
     }
+
 
     @Override
     public String toString() {
@@ -25,15 +26,15 @@ public class Provider {
                 "pno=" + pno +
                 ", pname='" + pname + '\'' +
                 ", phone='" + phone + '\'' +
-                ", desc='" + desc + '\'' +
+                ", DESCE='" + DESCE + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }
 
-    public Provider(String pname, String phone, String desc, String address) {
+    public Provider(String pname, String phone, String DESCE, String address) {
         this.pname = pname;
         this.phone = phone;
-        this.desc = desc;
+        this.DESCE = DESCE;
         this.address = address;
     }
 
@@ -71,13 +72,13 @@ public class Provider {
     }
 
 
-    @Column(name = "DESC", nullable = true, length = 255)
-    public String getDesc() {
-        return desc;
+    @Column(name = "DESCE", nullable = true, length = 255)
+    public String getDESCE() {
+        return DESCE;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDESCE(String DESCE) {
+        this.DESCE = DESCE;
     }
 
 
@@ -100,7 +101,7 @@ public class Provider {
         if (pno != provider.pno) return false;
         if (pname != null ? !pname.equals(provider.pname) : provider.pname != null) return false;
         if (phone != null ? !phone.equals(provider.phone) : provider.phone != null) return false;
-        if (desc != null ? !desc.equals(provider.desc) : provider.desc != null) return false;
+        if (DESCE != null ? !DESCE.equals(provider.DESCE) : provider.DESCE != null) return false;
         if (address != null ? !address.equals(provider.address) : provider.address != null) return false;
 
         return true;
@@ -111,7 +112,7 @@ public class Provider {
         int result = pno;
         result = 31 * result + (pname != null ? pname.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
-        result = 31 * result + (desc != null ? desc.hashCode() : 0);
+        result = 31 * result + (DESCE != null ? DESCE.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         return result;
     }
