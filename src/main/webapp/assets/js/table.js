@@ -3,10 +3,11 @@ window.onload = function () {
     $.get("getmenu.action", function (data, status) {
         Menu = data;
         //alert("数据: " +JSON.stringify(Menu) + "\n状态: " + status);
+        menuTree(Menu, document.getElementById('tree'), 'tree');
     });
     //构建菜单
     //alert(JSON.stringify(Menu))
-    menuTree(Menu, document.getElementById('tree'), 'tree');
+    //menuTree(Menu, document.getElementById('tree'), 'tree');
 }
 
 /*
@@ -26,12 +27,12 @@ function menuTree(jsonArr, container, treeId) {
         if (jsonArr[i].submenu) {
             oLi.className = 'sidebar-nav-link'
             oLi.className = 'sidebar-nav-link';
-            oLi.innerHTML = '<a href="' + oUrl + '">' + '<span class= ' + oicon + '></span>' + oText + '</a>';
+            oLi.innerHTML = '<a style="font-size:15px;" href="' + oUrl + '">' + '<span class= ' + oicon + '></span>' + oText + '</a>';
             menuTree(jsonArr[i].submenu, oLi);//递归构建子菜单
         } else {
             oUl.className = 'sidebar-nav-link sidebar-nav-sub'
             oLi.className = 'sidebar-nav-link';
-            oLi.innerHTML = '<a href="' + oUrl + '">' + '<span class= ' + oicon + '></span>' + oText + '</a>';
+            oLi.innerHTML = '<a style="font-size:5px;" href="' + oUrl + '">' + '<span class= ' + oicon + '></span>' + oText + '</a>';
         }
         //自定义函数
         if (typeof jsonArr[i].func == "function") {

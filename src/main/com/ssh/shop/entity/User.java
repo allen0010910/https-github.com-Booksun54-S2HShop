@@ -18,6 +18,12 @@ public class User implements Serializable {
         this.pic = pic;
     }
 
+    public User(String userid, String password, String pic) {
+        this.userid = userid;
+        this.password = password;
+        this.pic = pic;
+    }
+
     @Column(name = "PIC", unique = true, nullable = true)
     public String getPic() {
         return pic;

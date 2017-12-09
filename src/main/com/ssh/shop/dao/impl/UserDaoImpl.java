@@ -15,4 +15,12 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao {
                 .setString("password", user.getPassword()) //
                 .uniqueResult();
     }
+
+    @Override
+    public User getUser(String userid) {
+        String hql = "from User u where u.userid=:userid";
+        return (User) getSession().createQuery(hql).setString("userid", userid).uniqueResult();
+    }
+
+
 }

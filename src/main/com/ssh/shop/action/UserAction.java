@@ -56,19 +56,46 @@ public class UserAction extends BaseAction<User> {
         return "index";
     }
 
+    public String toMain() {
+        User user = (User) session.get("user");
+        System.out.println("session:" + user.toString());
+        if (user != null)
+            return "success";
+        else {
+            return "error";
+        }
+    }
+
     public String login() {
         System.out.println("进入登陆!");
+        //System.out.println(model.toString());
+        if (model.getUserid() == null || model.getUserid().equals("") && model.getPassword() != null && !model.getPassword().equals("")) {
+
+            tip = "账号不得为空!";
+            System.out.println("账号不得为空!");
+            return "error";
+        } else if (model.getPassword() == null || model.getPassword().equals("") && model.getUserid() != null && !model.getUserid().equals("")) {
+
+            tip = "密码不得为空!";
+            System.out.println("密码不得为空!");
+            return "error";
+        } else if (model.getPassword() == null || model.getPassword().equals("") || model.getUserid() == null || model.getUserid().equals("")) {
+            tip = "账号、密码不得为空!";
+            return "error";
+        }
+
+
         model = userService.login(model);
         //System.out.println(model.toString() + "登录信息");
         if (model == null) {
-            session.put("tip", "登陆失败，账号或者密码错误!");
+            tip = "登陆失败，账号或者密码错误!";
             logger.info("===登录失败，账号或者密码错误!===");
             return "login";
         } else {
             session.put("user", model);
             logger.info("===登陆成功!" + model.toString() + "===");
             if (session.get("goURL") == null) {
-                return "index"; //跳到首页
+                return "success"; //跳到首页
             } else {
                 return "goURL";
             }

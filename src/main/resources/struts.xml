@@ -14,16 +14,21 @@
         </interceptors>
         <global-results>
             <result name="index">WEB-INF/main/main.jsp</result>
+            <result name="success">/WEB-INF/main/main.jsp</result>
         </global-results>
         <action name="user_*" class="main.com.ssh.shop.action.UserAction" method="{1}">
-            <result name="login" type="redirect">/index.jsp</result>
-            <result name="error">/index.jsp</result>
-            <result name="goURL" type="redirect">
-                ${#session.goURL} <!-- 从值栈中取出session中的数据 -->
-            </result>
+            <result name="login">/index.jsp</result>
+            <result name="error" type="dispatcher">/index.jsp</result>
+            <result name="success">/WEB-INF/main/main.jsp</result>
+
             <interceptor-ref name="defaultStack"></interceptor-ref>
             <interceptor-ref name="checklogin"></interceptor-ref>
 
+        </action>
+
+        <action name="provider_*" class="main.com.ssh.shop.action.ProviderAction" method="{1}">
+            <result name="success">/WEB-INF/provider/provider.jsp</result>
+            <interceptor-ref name="defaultStack"></interceptor-ref>
         </action>
 
         <action name="getmenu" class="main.com.ssh.shop.action.MenuAction" method="getMenu">

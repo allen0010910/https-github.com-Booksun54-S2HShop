@@ -45,10 +45,10 @@
             <div class="tpl-login-logo">
 
             </div>
-            <c:if test="${not empty requestScope.tip}">
+            <c:if test="${not empty tip}">
                 <div class="am-alert" data-am-alert>
                     <button type="button" class="am-close">&times;</button>
-                    <p>${SessionScope.tip}</p>
+                    <p>${tip}</p>
                 </div>
             </c:if>
 

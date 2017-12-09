@@ -1,13 +1,17 @@
 package Test.Dao;
 
 import com.alibaba.fastjson.JSON;
+import main.com.ssh.shop.dao.GoodsDao;
 import main.com.ssh.shop.dao.MenuDao;
 import main.com.ssh.shop.dao.UserDao;
+import main.com.ssh.shop.entity.Goods;
 import main.com.ssh.shop.entity.Menu;
 import main.com.ssh.shop.entity.User;
 import main.com.ssh.shop.service.MenuService;
 import main.com.ssh.shop.service.UserService;
 import main.com.ssh.shop.util.MenuUtil;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.stereotype.Repository;
@@ -31,7 +35,22 @@ public class TestDao {
     private MenuDao menuDao;
     @Resource
     private MenuService menuService;
+    @Resource
+    private GoodsDao goodsDao;
+
     private static Logger logger = Logger.getLogger(TestDao.class);
+
+
+    @Test //测试Hibernate和Spring整合后
+    public void testcreate() {
+        Configuration conf = new Configuration();
+
+        conf.configure("/hibernate.cfg.xml");
+
+        SchemaExport dbExport = new SchemaExport(conf);
+
+        dbExport.create(true, true);
+    }
 
     @Test //测试Hibernate和Spring整合后
     public void testlogin() {
@@ -40,6 +59,23 @@ public class TestDao {
             System.out.println(user.toString());
         }
     }
+
+    @Test //测试Hibernate和Spring整合后
+    public void testcreateUser() {
+        userDao.save(new User("root", "123"));
+        User user = userDao.getUser("root");
+
+    }
+
+    @Test
+    public void testgetUser() {
+        User user = userDao.getUser("root");
+        if (user != null) {
+            //System.out.println(user.toString());
+            logger.info(user.toString());
+        }
+    }
+
 
     @Test //测试Hibernate和Spring整合后
     public void testloginService() {
@@ -64,5 +100,12 @@ public class TestDao {
         List<Menu> query2 = MenuUtil.convertoJson(query);
         String jsonString = JSON.toJSONString(query2);
         logger.info(jsonString);
+    }
+
+
+    @Test //测试Hibernate和Spring整合后
+    public void testGoods() {
+        Goods goods = new Goods("皮鞋", "鞋", "好看的皮鞋");
+        goodsDao.save(goods);
     }
 }
