@@ -1,6 +1,7 @@
 # S2HShop V0.0.025 2017/12/9
       （1）修改实体类 完成供应商界面
-      
+      （2）完成service接口及serviceImpl类的编写 
+      （3）修改provider类字段desc为desce（与mysql关键字冲突）
 # S2HShop V0.0.02 2017/11/25
       （1）完成Dao层 userDao层实现用户登录 
       （2）BaseDao实现泛型抽象出dao对象 实现登录功能 
