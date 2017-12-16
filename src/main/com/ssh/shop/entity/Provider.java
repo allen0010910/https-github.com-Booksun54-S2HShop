@@ -8,14 +8,14 @@ public class Provider {
     private int pno;
     private String pname;
     private String phone;
-    private String DESCE;
+    private String infor;
     private String address;
 
-    public Provider(int pno, String pname, String phone, String DESCE, String address) {
+    public Provider(int pno, String pname, String phone, String infor, String address) {
         this.pno = pno;
         this.pname = pname;
         this.phone = phone;
-        this.DESCE = DESCE;
+        this.infor = infor;
         this.address = address;
     }
 
@@ -26,15 +26,15 @@ public class Provider {
                 "pno=" + pno +
                 ", pname='" + pname + '\'' +
                 ", phone='" + phone + '\'' +
-                ", DESCE='" + DESCE + '\'' +
+                ", infor='" + infor + '\'' +
                 ", address='" + address + '\'' +
                 '}';
     }
 
-    public Provider(String pname, String phone, String DESCE, String address) {
+    public Provider(String pname, String phone, String infor, String address) {
         this.pname = pname;
         this.phone = phone;
-        this.DESCE = DESCE;
+        this.infor = infor;
         this.address = address;
     }
 
@@ -42,6 +42,7 @@ public class Provider {
     }
 
     @Id
+    @GeneratedValue
     @Column(name = "PNO", nullable = false)
     public int getPno() {
         return pno;
@@ -50,6 +51,7 @@ public class Provider {
     public void setPno(int pno) {
         this.pno = pno;
     }
+
 
 
     @Column(name = "PNAME", nullable = true, length = 255)
@@ -72,14 +74,15 @@ public class Provider {
     }
 
 
-    @Column(name = "DESCE", nullable = true, length = 255)
-    public String getDESCE() {
-        return DESCE;
+    @Column(name = "INFOR", nullable = true, length = 255)
+    public String getInfor() {
+        return infor;
     }
 
-    public void setDESCE(String DESCE) {
-        this.DESCE = DESCE;
+    public void setInfor(String infor) {
+        this.infor = infor;
     }
+
 
 
     @Column(name = "ADDRESS", nullable = true, length = 255)
@@ -101,7 +104,7 @@ public class Provider {
         if (pno != provider.pno) return false;
         if (pname != null ? !pname.equals(provider.pname) : provider.pname != null) return false;
         if (phone != null ? !phone.equals(provider.phone) : provider.phone != null) return false;
-        if (DESCE != null ? !DESCE.equals(provider.DESCE) : provider.DESCE != null) return false;
+        if (infor != null ? !infor.equals(provider.infor) : provider.infor != null) return false;
         if (address != null ? !address.equals(provider.address) : provider.address != null) return false;
 
         return true;
@@ -112,7 +115,7 @@ public class Provider {
         int result = pno;
         result = 31 * result + (pname != null ? pname.hashCode() : 0);
         result = 31 * result + (phone != null ? phone.hashCode() : 0);
-        result = 31 * result + (DESCE != null ? DESCE.hashCode() : 0);
+        result = 31 * result + (infor != null ? infor.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         return result;
     }

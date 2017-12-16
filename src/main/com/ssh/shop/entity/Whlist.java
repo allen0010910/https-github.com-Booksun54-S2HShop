@@ -26,6 +26,7 @@ public class Whlist {
     }
 
     @Id
+    @GeneratedValue
     @Column(name = "ID", nullable = false)
     public int getId() {
         return id;

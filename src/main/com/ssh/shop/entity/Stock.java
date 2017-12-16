@@ -44,6 +44,7 @@ public class Stock {
     }
 
     @Id
+    @GeneratedValue
     @Column(name = "ID", nullable = false)
     public int getId() {
         return id;

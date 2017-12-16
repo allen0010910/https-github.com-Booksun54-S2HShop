@@ -14,31 +14,31 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Amaze UI Admin index Examples</title>
-    <meta name="description" content="这是一个 index 页面">
+    <title>供应商管理页面</title>
+    <meta name="description" content="供应商管理页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
-    <link rel="icon" type="image/png" href="assets/i/favicon.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+    <link rel="icon" type="image/png" href="${shop}/assets/i/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="${shop}/assets/i/app-icon72x72@2x.png">
     <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
-    <script src="assets/js/echarts.min.js"></script>
-    <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
-    <link rel="stylesheet" href="assets/css/amazeui.datatables.min.css"/>
-    <link rel="stylesheet" href="assets/css/app.css">
-    <script src="assets/js/jquery.min.js"></script>
+    <script src="${shop}/assets/js/echarts.min.js"></script>
+    <link rel="stylesheet" href="${shop}/assets/css/amazeui.min.css"/>
+    <link rel="stylesheet" href="${shop}/assets/css/amazeui.datatables.min.css"/>
+    <link rel="stylesheet" href="${shop}/assets/css/app.css">
+    <script src="${shop}/assets/js/jquery.min.js"></script>
 
 </head>
 
 <body data-type="widgets">
-<script src="assets/js/theme.js"></script>
+<script src="${shop}/assets/js/theme.js"></script>
 <div class="am-g tpl-g">
     <!-- 头部 -->
     <header>
         <!-- logo -->
         <div class="am-fl tpl-header-logo">
-            <a href="javascript:;"><img src="assets/img/logo.png" alt=""></a>
+            <a href="javascript:;"><img src="${shop}/assets/img/logo.png" alt=""></a>
         </div>
         <!-- 右侧内容 -->
         <div class="tpl-header-fluid">
@@ -238,10 +238,12 @@
                                 <div class="am-form-group">
                                     <div class="am-btn-toolbar">
                                         <div class="am-btn-group am-btn-group-xs">
-                                            <button type="button" class="am-btn am-btn-default am-btn-success"><span
+                                            <button type="button" class="am-btn am-btn-default am-btn-success"
+                                                    id="doc-prompt-toggle"><span
                                                     class="am-icon-plus"></span> 新增
                                             </button>
-                                            <button type="button" class="am-btn am-btn-default am-btn-danger"><span
+                                            <button type="button" class="am-btn am-btn-default am-btn-danger"
+                                                    id="deleteall"><span
                                                     class="am-icon-trash-o"></span> 删除
                                             </button>
                                         </div>
@@ -254,10 +256,10 @@
 
                                 <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
 
-                                    <input type="text" class="am-form-field ">
+                                    <input type="text" class="am-form-field " id="searchtext">
                                     <span class="am-input-group-btn">
             <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search"
-                    type="button"></button>
+                    type="button" id="search"></button>
           </span>
                                 </div>
                             </div>
@@ -267,7 +269,9 @@
                                        id="example-r">
                                     <thead>
                                     <tr>
-                                        <th><input type="checkbox"/></th>
+                                        <th><input type="checkbox" class="am-checkbox" id="checkAll"/></th>
+                                        <th>序号</th>
+                                        <th>ID</th>
                                         <th>供应商名称</th>
                                         <th>联系方式</th>
                                         <th>供应商信息</th>
@@ -275,110 +279,8 @@
                                         <th>操作</th>
                                     </tr>
                                     </thead>
-                                    <tbody>
-                                    <tr class="gradeX">
-                                        <td><input type="checkbox"/></td>
-                                        <td>Amaze UI 模式窗口</td>
-                                        <td>张鹏飞</td>
-                                        <td>2016-09-26</td>
-                                        <td>2016-09-26</td>
-                                        <td>
-                                            <div class="tpl-table-black-operation">
-                                                <a href="javascript:;">
-                                                    <i class="am-icon-pencil"></i> 编辑
-                                                </a>
-                                                <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                    <i class="am-icon-trash"></i> 删除
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"/></td>
-                                        <td>有适配微信小程序的计划吗</td>
-                                        <td>天纵之人</td>
-                                        <td>2016-09-26</td>
-                                        <td>2016-09-26</td>
-                                        <td>
-                                            <div class="tpl-table-black-operation">
-                                                <a href="javascript:;">
-                                                    <i class="am-icon-pencil"></i> 编辑
-                                                </a>
-                                                <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                    <i class="am-icon-trash"></i> 删除
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td><input type="checkbox"/></td>
-                                        <td>请问有没有amazeui 分享插件</td>
-                                        <td>王宽师</td>
-                                        <td>2016-09-26</td>
-                                        <td>2016-09-26</td>
-                                        <td>
-                                            <div class="tpl-table-black-operation">
-                                                <a href="javascript:;">
-                                                    <i class="am-icon-pencil"></i> 编辑
-                                                </a>
-                                                <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                    <i class="am-icon-trash"></i> 删除
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"/></td>
-                                        <td>关于input输入框的问题</td>
-                                        <td>着迷</td>
-                                        <td>2016-09-26</td>
-                                        <td>2016-09-26</td>
-                                        <td>
-                                            <div class="tpl-table-black-operation">
-                                                <a href="javascript:;">
-                                                    <i class="am-icon-pencil"></i> 编辑
-                                                </a>
-                                                <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                    <i class="am-icon-trash"></i> 删除
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"/></td>
-                                        <td>有没有发现官网上的下载包不好用</td>
-                                        <td>醉里挑灯看键</td>
-                                        <td>2016-09-26</td>
-                                        <td>2016-09-26</td>
-                                        <td>
-                                            <div class="tpl-table-black-operation">
-                                                <a href="javascript:;">
-                                                    <i class="am-icon-pencil"></i> 编辑
-                                                </a>
-                                                <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                    <i class="am-icon-trash"></i> 删除
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
+                                    <tbody id="test">
 
-                                    <tr class="even gradeC">
-                                        <td><input type="checkbox"/></td>
-                                        <td>我建议WEB版本文件引入问题</td>
-                                        <td>罢了</td>
-                                        <td>2016-09-26</td>
-                                        <td>2016-09-26</td>
-                                        <td>
-                                            <div class="tpl-table-black-operation">
-                                                <a href="javascript:;">
-                                                    <i class="am-icon-pencil"></i> 编辑
-                                                </a>
-                                                <a href="javascript:;" class="tpl-table-black-operation-del">
-                                                    <i class="am-icon-trash"></i> 删除
-                                                </a>
-                                            </div>
-                                        </td>
-                                    </tr>
                                     <!-- more data -->
                                     </tbody>
                                 </table>
@@ -386,14 +288,24 @@
                             <div class="am-u-lg-12 am-cf">
 
                                 <div class="am-fr">
-                                    <ul class="am-pagination tpl-pagination">
+                                    <ul class="am-pagination tpl-pagination" id="pagination">
+                                        <!--
                                         <li class="am-disabled"><a href="#">«</a></li>
-                                        <li class="am-active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">5</a></li>
+                                        <li class="am-pagination-select">
+                                            <select >
+                                                <option value="#" class="">1
+
+                                                </option>
+                                                <option value="#" class="">2
+
+                                                </option>
+                                                <option value="#" class="">3
+
+                                                </option>
+                                            </select>
+                                        </li>
                                         <li><a href="#">»</a></li>
+                                        -->
                                     </ul>
                                 </div>
                             </div>
@@ -405,10 +317,78 @@
     </div>
 </div>
 </div>
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">新增供应商信息:</div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">供应商名称</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="供应商名称" id="addpname">
+        </div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">联系电话</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="联系电话" id="addphone">
+        </div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">描述信息</label>
+            <textarea class="am-modal-prompt-input" placeholder="描述信息" id="addinfor"></textarea>
+        </div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">地址</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="地址" id="addaddress">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+        </div>
+    </div>
+</div>
+
+<div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt2">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">修改供应商信息:</div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">供应商名称</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="供应商名称" id="pname_edit">
+        </div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">联系电话</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="联系电话" id="phone_edit">
+        </div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">描述信息</label>
+            <textarea class="am-modal-prompt-input" placeholder="描述信息" id="infor_edit"></textarea>
+        </div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">地址</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="地址" id="address_edit">
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>提交</span>
+        </div>
+    </div>
+</div>
+
+<div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
+    <div class="am-modal-dialog">
+        <div class="am-modal-hd">删除供应商信息</div>
+        <div class="am-modal-bd">
+            确定要删除这条记录吗？
+        </div>
+        <div class="am-modal-footer">
+            <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+            <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+        </div>
+    </div>
+</div>
+
+
 <script src="${shop}/assets/js/amazeui.min.js"></script>
 <script src="${shop}/assets/js/amazeui.datatables.min.js"></script>
 <script src="${shop}/assets/js/dataTables.responsive.min.js"></script>
 <script src="${shop}/assets/js/app.js"></script>
+<script src="${shop}/assets/js/provider.js"></script>
 
 </body>
 

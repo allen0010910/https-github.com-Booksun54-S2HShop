@@ -7,6 +7,7 @@
     <constant name="struts.devMode" value="true"/>
     <package name="shop" extends="json-default">
         <!-- category_update.actiocan： 访问update方法 -->
+
         <interceptors>
             <interceptor name="checklogin"
                          class="main.com.ssh.shop.interceptor.LoginInteceptor">
@@ -28,6 +29,19 @@
 
         <action name="provider_*" class="main.com.ssh.shop.action.ProviderAction" method="{1}">
             <result name="success">/WEB-INF/provider/provider.jsp</result>
+
+            <result name="jsonMap" type="json">
+                <!-- 要转换成json对象的数据 -->
+                <param name="root">pageMap</param>
+                <!-- 配置黑名单，过滤不需要的选项 ，支持正则表达式
+                json格式：{total:3,rows:[{account:{id:2,login:"user",name:"客服A",pass:"user"},hot:true,id:3,…}]}
+                -->
+                <param name="excludeProperties">
+                    <!-- rows[0].account.pass-->
+                    <!-- 这里显示不了正则表达式， CSDN的一个bug，我接个图放下面 -->
+                </param>
+            </result>
+
             <interceptor-ref name="defaultStack"></interceptor-ref>
         </action>
 
@@ -35,7 +49,10 @@
             <result name="jsonList" type="json">
                 <param name="root">jsonList</param>
             </result>
+
+
         </action>
+
 
     </package>
 

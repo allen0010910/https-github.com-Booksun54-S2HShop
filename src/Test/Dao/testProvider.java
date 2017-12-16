@@ -24,10 +24,35 @@ public class testProvider {
 
     @Test
     public void testProviderDao() {
-        Provider provider = new Provider("老王", "15928588609", "提供大量军火", "高新区");
+        Provider provider = new Provider("老张", "15928588629", "提供大量零食", "高新区");
         providerDao.save(provider);
         Provider provider1 = providerDao.get(1);
         if (provider1 != null)
             System.out.println(provider1.toString());
+    }
+
+    @Test
+    public void testqueryProvider() {
+        List<Provider> list = providerDao.queryToProvider("老王  ", 1, 2);
+        if (list != null) {
+            System.out.println("不为空");
+            for (Provider pr : list) {
+                System.out.println(pr.toString());
+            }
+        }
+    }
+
+    @Test
+    public void testCountProvider() {
+        Long i = providerDao.getCount("");
+        System.out.println(i);
+    }
+
+    @Test
+    public void testSearch() {
+        List<Provider> provider = providerDao.queryToProvider("老", 1, 1);
+        for (Provider provider1 : provider) {
+            System.out.println(provider1.toString());
+        }
     }
 }

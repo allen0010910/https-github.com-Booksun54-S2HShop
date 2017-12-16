@@ -49,6 +49,7 @@ public class Goods implements Serializable {
     }
 
     @Id
+    @GeneratedValue
     @Column(name = "GOODSID", nullable = false)
     public int getGoodsid() {
         return goodsid;

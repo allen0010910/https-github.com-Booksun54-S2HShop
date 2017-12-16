@@ -1,8 +1,6 @@
 package main.com.ssh.shop.service.impl;
 
-import main.com.ssh.shop.dao.BaseDao;
-import main.com.ssh.shop.dao.MenuDao;
-import main.com.ssh.shop.dao.UserDao;
+import main.com.ssh.shop.dao.*;
 import main.com.ssh.shop.service.BaseService;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
@@ -63,6 +61,18 @@ public class BaseServiceImpl<T> implements BaseService<T> {
 
     @Resource
     protected MenuDao menuDao;
+    @Resource
+    protected GoodsDao goodsDao;
+    @Resource
+    protected OrderDao orderDao;
+    @Resource
+    protected ProviderDao providerDao;
+    @Resource
+    protected StockDao stockDao;
+    @Resource
+    protected WarehouseDao warehouseDao;
+    @Resource
+    protected WhlistDao whlistDao;
 
 
     public void save(T t) {
