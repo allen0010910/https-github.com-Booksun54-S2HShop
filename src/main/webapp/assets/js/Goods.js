@@ -1,28 +1,30 @@
 window.onload = function () {
-    var list;
-    var count;
-    var now = 1;
+    var list;//数据集
+    var count;//总的页数
+    var now = 1;//当前页
 
-    $.get("provider_queryProvider.action", {
-        page: 1, rows: 5, 'pname': ' '
+    $.get("goods_queryGoods.action", {
+        page: 1, rows: 5, 'name': ' '
     }, function (data, status) {
         list = data;
         //alert("数据: " + JSON.stringify(list) + "\n状态: " + status);
         //alert(list.rows[1].address);
         count = Math.floor((list.total + 4) / 5);
+        //alert(count);
         //alert(Math.floor(9/5));
         //alert(page);
         var last = now - 1;
-        //alert(now); q
+        //alert(list.total);
+        //alert(now);
         if (now > 1) {
 
             //alert(last);
-            $("#pagination").append("<li class=\"am-pagination-prev \">\n" +
-                "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
+            $("#pagination").append("<li class=\"am-pagination-prev\">\n" +
+                "        <a href=\"#\" class=\"\" onclick='getgoods(" + last + ")'>上一页</a>\n" +
                 "      </li>");
         } else {
-            $("#pagination").append("<li class=\"am-pagination-prev am-disabled \">\n" +
-                "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
+            $("#pagination").append("<li class=\"am-pagination-prev  am-disabled\">\n" +
+                "        <a href=\"#\" class=\"\" onclick='getgoods(" + last + ")'>上一页</a>\n" +
                 "      </li>");
         }
 
@@ -31,11 +33,11 @@ window.onload = function () {
 
         for (var i = 1; i <= count; i++) {
             if (i == now) {
-                b = "  <option value=\"#\" class=\"\" selected=\"selected\" onclick='getProvider(" + i + ")'>" + i + "\n" +
+                b = "  <option value=\"#\" class=\"\" selected=\"selected\" onclick='getgoods(" + i + ")'>" + i + "\n" +
                     "\n" +
                     "</option>"
             } else {
-                b = "  <option value=\"#\" class=\"\" onclick='getProvider(" + i + ")'>" + i + "\n" +
+                b = "  <option value=\"#\" class=\"\" onclick='getgoods(" + i + ")'>" + i + "\n" +
                     "\n" +
                     "</option>"
             }
@@ -51,33 +53,35 @@ window.onload = function () {
             var next = now + 1;
             //alert(next+"1lalal");
             $("#pagination").append(" <li class=\"am-pagination-next \">\n" +
-                "        <a href=\"#\" class=\"\" onclick='getProvider(" + next + ")'>下一页</a>\n" +
+                "        <a href=\"#\" class=\"\" onclick='getgoods(" + next + ")'>下一页</a>\n" +
                 "      </li>");
         }
 
 
         for (var i = 0; i < list.rows.length; i++) {
             //alert(list.rows);
-            //alert(obj.pno);
+            //alert(obj.id);
 
-            var a = 1;
-            s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].pno + "' /></td><td>" + i + "</td><td>" + list.rows[i].pno +
-                "</td>+<td>" + list.rows[i].pname + "</td><td>" +
-                list.rows[i].phone + "</td><td>" +
-                list.rows[i].infor + "</td><td>" +
-                list.rows[i].address + "</td>" + "<td>" +
+            s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].id + "' /></td><td>" + i + "</td><td>" + list.rows[i].id +
+                "</td>" +
+                "<td><img src='" + list.rows[i].pic + "' class=\"tpl-table-line-img\"></td>" +
+                "<td>" + list.rows[i].name + "</td>" +
+                "<td>" + list.rows[i].samary + "</td>" +
+                "<td>" + list.rows[i].type + "</td>" +
+                "<td>" + list.rows[i].price + "</td>" +
+                "<td>" +
                 "<div class=\"tpl-table-black-operation\">\n" +
-                "<a href=\"javascript:;\" onclick= editProvider('" +
-                list.rows[i].pno + "','" + list.rows[i].pname + "','" +
-                list.rows[i].infor + "','" +
-                list.rows[i].address + "','" +
-                list.rows[i].phone + "')>" +
+                "<a href=\"javascript:;\" onclick= editgoods('" +
+                list.rows[i].id + "','" + list.rows[i].name + "','" + list.rows[i].samary + "','" +
+                list.rows[i].type + "','" +
+                list.rows[i].price + "')>" +
                 "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                 "</a>\n" +
 
-                "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delprovider('" + list.rows[i].pno + "')>\n" +
+                "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delgoods('" + list.rows[i].id + "')>\n" +
                 "<i class=\"am-icon-trash\"></i> 删除\n" +
                 "</a>\n" +
+
                 "</div>\n" +
                 "</td></tr>";
             // alert(s);
@@ -99,38 +103,26 @@ window.onload = function () {
 
 $(document).ready(function () {
 
+
     $('#doc-prompt-toggle').on('click', function () {
         //alert("123");
-        $('#addpname').val("");
-        $('#addphone').val("");
-        $('#addaddress').val("");
-        $('#addinfor').val("");
+        $('#addimage').val("");
+        $('#addname').val("");
+        $('#addsamary').val("");
+        $('#addtype').val("");
+        $('#addprice').val("");
         $('#my-prompt').modal({
             relatedTarget: this,
             onConfirm: function (e) {
-                //alert(e.data[2])
+                //alert(e.data)
+                //alert(getPath())
 
-                $.post("provider_saveProvider.action",
-                    {
-                        'pno': 1,
-                        'pname': e.data[0],
-                        'phone': e.data[1],
-                        'infor': e.data[2],
-                        'address': e.data[3]
-                    },
-                    function (data, status) {
-                        //alert("数据: \n" + data + "\n状态: " + status);
-                        if (status == 'success') {
-                            alert("插入成功!");
-                            getProvider(1);
-                        }
-
-                    });
+                $("#myform").submit();
 
                 //alert('你输入的是：' + e.data[0] || '')
             },
             onCancel: function (e) {
-                alert('取消添加供应商信息!');
+                alert('取消添加商品信息!');
             }
         });
     });
@@ -139,10 +131,10 @@ $(document).ready(function () {
         var text = $("#searchtext").val();
         var list;
         //alert(text);
-        //getProvider();
+        //getgoods();
 
-        $.get("provider_queryProvider.action", {
-            page: 1, rows: 5, 'pname': text
+        $.get("goods_queryGoods.action", {
+            page: 1, rows: 5, 'name': text
         }, function (data, status) {
 
             list = data;
@@ -152,7 +144,7 @@ $(document).ready(function () {
             //alert(list.rows[1].address);
             $("#test").empty();
             $("#pagination").empty();
-            var count = Math.floor((list.total + 4) / 5);
+            var count = Math.floor(list.total + 4) / 5;
             //alert(Math.floor(9/5));
             //alert(page);
             var last = now - 1;
@@ -160,11 +152,11 @@ $(document).ready(function () {
             if (now > 1) {
 
                 $("#pagination").append("<li class=\"am-pagination-prev \">\n" +
-                    "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
+                    "        <a href=\"#\" class=\"\" onclick='getgoods(" + last + ")'>上一页</a>\n" +
                     "      </li>");
             } else {
                 $("#pagination").append("<li class=\"am-pagination-prev am-disabled \">\n" +
-                    "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
+                    "        <a href=\"#\" class=\"\" onclick='getgoods(" + last + ")'>上一页</a>\n" +
                     "      </li>");
             }
 
@@ -173,7 +165,7 @@ $(document).ready(function () {
 
             for (var i = 1; i <= count; i++) {
 
-                b = "  <option value=\"#\" class=\"\" onclick='getProvider(" + i + ")'>" + i + "\n" +
+                b = "  <option value=\"#\" class=\"\" onclick='getgoods(" + i + ")'>" + i + "\n" +
                     "\n" +
                     "</option>"
 
@@ -186,30 +178,32 @@ $(document).ready(function () {
             if (count != 1 && now != count) {
                 //alert(next);
                 $("#pagination").append(" <li class=\"am-pagination-next \">\n" +
-                    "        <a href=\"#\" class=\"\" onclick='getProvider(" + next + ")'>下一页</a>\n" +
+                    "        <a href=\"#\" class=\"\" onclick='getgoods(" + next + ")'>下一页</a>\n" +
                     "      </li>");
             }
 
             for (var i = 0; i < list.rows.length; i++) {
 
-                //alert(list.rows);
-                s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].pno + "' /></td><td>" + i + "</td><td>" + list.rows[i].pno +
-                    "</td>+<td>" + list.rows[i].pname + "</td><td>" +
-                    list.rows[i].phone + "</td><td>" +
-                    list.rows[i].infor + "</td><td>" +
-                    list.rows[i].address + "</td>" + "<td>" +
+                s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].id + "' /></td><td>" + i + "</td><td>" + list.rows[i].id +
+                    "</td>" +
+                    "<td><img src='" + list.rows[i].pic + "' class=\"tpl-table-line-img\"></td>" +
+                    "<td>" + list.rows[i].name + "</td>" +
+                    "<td>" + list.rows[i].samary + "</td>" +
+                    "<td>" + list.rows[i].type + "</td>" +
+                    "<td>" + list.rows[i].price + "</td>" +
+                    "<td>" +
                     "<div class=\"tpl-table-black-operation\">\n" +
-                    "<a href=\"javascript:;\" onclick= editProvider('" +
-                    list.rows[i].pno + "','" + list.rows[i].pname + "','" +
-                    list.rows[i].infor + "','" +
-                    list.rows[i].address + "','" +
-                    list.rows[i].phone + "')>" +
+                    "<a href=\"javascript:;\" onclick= editgoods('" +
+                    list.rows[i].id + "','" + list.rows[i].name + "','" + list.rows[i].samary + "','" +
+                    list.rows[i].type + "','" +
+                    list.rows[i].price + "')>" +
                     "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                     "</a>\n" +
 
-                    "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delprovider('" + list.rows[i].pno + "')>\n" +
+                    "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delgoods('" + list.rows[i].id + "')>\n" +
                     "<i class=\"am-icon-trash\"></i> 删除\n" +
                     "</a>\n" +
+
                     "</div>\n" +
                     "</td></tr>";
                 // alert(s);
@@ -249,14 +243,14 @@ $(document).ready(function () {
             });
             //alert(checkData);
             for (x in checkData) {
-                $.post("provider_deleteProvider.action",
+                $.post("goods_deletegoods.action",
                     {
-                        pno: checkData[x]
+                        id: checkData[x]
                     },
                     function (data, status) {
                         //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
                         alert(data.status);
-                        getProvider(1);
+                        getgoods(1);
                     });
 
                 alert(checkData[x]);
@@ -267,10 +261,10 @@ $(document).ready(function () {
 
 });
 
-function getProvider(noww) {
+function getgoods(noww) {
     var list;
-    $.get("provider_queryProvider.action", {
-        page: noww, rows: 5, 'pname': " "
+    $.get("goods_queryGoods.action", {
+        page: noww, rows: 5, 'name': " "
     }, function (data, status) {
 
         //alert("数据: " + JSON.stringify(list) + "\n状态: " + status);
@@ -289,11 +283,11 @@ function getProvider(noww) {
         if (noww > 1) {
 
             $("#pagination").append("<li class=\"am-pagination-prev\">\n" +
-                "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
+                "        <a href=\"#\" class=\"\" onclick='getgoods(" + last + ")'>上一页</a>\n" +
                 "      </li>");
         } else {
             $("#pagination").append("<li class=\"am-pagination-prev am-disabled \">\n" +
-                "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
+                "        <a href=\"#\" class=\"\" onclick='getgoods(" + last + ")'>上一页</a>\n" +
                 "      </li>");
         }
 
@@ -302,11 +296,11 @@ function getProvider(noww) {
 
         for (var i = 1; i <= count; i++) {
             if (i == noww) {
-                b = "  <option value=\"#\" class=\"\" selected=\"selected\" onclick='getProvider(" + i + ")'>" + i + "\n" +
+                b = "  <option value=\"#\" class=\"\" selected=\"selected\" onclick='getgoods(" + i + ")'>" + i + "\n" +
                     "\n" +
                     "</option>"
             } else {
-                b = "  <option value=\"#\" class=\"\" onclick='getProvider(" + i + ")'>" + i + "\n" +
+                b = "  <option value=\"#\" class=\"\" onclick='getgoods(" + i + ")'>" + i + "\n" +
                     "\n" +
                     "</option>"
             }
@@ -320,29 +314,32 @@ function getProvider(noww) {
             //alert(now);
 
             $("#pagination").append(" <li class=\"am-pagination-next \">\n" +
-                "        <a href=\"#\" class=\"\" onclick='getProvider(" + next + ")'>下一页</a>\n" +
+                "        <a href=\"#\" class=\"\" onclick='getgoods(" + next + ")'>下一页</a>\n" +
                 "      </li>");
         }
         for (var i = 0; i < list.rows.length; i++) {
-            //alert(list.rows);
+            //alert(list.rows[i]);
 
-            s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].pno + "' /></td><td>" + i + "</td><td>" + list.rows[i].pno +
-                "</td>+<td>" + list.rows[i].pname + "</td><td>" +
-                list.rows[i].phone + "</td><td>" +
-                list.rows[i].infor + "</td><td>" +
-                list.rows[i].address + "</td>" + "<td>" +
+            s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].id + "' /></td><td>" + i + "</td><td>" + list.rows[i].id +
+                "</td>" +
+                "<td><img src='" + list.rows[i].pic + "' class=\"tpl-table-line-img\"></td>" +
+                "<td>" + list.rows[i].name + "</td>" +
+                "<td>" + list.rows[i].samary + "</td>" +
+                "<td>" + list.rows[i].type + "</td>" +
+                "<td>" + list.rows[i].price + "</td>" +
+                "<td>" +
                 "<div class=\"tpl-table-black-operation\">\n" +
-                "<a href=\"javascript:;\" onclick= editProvider('" +
-                list.rows[i].pno + "','" + list.rows[i].pname + "','" +
-                list.rows[i].infor + "','" +
-                list.rows[i].address + "','" +
-                list.rows[i].phone + "')>" +
+                "<a href=\"javascript:;\" onclick= editgoods('" +
+                list.rows[i].id + "','" + list.rows[i].name + "','" + list.rows[i].samary + "','" +
+                list.rows[i].type + "','" +
+                list.rows[i].price + "')>" +
                 "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                 "</a>\n" +
 
-                "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delprovider('" + list.rows[i].pno + "')>\n" +
+                "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delgoods('" + list.rows[i].id + "')>\n" +
                 "<i class=\"am-icon-trash\"></i> 删除\n" +
                 "</a>\n" +
+
                 "</div>\n" +
                 "</td></tr>";
             // alert(s);
@@ -353,22 +350,26 @@ function getProvider(noww) {
     });
 }
 
-function delprovider(id) {
+function delgoods(id) {
+
     alert(id);
-    $('#pid').val(id);
+    $('#gid').val(id);
     $('#my-confirm').modal({
         relatedTarget: this,
-        onConfirm: function (options) {
+        onConfirm: function (e) {
             alert($('#gid').val());
-            $.post("provider_deleteProvider.action",
+
+            $.post("goods_deletegoods.action",
                 {
-                    'pno': $('#pid').val()
+                    "id": $('#gid').val()
                 },
                 function (data, status) {
                     //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
-                    alert(data.status);
-                    getProvider(1);
+                    //alert();
+
+                    getgoods(1);
                 });
+
         },
         // closeOnConfirm: false,
         onCancel: function () {
@@ -377,38 +378,38 @@ function delprovider(id) {
     });
 }
 
-function editProvider(pno, pname, infor, address, phone) {
-    // alert(pno);
+function editgoods(id, name, samary, type, price) {
+    // alert(id);
     // alert(pname);
     // alert(infor);
     // alert(address);
     // alert(phone);
-    $('#edit_pid').val(pno);
-    $('#pname_edit').val(pname);
-    $('#phone_edit').val(phone);
-    $('#address_edit').val(address);
-    $('#infor_edit').val(infor)
+    //alert(samary);
+    $('#editid').val(id);
+    $('#editname').val(name);
+    $('#editsamary').val(samary);
+    $('#edittype').val(type);
+    $('#editprice').val(price);
+
+
+    //alert( $('#editsamery').val());
 
     $('#my-prompt2').modal({
         relatedTarget: this,
         onConfirm: function (e) {
-            $.post("provider_editProvider.action",
-                {
-                    "pno": $('#edit_pid').val(),
-                    'pname': $('#pname_edit').val(),
-                    'phone': $('#phone_edit').val(),
-                    'infor': $('#infor_edit').val(),
-                    'address': $('#address_edit').val()
-                },
-                function (data, status) {
-                    //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
-                    alert(data.status);
-                    getProvider(1);
-                });
+            //alert($('#editsamery').val());
+            $('#form2').submit();
+            $('#editid').val("");
+            $('#editname').val("");
+            $('#editsamary').val("");
+            $('#edittype').val("");
+            $('#editprice').val("");
+            $('#editimage').val("");
         },
         // closeOnConfirm: false,
         onCancel: function () {
             alert('算逑，不弄了');
         }
     });
+
 }

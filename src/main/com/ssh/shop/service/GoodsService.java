@@ -2,8 +2,12 @@ package main.com.ssh.shop.service;
 
 import main.com.ssh.shop.entity.Goods;
 
-public interface GoodsService extends BaseService<Goods> {
-    public void save(Goods goods);
+import java.util.List;
 
-    public void update(Goods goods);
+public interface GoodsService extends BaseService<Goods> {
+    //查询商品名称
+    public List<Goods> queryToGoods(String name, int page, int size);//实现分页
+
+    //根据关键字查询总记录数
+    public Long getCount(String name);
 }

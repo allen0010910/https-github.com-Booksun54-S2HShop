@@ -7,26 +7,45 @@ import java.sql.Timestamp;
 @Table(name = "WHLIST")
 public class Whlist {
     private int id;
-    private Integer type;
+    private Integer goodid;
     private Integer num;
-    private Timestamp date;
-    private Integer userid;
-    private Double money;
+    private Integer wno;
+    private Integer min;
 
-    public Whlist(int id, Integer type, Integer num, Timestamp date, Integer userid, Double money) {
-        this.id = id;
-        this.type = type;
-        this.num = num;
-        this.date = date;
-        this.userid = userid;
-        this.money = money;
+    @Basic
+    @Column(name = "Min", nullable = true)
+    public Integer getMin() {
+        return min;
     }
 
-    public Whlist() {
+    public void setMin(Integer min) {
+        this.min = min;
+    }
+
+    private Goods goods;
+    private Warehouse warehouse;
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "goodid", nullable = true)
+    public Goods getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Goods goods) {
+        this.goods = goods;
+    }
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "wno", nullable = true)
+    public Warehouse getWarehouse() {
+        return warehouse;
+    }
+
+    public void setWarehouse(Warehouse warehouse) {
+        this.warehouse = warehouse;
     }
 
     @Id
-    @GeneratedValue
     @Column(name = "ID", nullable = false)
     public int getId() {
         return id;
@@ -36,17 +55,17 @@ public class Whlist {
         this.id = id;
     }
 
-
-    @Column(name = "TYPE", nullable = true)
-    public Integer getType() {
-        return type;
+    @Basic
+    @Column(name = "GOODID", nullable = true)
+    public Integer getGoodid() {
+        return goodid;
     }
 
-    public void setType(Integer type) {
-        this.type = type;
+    public void setGoodid(Integer goodid) {
+        this.goodid = goodid;
     }
 
-
+    @Basic
     @Column(name = "NUM", nullable = true)
     public Integer getNum() {
         return num;
@@ -56,45 +75,14 @@ public class Whlist {
         this.num = num;
     }
 
-
-    @Column(name = "DATE", nullable = true)
-    public Timestamp getDate() {
-        return date;
+    @Basic
+    @Column(name = "WNO", nullable = true)
+    public Integer getWno() {
+        return wno;
     }
 
-    public void setDate(Timestamp date) {
-        this.date = date;
-    }
-
-
-    @Column(name = "USERID", nullable = true)
-    public Integer getUserid() {
-        return userid;
-    }
-
-    public void setUserid(Integer userid) {
-        this.userid = userid;
-    }
-
-    @Override
-    public String toString() {
-        return "Whlist{" +
-                "id=" + id +
-                ", type=" + type +
-                ", num=" + num +
-                ", date=" + date +
-                ", userid=" + userid +
-                ", money=" + money +
-                '}';
-    }
-
-    @Column(name = "MONEY", nullable = true, precision = 0)
-    public Double getMoney() {
-        return money;
-    }
-
-    public void setMoney(Double money) {
-        this.money = money;
+    public void setWno(Integer wno) {
+        this.wno = wno;
     }
 
     @Override
@@ -105,11 +93,11 @@ public class Whlist {
         Whlist whlist = (Whlist) o;
 
         if (id != whlist.id) return false;
-        if (type != null ? !type.equals(whlist.type) : whlist.type != null) return false;
+        if (goodid != null ? !goodid.equals(whlist.goodid) : whlist.goodid != null) return false;
         if (num != null ? !num.equals(whlist.num) : whlist.num != null) return false;
-        if (date != null ? !date.equals(whlist.date) : whlist.date != null) return false;
-        if (userid != null ? !userid.equals(whlist.userid) : whlist.userid != null) return false;
-        if (money != null ? !money.equals(whlist.money) : whlist.money != null) return false;
+        if (wno != null ? !wno.equals(whlist.wno) : whlist.wno != null) return false;
+
+
 
         return true;
     }
@@ -117,11 +105,36 @@ public class Whlist {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (type != null ? type.hashCode() : 0);
+        result = 31 * result + (goodid != null ? goodid.hashCode() : 0);
         result = 31 * result + (num != null ? num.hashCode() : 0);
-        result = 31 * result + (date != null ? date.hashCode() : 0);
-        result = 31 * result + (userid != null ? userid.hashCode() : 0);
-        result = 31 * result + (money != null ? money.hashCode() : 0);
+        result = 31 * result + (wno != null ? wno.hashCode() : 0);
+
         return result;
+    }
+
+    public Whlist(int id, Integer goodid, Integer num, Integer wno, Goods goods, Warehouse warehouse) {
+        this.id = id;
+        this.goodid = goodid;
+        this.num = num;
+        this.wno = wno;
+        this.goods = goods;
+        this.warehouse = warehouse;
+    }
+
+    public Whlist() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "Whlist{" +
+                "id=" + id +
+                ", goodid=" + goodid +
+                ", num=" + num +
+                ", wno=" + wno +
+                ", min=" + min +
+                ", goods=" + goods +
+                ", warehouse=" + warehouse +
+                '}';
     }
 }

@@ -5,9 +5,9 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.opensymphony.xwork2.util.logging.LoggerFactory;
-import main.com.ssh.shop.service.MenuService;
-import main.com.ssh.shop.service.ProviderService;
-import main.com.ssh.shop.service.UserService;
+import main.com.ssh.shop.entity.FileImage;
+import main.com.ssh.shop.service.*;
+import main.com.ssh.shop.util.FileUpload;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.RequestAware;
 import org.apache.struts2.interceptor.SessionAware;
@@ -32,6 +32,37 @@ public class BaseAction<T> extends ActionSupport implements RequestAware, Sessio
     protected MenuService menuService;
     @Resource
     protected ProviderService providerService;
+    @Resource
+    protected WarehouseService warehouseService;
+    @Resource
+    protected GoodsService goodsService;
+    @Resource
+    protected WhlistService whlistService;
+
+
+    //封装了图片信息的类
+    protected FileImage fileImage;
+
+
+    //上传文件工具类
+    @Resource
+    protected FileUpload fileUpload;
+
+    public FileUpload getFileUpload() {
+        return fileUpload;
+    }
+
+    public void setFileUpload(FileUpload fileUpload) {
+        this.fileUpload = fileUpload;
+    }
+
+    public FileImage getFileImage() {
+        return fileImage;
+    }
+
+    public void setFileImage(FileImage fileImage) {
+        this.fileImage = fileImage;
+    }
 
 
     //page和rows和分页有关，pageMap存放查询的数据，然后打包成json格式用的

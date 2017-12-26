@@ -3,26 +3,27 @@ window.onload = function () {
     var count;
     var now = 1;
 
-    $.get("provider_queryProvider.action", {
-        page: 1, rows: 5, 'pname': ' '
+    $.get("warehouse_queryWarehouse.action", {
+        page: 1, rows: 5, 'name': ' '
     }, function (data, status) {
         list = data;
         //alert("数据: " + JSON.stringify(list) + "\n状态: " + status);
         //alert(list.rows[1].address);
         count = Math.floor((list.total + 4) / 5);
+        //alert(count);
         //alert(Math.floor(9/5));
         //alert(page);
         var last = now - 1;
-        //alert(now); q
+        //alert(now);
         if (now > 1) {
 
             //alert(last);
-            $("#pagination").append("<li class=\"am-pagination-prev \">\n" +
-                "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
+            $("#pagination").append("<li class=\"am-pagination-prev\">\n" +
+                "        <a href=\"#\" class=\"\" onclick='getWarehouse(" + last + ")'>上一页</a>\n" +
                 "      </li>");
         } else {
-            $("#pagination").append("<li class=\"am-pagination-prev am-disabled \">\n" +
-                "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
+            $("#pagination").append("<li class=\"am-pagination-prev  am-disabled\">\n" +
+                "        <a href=\"#\" class=\"\" onclick='getWarehouse(" + last + ")'>上一页</a>\n" +
                 "      </li>");
         }
 
@@ -31,11 +32,11 @@ window.onload = function () {
 
         for (var i = 1; i <= count; i++) {
             if (i == now) {
-                b = "  <option value=\"#\" class=\"\" selected=\"selected\" onclick='getProvider(" + i + ")'>" + i + "\n" +
+                b = "  <option value=\"#\" class=\"\" selected=\"selected\" onclick='getWarehouse(" + i + ")'>" + i + "\n" +
                     "\n" +
                     "</option>"
             } else {
-                b = "  <option value=\"#\" class=\"\" onclick='getProvider(" + i + ")'>" + i + "\n" +
+                b = "  <option value=\"#\" class=\"\" onclick='getWarehouse(" + i + ")'>" + i + "\n" +
                     "\n" +
                     "</option>"
             }
@@ -51,33 +52,37 @@ window.onload = function () {
             var next = now + 1;
             //alert(next+"1lalal");
             $("#pagination").append(" <li class=\"am-pagination-next \">\n" +
-                "        <a href=\"#\" class=\"\" onclick='getProvider(" + next + ")'>下一页</a>\n" +
+                "        <a href=\"#\" class=\"\" onclick='getWarehouse(" + next + ")'>下一页</a>\n" +
                 "      </li>");
         }
 
 
         for (var i = 0; i < list.rows.length; i++) {
             //alert(list.rows);
-            //alert(obj.pno);
+            //alert(obj.id);
 
             var a = 1;
-            s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].pno + "' /></td><td>" + i + "</td><td>" + list.rows[i].pno +
-                "</td>+<td>" + list.rows[i].pname + "</td><td>" +
-                list.rows[i].phone + "</td><td>" +
-                list.rows[i].infor + "</td><td>" +
+
+
+            s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].id + "' /></td><td>" + i + "</td><td>" + list.rows[i].id +
+                "</td>+<td>" + list.rows[i].name + "</td><td>" +
                 list.rows[i].address + "</td>" + "<td>" +
                 "<div class=\"tpl-table-black-operation\">\n" +
-                "<a href=\"javascript:;\" onclick= editProvider('" +
-                list.rows[i].pno + "','" + list.rows[i].pname + "','" +
-                list.rows[i].infor + "','" +
-                list.rows[i].address + "','" +
-                list.rows[i].phone + "')>" +
+                "<a href=\"javascript:;\" onclick= editWarehouse('" +
+                list.rows[i].id + "','" + list.rows[i].name + "','" +
+                list.rows[i].address + "')>" +
                 "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                 "</a>\n" +
 
-                "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delprovider('" + list.rows[i].pno + "')>\n" +
+                "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delWarehouse('" + list.rows[i].id + "')>\n" +
                 "<i class=\"am-icon-trash\"></i> 删除\n" +
                 "</a>\n" +
+
+                "<a href=\"whlist_toWhlist.action?wno=" + list.rows[i].id + "\" class=\"am-btn am-btn-default am-btn-secondary\">\n" +
+                "<i class=\"am-icon-trash\"></i> 查看库存\n" +
+                "</a>\n" +
+
+
                 "</div>\n" +
                 "</td></tr>";
             // alert(s);
@@ -101,28 +106,25 @@ $(document).ready(function () {
 
     $('#doc-prompt-toggle').on('click', function () {
         //alert("123");
-        $('#addpname').val("");
-        $('#addphone').val("");
+
+        $('#addname').val("");
         $('#addaddress').val("");
-        $('#addinfor').val("");
+
         $('#my-prompt').modal({
             relatedTarget: this,
             onConfirm: function (e) {
                 //alert(e.data[2])
 
-                $.post("provider_saveProvider.action",
+                $.post("warehouse_saveWarehouse.action",
                     {
-                        'pno': 1,
-                        'pname': e.data[0],
-                        'phone': e.data[1],
-                        'infor': e.data[2],
-                        'address': e.data[3]
+                        'name': e.data[0],
+                        'address': e.data[1],
                     },
                     function (data, status) {
                         //alert("数据: \n" + data + "\n状态: " + status);
                         if (status == 'success') {
                             alert("插入成功!");
-                            getProvider(1);
+                            getWarehouse(1);
                         }
 
                     });
@@ -130,7 +132,7 @@ $(document).ready(function () {
                 //alert('你输入的是：' + e.data[0] || '')
             },
             onCancel: function (e) {
-                alert('取消添加供应商信息!');
+                alert('取消添加仓库信息!');
             }
         });
     });
@@ -139,10 +141,10 @@ $(document).ready(function () {
         var text = $("#searchtext").val();
         var list;
         //alert(text);
-        //getProvider();
+        //getWarehouse();
 
-        $.get("provider_queryProvider.action", {
-            page: 1, rows: 5, 'pname': text
+        $.get("warehouse_queryWarehouse.action", {
+            page: 1, rows: 5, 'name': text
         }, function (data, status) {
 
             list = data;
@@ -152,7 +154,7 @@ $(document).ready(function () {
             //alert(list.rows[1].address);
             $("#test").empty();
             $("#pagination").empty();
-            var count = Math.floor((list.total + 4) / 5);
+            var count = Math.floor(list.total + 4) / 5;
             //alert(Math.floor(9/5));
             //alert(page);
             var last = now - 1;
@@ -160,11 +162,11 @@ $(document).ready(function () {
             if (now > 1) {
 
                 $("#pagination").append("<li class=\"am-pagination-prev \">\n" +
-                    "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
+                    "        <a href=\"#\" class=\"\" onclick='getWarehouse(" + last + ")'>上一页</a>\n" +
                     "      </li>");
             } else {
                 $("#pagination").append("<li class=\"am-pagination-prev am-disabled \">\n" +
-                    "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
+                    "        <a href=\"#\" class=\"\" onclick='getWarehouse(" + last + ")'>上一页</a>\n" +
                     "      </li>");
             }
 
@@ -173,7 +175,7 @@ $(document).ready(function () {
 
             for (var i = 1; i <= count; i++) {
 
-                b = "  <option value=\"#\" class=\"\" onclick='getProvider(" + i + ")'>" + i + "\n" +
+                b = "  <option value=\"#\" class=\"\" onclick='getWarehouse(" + i + ")'>" + i + "\n" +
                     "\n" +
                     "</option>"
 
@@ -186,30 +188,32 @@ $(document).ready(function () {
             if (count != 1 && now != count) {
                 //alert(next);
                 $("#pagination").append(" <li class=\"am-pagination-next \">\n" +
-                    "        <a href=\"#\" class=\"\" onclick='getProvider(" + next + ")'>下一页</a>\n" +
+                    "        <a href=\"#\" class=\"\" onclick='getWarehouse(" + next + ")'>下一页</a>\n" +
                     "      </li>");
             }
 
             for (var i = 0; i < list.rows.length; i++) {
 
-                //alert(list.rows);
-                s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].pno + "' /></td><td>" + i + "</td><td>" + list.rows[i].pno +
-                    "</td>+<td>" + list.rows[i].pname + "</td><td>" +
-                    list.rows[i].phone + "</td><td>" +
-                    list.rows[i].infor + "</td><td>" +
+
+                s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].id + "' /></td><td>" + i + "</td><td>" + list.rows[i].id +
+                    "</td>+<td>" + list.rows[i].name + "</td><td>" +
                     list.rows[i].address + "</td>" + "<td>" +
                     "<div class=\"tpl-table-black-operation\">\n" +
-                    "<a href=\"javascript:;\" onclick= editProvider('" +
-                    list.rows[i].pno + "','" + list.rows[i].pname + "','" +
-                    list.rows[i].infor + "','" +
-                    list.rows[i].address + "','" +
-                    list.rows[i].phone + "')>" +
+                    "<a href=\"javascript:;\" onclick= editWarehouse('" +
+                    list.rows[i].id + "','" + list.rows[i].name + "','" +
+                    list.rows[i].address + "')>" +
                     "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                     "</a>\n" +
 
-                    "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delprovider('" + list.rows[i].pno + "')>\n" +
+                    "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delprovider('" + list.rows[i].id + "')>\n" +
                     "<i class=\"am-icon-trash\"></i> 删除\n" +
                     "</a>\n" +
+
+                    "<a href=\"whlist_toWhlist.action?wno=" + list.rows[i].id + "\" class=\"am-btn am-btn-default am-btn-secondary\">\n" +
+                    "<i class=\"am-icon-archive\"></i> 查看库存\n" +
+                    "</a>\n" +
+
+
                     "</div>\n" +
                     "</td></tr>";
                 // alert(s);
@@ -249,14 +253,14 @@ $(document).ready(function () {
             });
             //alert(checkData);
             for (x in checkData) {
-                $.post("provider_deleteProvider.action",
+                $.post("warehouse_deletewarehouse.action",
                     {
-                        pno: checkData[x]
+                        id: checkData[x]
                     },
                     function (data, status) {
                         //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
                         alert(data.status);
-                        getProvider(1);
+                        getWarehouse(1);
                     });
 
                 alert(checkData[x]);
@@ -267,10 +271,10 @@ $(document).ready(function () {
 
 });
 
-function getProvider(noww) {
+function getWarehouse(noww) {
     var list;
-    $.get("provider_queryProvider.action", {
-        page: noww, rows: 5, 'pname': " "
+    $.get("warehouse_queryWarehouse.action", {
+        page: noww, rows: 5, 'name': " "
     }, function (data, status) {
 
         //alert("数据: " + JSON.stringify(list) + "\n状态: " + status);
@@ -289,11 +293,11 @@ function getProvider(noww) {
         if (noww > 1) {
 
             $("#pagination").append("<li class=\"am-pagination-prev\">\n" +
-                "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
+                "        <a href=\"#\" class=\"\" onclick='getWarehouse(" + last + ")'>上一页</a>\n" +
                 "      </li>");
         } else {
             $("#pagination").append("<li class=\"am-pagination-prev am-disabled \">\n" +
-                "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
+                "        <a href=\"#\" class=\"\" onclick='getWarehouse(" + last + ")'>上一页</a>\n" +
                 "      </li>");
         }
 
@@ -302,11 +306,11 @@ function getProvider(noww) {
 
         for (var i = 1; i <= count; i++) {
             if (i == noww) {
-                b = "  <option value=\"#\" class=\"\" selected=\"selected\" onclick='getProvider(" + i + ")'>" + i + "\n" +
+                b = "  <option value=\"#\" class=\"\" selected=\"selected\" onclick='getWarehouse(" + i + ")'>" + i + "\n" +
                     "\n" +
                     "</option>"
             } else {
-                b = "  <option value=\"#\" class=\"\" onclick='getProvider(" + i + ")'>" + i + "\n" +
+                b = "  <option value=\"#\" class=\"\" onclick='getWarehouse(" + i + ")'>" + i + "\n" +
                     "\n" +
                     "</option>"
             }
@@ -320,28 +324,29 @@ function getProvider(noww) {
             //alert(now);
 
             $("#pagination").append(" <li class=\"am-pagination-next \">\n" +
-                "        <a href=\"#\" class=\"\" onclick='getProvider(" + next + ")'>下一页</a>\n" +
+                "        <a href=\"#\" class=\"\" onclick='getWarehouse(" + next + ")'>下一页</a>\n" +
                 "      </li>");
         }
         for (var i = 0; i < list.rows.length; i++) {
             //alert(list.rows);
 
-            s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].pno + "' /></td><td>" + i + "</td><td>" + list.rows[i].pno +
-                "</td>+<td>" + list.rows[i].pname + "</td><td>" +
-                list.rows[i].phone + "</td><td>" +
-                list.rows[i].infor + "</td><td>" +
+            s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].id + "' /></td><td>" + i + "</td><td>" + list.rows[i].id +
+                "</td>+<td>" + list.rows[i].name + "</td><td>" +
                 list.rows[i].address + "</td>" + "<td>" +
                 "<div class=\"tpl-table-black-operation\">\n" +
-                "<a href=\"javascript:;\" onclick= editProvider('" +
-                list.rows[i].pno + "','" + list.rows[i].pname + "','" +
-                list.rows[i].infor + "','" +
-                list.rows[i].address + "','" +
-                list.rows[i].phone + "')>" +
+                "<a href=\"javascript:;\" onclick= editWarehouse('" +
+                list.rows[i].id + "','" + list.rows[i].name + "','" +
+                list.rows[i].address + "')>" +
                 "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                 "</a>\n" +
 
-                "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delprovider('" + list.rows[i].pno + "')>\n" +
+                "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delWarehouse('" + list.rows[i].id + "')>\n" +
                 "<i class=\"am-icon-trash\"></i> 删除\n" +
+
+                "<a href=\"whlist_toWhlist.action?wno=" + list.rows[i].id + "\" class=\"am-btn am-btn-default am-btn-secondary\">\n" +
+                "<i class=\"am-icon-archive\"></i> 查看库存\n" +
+                "</a>\n" +
+
                 "</a>\n" +
                 "</div>\n" +
                 "</td></tr>";
@@ -353,21 +358,22 @@ function getProvider(noww) {
     });
 }
 
-function delprovider(id) {
-    alert(id);
-    $('#pid').val(id);
+function delWarehouse(id) {
+    alert($('#id_delete').val());
+    $('#id_delete').val(id);
+    alert($('#id_delete').val());
     $('#my-confirm').modal({
         relatedTarget: this,
         onConfirm: function (options) {
-            alert($('#gid').val());
-            $.post("provider_deleteProvider.action",
+            alert($('#id_delete').val());
+            $.post("warehouse_deleteWarehouse.action",
                 {
-                    'pno': $('#pid').val()
+                    "id": $('#id_delete').val()
                 },
                 function (data, status) {
                     //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
                     alert(data.status);
-                    getProvider(1);
+                    getWarehouse(1);
                 });
         },
         // closeOnConfirm: false,
@@ -377,33 +383,28 @@ function delprovider(id) {
     });
 }
 
-function editProvider(pno, pname, infor, address, phone) {
-    // alert(pno);
+function editWarehouse(id, name, address) {
+    // alert(id);
     // alert(pname);
     // alert(infor);
     // alert(address);
     // alert(phone);
-    $('#edit_pid').val(pno);
-    $('#pname_edit').val(pname);
-    $('#phone_edit').val(phone);
+    $('#id_edit').val(id);
+    $('#name_edit').val(name);
     $('#address_edit').val(address);
-    $('#infor_edit').val(infor)
-
     $('#my-prompt2').modal({
         relatedTarget: this,
         onConfirm: function (e) {
-            $.post("provider_editProvider.action",
+            $.post("warehouse_editWarehouse.action",
                 {
-                    "pno": $('#edit_pid').val(),
-                    'pname': $('#pname_edit').val(),
-                    'phone': $('#phone_edit').val(),
-                    'infor': $('#infor_edit').val(),
+                    "id": $('#id_edit').val(),
+                    'name': $('#name_edit').val(),
                     'address': $('#address_edit').val()
                 },
                 function (data, status) {
                     //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
                     alert(data.status);
-                    getProvider(1);
+                    getWarehouse(1);
                 });
         },
         // closeOnConfirm: false,
@@ -411,4 +412,5 @@ function editProvider(pno, pname, infor, address, phone) {
             alert('算逑，不弄了');
         }
     });
+
 }

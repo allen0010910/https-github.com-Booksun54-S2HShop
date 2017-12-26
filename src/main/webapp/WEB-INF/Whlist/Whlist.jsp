@@ -1,6 +1,20 @@
 <%--
   Created by IntelliJ IDEA.
   User: booksun
+  Date: 2017/12/23
+  Time: 14:46
+  To change this template use File | Settings | File Templates.
+--%>
+<%--
+  Created by IntelliJ IDEA.
+  User: booksun
+  Date: 2017/12/18
+  Time: 19:11
+  To change this template use File | Settings | File Templates.
+--%>
+<%--
+  Created by IntelliJ IDEA.
+  User: booksun
   Date: 2017/11/25
   Time: 15:01
   To change this template use File | Settings | File Templates.
@@ -14,8 +28,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>供应商管理页面</title>
-    <meta name="description" content="供应商管理页面">
+    <title>库存管理页面</title>
+    <meta name="description" content="进货管理页面">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
@@ -228,7 +242,7 @@
                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-12">
                     <div class="widget am-cf">
                         <div class="widget-head am-cf">
-                            <div class="widget-title  am-cf">供应商列表</div>
+                            <div class="widget-title  am-cf">库存信息列表</div>
 
 
                         </div>
@@ -246,6 +260,10 @@
                                                     id="deleteall"><span
                                                     class="am-icon-trash-o"></span> 删除
                                             </button>
+                                            <a href="javascript:history.go(-1);"
+                                               class="am-btn am-btn-default am-btn-secondary"><span
+                                                    class="am-icon-trash-o"></span> 返回</a>
+
                                         </div>
                                     </div>
                                 </div>
@@ -256,7 +274,7 @@
 
                                 <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
 
-                                    <input type="text" class="am-form-field " id="searchtext" placeholder="输入供应商名称">
+                                    <input type="text" class="am-form-field " id="searchtext" placeholder="输入商品名称">
                                     <span class="am-input-group-btn">
             <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search"
                     type="button" id="search"></button>
@@ -272,10 +290,10 @@
                                         <th><input type="checkbox" class="am-checkbox" id="checkAll"/></th>
                                         <th>序号</th>
                                         <th>ID</th>
-                                        <th>供应商名称</th>
-                                        <th>联系方式</th>
-                                        <th>供应商信息</th>
-                                        <th>供应商地址</th>
+                                        <th>商品名称</th>
+                                        <th>数量</th>
+                                        <th>仓库名称</th>
+                                        <th>最小警戒值</th>
                                         <th>操作</th>
                                     </tr>
                                     </thead>
@@ -320,22 +338,14 @@
 
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">新增供应商信息:</div>
+        <div class="am-modal-hd">新增进货信息:</div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">供应商名称</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="供应商名称" id="addpname">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库名称</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="仓库名称" id="addname">
         </div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">联系电话</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="联系电话" id="addphone">
-        </div>
-        <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">描述信息</label>
-            <textarea class="am-modal-prompt-input" placeholder="描述信息" id="addinfor"></textarea>
-        </div>
-        <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">地址</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="地址" id="addaddress">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库地址</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="仓库地址" id="addaddress">
         </div>
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>
@@ -346,24 +356,15 @@
 
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt2">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">修改供应商信息:</div>
+        <div class="am-modal-hd">修改进货信息:</div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">供应商名称</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="供应商名称" id="pname_edit">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库名称</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="仓库名称" id="name_edit">
         </div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">联系电话</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="联系电话" id="phone_edit">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库地址</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="仓库地址" id="address_edit">
         </div>
-        <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">描述信息</label>
-            <textarea class="am-modal-prompt-input" placeholder="描述信息" id="infor_edit"></textarea>
-        </div>
-        <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">地址</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="地址" id="address_edit">
-        </div>
-        <input type="hidden" class="am-modal-prompt-input" id="edit_pid" value="">
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>
             <span class="am-modal-btn" data-am-modal-confirm>提交</span>
@@ -373,12 +374,10 @@
 
 <div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">删除供应商信息</div>
+        <div class="am-modal-hd">删除库存信息</div>
+        <input type="hidden" class="am-modal-prompt-input" placeholder="id" id="id_delete">
         <div class="am-modal-bd">
             确定要删除这条记录吗？
-        </div>
-        <div class="am-modal-bd">
-            <input type="hidden" class="am-modal-prompt-input" id="pid" value="">
         </div>
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>
@@ -387,13 +386,14 @@
     </div>
 </div>
 
-
 <script src="${shop}/assets/js/amazeui.min.js"></script>
 <script src="${shop}/assets/js/amazeui.datatables.min.js"></script>
 <script src="${shop}/assets/js/dataTables.responsive.min.js"></script>
 <script src="${shop}/assets/js/app.js"></script>
-<script src="${shop}/assets/js/provider.js"></script>
-
+<script src="${shop}/assets/js/whlist.js"></script>
+<script>
+    var wno = "${wno}";
+</script>
 </body>
 
 </html>

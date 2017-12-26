@@ -14,7 +14,6 @@ import org.hibernate.cfg.Configuration;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.stereotype.Repository;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.apache.log4j.Logger;
@@ -105,7 +104,7 @@ public class TestDao {
 
     @Test //测试Hibernate和Spring整合后
     public void testGoods() {
-        Goods goods = new Goods("皮鞋", "鞋", "好看的皮鞋");
+        Goods goods = new Goods("皮鞋", "好看的皮鞋", "皮鞋", 123.5);
         goodsDao.save(goods);
     }
 }
