@@ -34,6 +34,14 @@
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
 
+    <!-- 第二种方式是使用注解的方式注入，主要用在java代码中使用注解注入properties文件中相应的value值 -->
+    <bean id="prop" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <array>
+                <value>classpath:public.properties</value>
+            </array>
+        </property>
+    </bean>
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
@@ -56,6 +64,7 @@
     <context:component-scan base-package="main.com.ssh.shop.action"/>
     <context:component-scan base-package="main.com.ssh.shop.service"/>
     <context:component-scan base-package="main.com.ssh.shop.*.*"/>
+    <context:component-scan base-package="main.com.ssh.shop.util"/>
 
 
 </beans>

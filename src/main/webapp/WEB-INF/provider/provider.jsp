@@ -256,7 +256,7 @@
 
                                 <div class="am-input-group am-input-group-sm tpl-form-border-form cl-p">
 
-                                    <input type="text" class="am-form-field " id="searchtext">
+                                    <input type="text" class="am-form-field " id="searchtext" placeholder="输入供应商名称">
                                     <span class="am-input-group-btn">
             <button class="am-btn  am-btn-default am-btn-success tpl-table-list-field am-icon-search"
                     type="button" id="search"></button>
@@ -363,6 +363,7 @@
             <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">地址</label>
             <input type="text" class="am-modal-prompt-input" placeholder="地址" id="address_edit">
         </div>
+        <input type="hidden" class="am-modal-prompt-input" id="edit_pid" value="">
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>
             <span class="am-modal-btn" data-am-modal-confirm>提交</span>
@@ -375,6 +376,9 @@
         <div class="am-modal-hd">删除供应商信息</div>
         <div class="am-modal-bd">
             确定要删除这条记录吗？
+        </div>
+        <div class="am-modal-bd">
+            <input type="hidden" class="am-modal-prompt-input" id="pid" value="">
         </div>
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>

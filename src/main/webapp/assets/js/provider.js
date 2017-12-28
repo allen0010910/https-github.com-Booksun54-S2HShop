@@ -9,19 +9,19 @@ window.onload = function () {
         list = data;
         //alert("数据: " + JSON.stringify(list) + "\n状态: " + status);
         //alert(list.rows[1].address);
-        count = Math.floor(list.total + 4) / 5;
+        count = Math.floor((list.total + 4) / 5);
         //alert(Math.floor(9/5));
         //alert(page);
         var last = now - 1;
-        //alert(now);
+        //alert(now); q
         if (now > 1) {
 
             //alert(last);
-            $("#pagination").append("<li class=\"am-pagination-prev am-disabled\">\n" +
+            $("#pagination").append("<li class=\"am-pagination-prev \">\n" +
                 "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
                 "      </li>");
         } else {
-            $("#pagination").append("<li class=\"am-pagination-prev \">\n" +
+            $("#pagination").append("<li class=\"am-pagination-prev am-disabled \">\n" +
                 "        <a href=\"#\" class=\"\" onclick='getProvider(" + last + ")'>上一页</a>\n" +
                 "      </li>");
         }
@@ -152,7 +152,7 @@ $(document).ready(function () {
             //alert(list.rows[1].address);
             $("#test").empty();
             $("#pagination").empty();
-            var count = Math.floor(list.total + 4) / 5;
+            var count = Math.floor((list.total + 4) / 5);
             //alert(Math.floor(9/5));
             //alert(page);
             var last = now - 1;
@@ -281,7 +281,7 @@ function getProvider(noww) {
         list = data;
         //alert("数据: " + JSON.stringify(list) + "\n状态: " + status);
         //alert(list.rows[1].address);
-        var count = Math.floor(list.total + 4) / 5;
+        var count = Math.floor((list.total + 4) / 5);
         //alert(Math.floor(9/5));
         //alert(page);
         var last = noww - 1;
@@ -325,12 +325,7 @@ function getProvider(noww) {
         }
         for (var i = 0; i < list.rows.length; i++) {
             //alert(list.rows);
-            var obj = new Object();
-            obj.pno = list.rows[i].pno;
-            obj.pname = list.rows[i].pname;
-            obj.infor = list.rows[i].phone;
-            obj.infor = list.rows[i].infor;
-            obj.address = list.rows[i].address;
+
             s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].pno + "' /></td><td>" + i + "</td><td>" + list.rows[i].pno +
                 "</td>+<td>" + list.rows[i].pname + "</td><td>" +
                 list.rows[i].phone + "</td><td>" +
@@ -359,13 +354,15 @@ function getProvider(noww) {
 }
 
 function delprovider(id) {
-    //alert(id);
+    alert(id);
+    $('#pid').val(id);
     $('#my-confirm').modal({
         relatedTarget: this,
         onConfirm: function (options) {
+            alert($('#gid').val());
             $.post("provider_deleteProvider.action",
                 {
-                    pno: id
+                    'pno': $('#pid').val()
                 },
                 function (data, status) {
                     //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
@@ -386,6 +383,7 @@ function editProvider(pno, pname, infor, address, phone) {
     // alert(infor);
     // alert(address);
     // alert(phone);
+    $('#edit_pid').val(pno);
     $('#pname_edit').val(pname);
     $('#phone_edit').val(phone);
     $('#address_edit').val(address);
@@ -396,11 +394,11 @@ function editProvider(pno, pname, infor, address, phone) {
         onConfirm: function (e) {
             $.post("provider_editProvider.action",
                 {
-                    "pno": pno,
-                    'pname': e.data[0],
-                    'phone': e.data[1],
-                    'infor': e.data[2],
-                    'address': e.data[3]
+                    "pno": $('#edit_pid').val(),
+                    'pname': $('#pname_edit').val(),
+                    'phone': $('#phone_edit').val(),
+                    'infor': $('#infor_edit').val(),
+                    'address': $('#address_edit').val()
                 },
                 function (data, status) {
                     //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
