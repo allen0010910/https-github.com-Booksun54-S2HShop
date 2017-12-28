@@ -1,10 +1,5 @@
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.event.internalEventListenerFactory' to allow for resolving potential circular references
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.event.internalEventListenerFactory'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'goodsService'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'goodsService'
@@ -154,7 +149,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.transaction.annotation.AnnotationTransactionAttributeSource - Adding transactional method 'WhlistDaoImpl.searchbyname' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+DEBUG main org.springframework.transaction.annotation.AnnotationTransactionAttributeSource - Adding transactional method 'WhlistDaoImpl.getCountAll' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'whlistDao' with 0 common interceptors and 1 specific interceptors
 DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.WhlistDaoImpl@6579c3d9]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'whlistDao'
@@ -485,15 +480,35 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test method: context [DefaultTestContext@3f49dace testClass = testOrderDao, testInstance = Test.Dao.testOrderDao@1ed4004b, testMethod = testcountOrderDao@testOrderDao, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1e397ed7 testClass = testOrderDao, locations = '{classpath:beans.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+DEBUG main org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test method: context [DefaultTestContext@3f49dace testClass = testOrderDao, testInstance = Test.Dao.testOrderDao@1ed4004b, testMethod = testqueryOrderDao@testOrderDao, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1e397ed7 testClass = testOrderDao, locations = '{classpath:beans.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+DEBUG main org.springframework.transaction.annotation.AnnotationTransactionAttributeSource - Adding transactional method 'OrderDaoImpl.queryToOrderDao' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'transactionManager'
-DEBUG main org.springframework.orm.hibernate4.HibernateTransactionManager - Creating new transaction with name [main.com.ssh.shop.dao.impl.OrderDaoImpl.getCount]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+DEBUG main org.springframework.orm.hibernate4.HibernateTransactionManager - Creating new transaction with name [main.com.ssh.shop.dao.impl.OrderDaoImpl.queryToOrderDao]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
 DEBUG main org.springframework.orm.hibernate4.HibernateTransactionManager - Opened new Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@566d0c69 updates=org.hibernate.engine.spi.ExecutableList@388b401d deletions=org.hibernate.engine.spi.ExecutableList@2bcec6a6 orphanRemovals=org.hibernate.engine.spi.ExecutableList@77a281fc collectionCreations=org.hibernate.engine.spi.ExecutableList@4912d525 collectionRemovals=org.hibernate.engine.spi.ExecutableList@2bfbffb2 collectionUpdates=org.hibernate.engine.spi.ExecutableList@765df79d collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@151335cb unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])] for Hibernate transaction
 DEBUG main org.springframework.orm.hibernate4.HibernateTransactionManager - Preparing JDBC Connection of Hibernate Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@566d0c69 updates=org.hibernate.engine.spi.ExecutableList@388b401d deletions=org.hibernate.engine.spi.ExecutableList@2bcec6a6 orphanRemovals=org.hibernate.engine.spi.ExecutableList@77a281fc collectionCreations=org.hibernate.engine.spi.ExecutableList@4912d525 collectionRemovals=org.hibernate.engine.spi.ExecutableList@2bfbffb2 collectionUpdates=org.hibernate.engine.spi.ExecutableList@765df79d collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@151335cb unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])]
 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtaining JDBC connection
-DEBUG main com.mchange.v2.resourcepool.BasicResourcePool - trace com.mchange.v2.resourcepool.BasicResourcePool@4b9df8a [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@53e4cdf5)
+DEBUG main com.mchange.v2.resourcepool.BasicResourcePool - trace com.mchange.v2.resourcepool.BasicResourcePool@4b9df8a [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@6e570d14)
 DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtained JDBC connection
 DEBUG main org.hibernate.engine.transaction.spi.AbstractTransactionImpl - begin
 DEBUG main org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction - initial autocommit status: true
 DEBUG main org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction - disabling autocommit
 DEBUG main org.springframework.orm.hibernate4.HibernateTransactionManager - Exposing Hibernate transaction as JDBC transaction [com.mchange.v2.c3p0.impl.NewProxyConnection@6a10b263]
+DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - parse() - HQL: from main.com.ssh.shop.entity.Order
+DEBUG main org.hibernate.hql.internal.ast.HqlParser - weakKeywords() : new LT(1) token - ["Order",<109> previously: <41>,line=1,col=31,possibleID=true]
+DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    \-[SELECT_FROM] Node: 'SELECT_FROM'
+       \-[FROM] Node: 'from'
+          \-[RANGE] Node: 'RANGE'
+             \-[DOT] Node: '.'
+                +-[DOT] Node: '.'
+                |  +-[DOT] Node: '.'
+                |  |  +-[DOT] Node: '.'
+                |  |  |  +-[DOT] Node: '.'
+                |  |  |  |  +-[IDENT] Node: 'main'
+                |  |  |  |  \-[IDENT] Node: 'com'
+                |  |  |  \-[IDENT] Node: 'ssh'
+                |  |  \-[IDENT] Node: 'shop'
+                |  \-[IDENT] Node: 'entity'
+                \-[IDENT] Node: 'Order'
+
