@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.apache.log4j.Logger;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 
 
 @Controller("userAction")
@@ -29,6 +30,11 @@ public class UserAction extends BaseAction<User> {
         this.tip = tip;
     }
 
+    public String register()
+    {
+        return "register";
+    }
+
     public String update() {
         HttpServletRequest request = ServletActionContext.getRequest();
         String id = request.getParameter("id");
@@ -42,7 +48,7 @@ public class UserAction extends BaseAction<User> {
 
     public String save() {
         System.out.println("---save---");
-        System.out.println(model);
+        System.out.println(model.toString());
         userService.save(model);
         logger.info("---完成用户信息插入---");
         return "index";
@@ -102,4 +108,16 @@ public class UserAction extends BaseAction<User> {
 
         }
     }
+
+    public String confirmation(){
+        User user = userService.getUser(model.getUserid());
+        if(user!=null){
+            session.put("useriderror", "用户名已存在！");
+            return "register";
+        }else{
+            userService.save(model);
+            return "success";
+        }
+    }
+
 }

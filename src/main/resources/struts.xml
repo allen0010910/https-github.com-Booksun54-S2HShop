@@ -21,6 +21,8 @@
             <result name="login">/index.jsp</result>
             <result name="error" type="dispatcher">/index.jsp</result>
             <result name="success">/WEB-INF/main/main.jsp</result>
+            <result name="register">/WEB-INF/user/register.jsp</result>
+
 
             <interceptor-ref name="defaultStack"></interceptor-ref>
             <interceptor-ref name="checklogin"></interceptor-ref>
