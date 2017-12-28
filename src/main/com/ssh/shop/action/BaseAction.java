@@ -38,6 +38,8 @@ public class BaseAction<T> extends ActionSupport implements RequestAware, Sessio
     protected GoodsService goodsService;
     @Resource
     protected WhlistService whlistService;
+    @Resource
+    protected StockService stockService;
 
 
     //封装了图片信息的类

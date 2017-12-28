@@ -35,6 +35,10 @@ public class UserAction extends BaseAction<User> {
         return "register";
     }
 
+    public String headPortrait() {
+        return "headPortrait";
+    }
+
     public String update() {
         HttpServletRequest request = ServletActionContext.getRequest();
         String id = request.getParameter("id");
@@ -118,6 +122,19 @@ public class UserAction extends BaseAction<User> {
             userService.save(model);
             return "success";
         }
+    }
+
+    public String changeImage() {
+        //fileUpload工具类被抽取了，uploadFile方法直接接受一个fileImage对象，返回新的图片名
+        String pic = fileUpload.uploadFile(fileImage);
+        System.out.println(fileImage.getFile().getName());
+        User user = (User) session.get("user");
+        System.out.println(user.toString());
+        user.setPic("pic\\" + pic);
+        System.out.println(user.toString());
+        //商品信息入库
+        userService.update(user);
+        return "success";
     }
 
 }
