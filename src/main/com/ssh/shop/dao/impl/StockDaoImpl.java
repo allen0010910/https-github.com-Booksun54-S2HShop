@@ -11,7 +11,7 @@ public class StockDaoImpl extends BaseDaoImpl<Stock> implements StockDao {
     @Override
     public List<Stock> queryToStockDao(int page, int size) {
         String hql;
-        hql = "from Stock";
+        hql = "from Stock ";
         return getSession().createQuery(hql).
                 setFirstResult((page - 1) * size).
                 setMaxResults(size).list();

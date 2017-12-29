@@ -28,10 +28,11 @@
         <mapping class="main.com.ssh.shop.entity.Menu"/>
         <mapping class="main.com.ssh.shop.entity.Goods"/>
         <mapping class="main.com.ssh.shop.entity.Provider"/>
-        <mapping class="main.com.ssh.shop.entity.Order"/>
+        <mapping class="main.com.ssh.shop.entity.Orders"/>
         <mapping class="main.com.ssh.shop.entity.Stock"/>
         <mapping class="main.com.ssh.shop.entity.Warehouse"/>
         <mapping class="main.com.ssh.shop.entity.Whlist"/>
+        <mapping class="main.com.ssh.shop.entity.Orders"/>
 
     </session-factory>
 

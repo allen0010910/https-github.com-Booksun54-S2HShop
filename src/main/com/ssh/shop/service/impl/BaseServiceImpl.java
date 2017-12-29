@@ -64,7 +64,7 @@ public class BaseServiceImpl<T> implements BaseService<T> {
     @Resource
     protected GoodsDao goodsDao;
     @Resource
-    protected OrderDao orderDao;
+    protected OrdersDao ordersDao;
     @Resource
     protected ProviderDao providerDao;
     @Resource

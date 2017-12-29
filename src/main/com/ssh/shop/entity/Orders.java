@@ -4,20 +4,16 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-@Table(name = "ORDER")
-public class Order {
+@Table(name = "ORDERS")
+public class Orders {
     private int id;
     private Integer goodsid;
     private Integer num;
-    private Timestamp data;
+    private Timestamp date;
     private Double price;
     private Integer userid;
     private Integer pno;
     private Double sum;
-
-    public Order() {
-
-    }
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -29,7 +25,7 @@ public class Order {
         this.id = id;
     }
 
-
+    @Basic
     @Column(name = "GOODSID", nullable = true)
     public Integer getGoodsid() {
         return goodsid;
@@ -39,7 +35,7 @@ public class Order {
         this.goodsid = goodsid;
     }
 
-
+    @Basic
     @Column(name = "NUM", nullable = true)
     public Integer getNum() {
         return num;
@@ -49,17 +45,17 @@ public class Order {
         this.num = num;
     }
 
-
-    @Column(name = "DATA", nullable = true)
-    public Timestamp getData() {
-        return data;
+    @Basic
+    @Column(name = "DATE", nullable = true)
+    public Timestamp getDate() {
+        return date;
     }
 
-    public void setData(Timestamp data) {
-        this.data = data;
+    public void setDate(Timestamp date) {
+        this.date = date;
     }
 
-
+    @Basic
     @Column(name = "PRICE", nullable = true, precision = 0)
     public Double getPrice() {
         return price;
@@ -69,7 +65,7 @@ public class Order {
         this.price = price;
     }
 
-
+    @Basic
     @Column(name = "USERID", nullable = true)
     public Integer getUserid() {
         return userid;
@@ -79,7 +75,7 @@ public class Order {
         this.userid = userid;
     }
 
-
+    @Basic
     @Column(name = "PNO", nullable = true)
     public Integer getPno() {
         return pno;
@@ -89,34 +85,8 @@ public class Order {
         this.pno = pno;
     }
 
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", goodsid=" + goodsid +
-                ", num=" + num +
-                ", data=" + data +
-                ", price=" + price +
-                ", userid=" + userid +
-                ", pno=" + pno +
-                ", sum=" + sum +
-                '}';
-    }
-
-    public Order(int id, Integer goodsid, Integer num, Timestamp data, Double price, Integer userid, Integer pno, Double sum) {
-        this.id = id;
-        this.goodsid = goodsid;
-        this.num = num;
-        this.data = data;
-        this.price = price;
-        this.userid = userid;
-        this.pno = pno;
-        this.sum = sum;
-    }
-
+    @Basic
     @Column(name = "SUM", nullable = true, precision = 0)
-
     public Double getSum() {
         return sum;
     }
@@ -130,16 +100,16 @@ public class Order {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Order order = (Order) o;
+        Orders orders = (Orders) o;
 
-        if (id != order.id) return false;
-        if (goodsid != null ? !goodsid.equals(order.goodsid) : order.goodsid != null) return false;
-        if (num != null ? !num.equals(order.num) : order.num != null) return false;
-        if (data != null ? !data.equals(order.data) : order.data != null) return false;
-        if (price != null ? !price.equals(order.price) : order.price != null) return false;
-        if (userid != null ? !userid.equals(order.userid) : order.userid != null) return false;
-        if (pno != null ? !pno.equals(order.pno) : order.pno != null) return false;
-        if (sum != null ? !sum.equals(order.sum) : order.sum != null) return false;
+        if (id != orders.id) return false;
+        if (goodsid != null ? !goodsid.equals(orders.goodsid) : orders.goodsid != null) return false;
+        if (num != null ? !num.equals(orders.num) : orders.num != null) return false;
+        if (date != null ? !date.equals(orders.date) : orders.date != null) return false;
+        if (price != null ? !price.equals(orders.price) : orders.price != null) return false;
+        if (userid != null ? !userid.equals(orders.userid) : orders.userid != null) return false;
+        if (pno != null ? !pno.equals(orders.pno) : orders.pno != null) return false;
+        if (sum != null ? !sum.equals(orders.sum) : orders.sum != null) return false;
 
         return true;
     }
@@ -149,11 +119,40 @@ public class Order {
         int result = id;
         result = 31 * result + (goodsid != null ? goodsid.hashCode() : 0);
         result = 31 * result + (num != null ? num.hashCode() : 0);
-        result = 31 * result + (data != null ? data.hashCode() : 0);
+        result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (price != null ? price.hashCode() : 0);
         result = 31 * result + (userid != null ? userid.hashCode() : 0);
         result = 31 * result + (pno != null ? pno.hashCode() : 0);
         result = 31 * result + (sum != null ? sum.hashCode() : 0);
         return result;
+    }
+
+    public Orders() {
+
+    }
+
+    public Orders(int id, Integer goodsid, Integer num, Timestamp date, Double price, Integer userid, Integer pno, Double sum) {
+        this.id = id;
+        this.goodsid = goodsid;
+        this.num = num;
+        this.date = date;
+        this.price = price;
+        this.userid = userid;
+        this.pno = pno;
+        this.sum = sum;
+    }
+
+    @Override
+    public String toString() {
+        return "Orders{" +
+                "id=" + id +
+                ", goodsid=" + goodsid +
+                ", num=" + num +
+                ", date=" + date +
+                ", price=" + price +
+                ", userid=" + userid +
+                ", pno=" + pno +
+                ", sum=" + sum +
+                '}';
     }
 }
