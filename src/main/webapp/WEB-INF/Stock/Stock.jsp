@@ -275,8 +275,10 @@
                                         <th>ID</th>
                                         <th>商品名称</th>
                                         <th>销售数量</th>
+                                        <th>销售单价</th>
+                                        <th>销售金额</th>
                                         <th>仓库名称</th>
-                                        <th>最小警戒值</th>
+                                        <th>日期</th>
                                         <th>操作</th>
                                     </tr>
                                     </thead>
@@ -321,7 +323,7 @@
 
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">新增进货信息:</div>
+        <div class="am-modal-hd">新增销售信息:</div>
         <div class="am-modal-bd">
             <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库名称</label>
             <input type="text" class="am-modal-prompt-input" placeholder="仓库名称" id="addname">
@@ -339,7 +341,7 @@
 
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt2">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">修改进货信息:</div>
+        <div class="am-modal-hd">修改销售信息:</div>
         <div class="am-modal-bd">
             <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库名称</label>
             <input type="text" class="am-modal-prompt-input" placeholder="仓库名称" id="name_edit">
@@ -357,7 +359,7 @@
 
 <div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">删除库存信息</div>
+        <div class="am-modal-hd">删除销售信息</div>
         <input type="hidden" class="am-modal-prompt-input" placeholder="id" id="id_delete">
         <div class="am-modal-bd">
             确定要删除这条记录吗？
@@ -373,10 +375,8 @@
 <script src="${shop}/assets/js/amazeui.datatables.min.js"></script>
 <script src="${shop}/assets/js/dataTables.responsive.min.js"></script>
 <script src="${shop}/assets/js/app.js"></script>
-<script src="${shop}/assets/js/whlist.js"></script>
-<script>
-    var wno = "${wno}";
-</script>
+<script src="${shop}/assets/js/stock.js"></script>
+
 </body>
 
 </html>

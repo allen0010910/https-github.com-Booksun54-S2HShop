@@ -18,6 +18,17 @@ public class Orders {
 
     private Goods goods;
     private Whlist whlist;
+    private Provider provider;
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "pno", nullable = true)
+    public Provider getProvider() {
+        return provider;
+    }
+
+    public void setProvider(Provider provider) {
+        this.provider = provider;
+    }
 
     @ManyToOne(cascade = CascadeType.ALL, optional = true)
     @JoinColumn(name = "goodsid", nullable = true)
@@ -97,16 +108,6 @@ public class Orders {
 
     public void setUserid(Integer userid) {
         this.userid = userid;
-    }
-
-    @Basic
-    @Column(name = "PNO", nullable = true)
-    public Integer getPno() {
-        return pno;
-    }
-
-    public void setPno(Integer pno) {
-        this.pno = pno;
     }
 
     @Basic
