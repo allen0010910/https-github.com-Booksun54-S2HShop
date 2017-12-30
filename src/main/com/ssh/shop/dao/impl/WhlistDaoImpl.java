@@ -10,7 +10,7 @@ public class WhlistDaoImpl extends BaseDaoImpl<Whlist> implements WhlistDao {
     @Override
     public List<Whlist> queryToWhlist(int wno, int page, int size) {
         String hql;
-        hql = "from Whlist as w where w.wno =:wno";
+        hql = "from Whlist as w where w.warehouse.id =:wno";
         return getSession().createQuery(hql).setInteger("wno", wno).list();
 
     }
@@ -20,10 +20,10 @@ public class WhlistDaoImpl extends BaseDaoImpl<Whlist> implements WhlistDao {
         String hql;
         name = name.trim();
         if (name.equals("") || name == null) {
-            hql = "from Whlist as w where w.wno =:wno";
+            hql = "from Whlist as w where w.warehouse.id =:wno";
             return getSession().createQuery(hql).setInteger("wno", wno).list();
         } else {
-            hql = "from Whlist as w where w.wno =:wno and w.goods.name=:name";
+            hql = "from Whlist as w where w.warehouse.id =:wno and w.goods.name=:name";
             return getSession().createQuery(hql).setInteger("wno", wno).setString("name", name).list();
         }
 
@@ -39,7 +39,8 @@ public class WhlistDaoImpl extends BaseDaoImpl<Whlist> implements WhlistDao {
     @Override
     public Long getCountAll(int wno) {
 
-        String hql = "select count(c) from Whlist c where c.wno=:wno";
+        String hql = "select count(c) from Whlist c where c.warehouse.id=:wno";
         return (Long) getSession().createQuery(hql).setInteger("wno", wno).uniqueResult(); //返回一条记录:总记录数
     }
+
 }

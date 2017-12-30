@@ -14,6 +14,10 @@ public class Warehouse {
 
     }
 
+    public Warehouse(int id) {
+        this.id = id;
+    }
+
     public Warehouse(int id, String name, String address) {
         this.id = id;
         this.name = name;

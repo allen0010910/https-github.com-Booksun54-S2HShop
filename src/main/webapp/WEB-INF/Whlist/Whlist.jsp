@@ -338,15 +338,22 @@
 
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">新增进货信息:</div>
+        <div class="am-modal-hd">新增库存信息:</div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库名称</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库名称" id="addname">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品</label>
+            <select data-am-selected id="selectgood">
+
+            </select>
         </div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库地址</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库地址" id="addaddress">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">数量</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="数量" id="num_add">
         </div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">最小警戒值</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="最小警戒值" id="min_add">
+        </div>
+        <input type="hidden" class="am-modal-prompt-input" placeholder="wno" id="wno_add">
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>
             <span class="am-modal-btn" data-am-modal-confirm>提交</span>
@@ -356,19 +363,29 @@
 
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt2">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">修改进货信息:</div>
+        <div class="am-modal-hd">修改库存信息:</div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库名称</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库名称" id="name_edit">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品名称</label>
+            <input type="text" class="am-modal-prompt-input" disabled="true" placeholder="商品名称" id="name_edit">
         </div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库地址</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库地址" id="address_edit">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">数量</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="数量" id="num_edit">
         </div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">最小警戒值</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="最小警戒值" id="min_edit">
+        </div>
+        <input type="hidden" class="am-modal-prompt-input" placeholder="wno" id="wno_edit">
+        <input type="hidden" class="am-modal-prompt-input" placeholder="id" id="id_edit">
+        <input type="hidden" class="am-modal-prompt-input" placeholder="goodid" id="goodid_edit">
+
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>
             <span class="am-modal-btn" data-am-modal-confirm>提交</span>
         </div>
+
+
     </div>
 </div>
 

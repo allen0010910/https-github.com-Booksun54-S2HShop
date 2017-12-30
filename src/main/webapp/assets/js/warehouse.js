@@ -78,7 +78,7 @@ window.onload = function () {
                 "<i class=\"am-icon-trash\"></i> 删除\n" +
                 "</a>\n" +
 
-                "<a href=\"whlist_toWhlist.action?wno=" + list.rows[i].id + "\" class=\"am-btn am-btn-default am-btn-secondary\">\n" +
+                "<a href=\"whlist_toWhlist.action?warehouse.id=" + list.rows[i].id + "\" class=\"am-btn am-btn-default am-btn-secondary\">\n" +
                 "<i class=\"am-icon-trash\"></i> 查看库存\n" +
                 "</a>\n" +
 
@@ -209,7 +209,7 @@ $(document).ready(function () {
                     "<i class=\"am-icon-trash\"></i> 删除\n" +
                     "</a>\n" +
 
-                    "<a href=\"whlist_toWhlist.action?wno=" + list.rows[i].id + "\" class=\"am-btn am-btn-default am-btn-secondary\">\n" +
+                    "<a href=\"whlist_toWhlist.action?warehouse.id=" + list.rows[i].id + "\" class=\"am-btn am-btn-default am-btn-secondary\">\n" +
                     "<i class=\"am-icon-archive\"></i> 查看库存\n" +
                     "</a>\n" +
 
@@ -342,12 +342,13 @@ function getWarehouse(noww) {
 
                 "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delWarehouse('" + list.rows[i].id + "')>\n" +
                 "<i class=\"am-icon-trash\"></i> 删除\n" +
-
-                "<a href=\"whlist_toWhlist.action?wno=" + list.rows[i].id + "\" class=\"am-btn am-btn-default am-btn-secondary\">\n" +
-                "<i class=\"am-icon-archive\"></i> 查看库存\n" +
                 "</a>\n" +
 
+                "<a href=\"whlist_toWhlist.action?warehouse.id=" + list.rows[i].id + "\" class=\"am-btn am-btn-default am-btn-secondary\">\n" +
+                "<i class=\"am-icon-trash\"></i> 查看库存\n" +
                 "</a>\n" +
+
+
                 "</div>\n" +
                 "</td></tr>";
             // alert(s);

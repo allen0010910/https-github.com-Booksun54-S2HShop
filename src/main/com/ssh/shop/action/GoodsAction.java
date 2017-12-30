@@ -20,7 +20,11 @@ public class GoodsAction extends BaseAction<Goods> {
         pageMap = new HashMap<String, Object>();
 
         //根据关键字和分页的参数查询相应的数据。这个方法在Service中写过了，完成级联查询
-        //System.out.println("page:"+page+"rows:"+rows+"model:"+model.toString());
+        //System.out.println("page:"+page+"rows:"+rows+"model:"+model.toString())
+        if (page == null || rows == null) {
+            page = 0;
+            rows = 0;
+        }
         List<Goods> providerList = goodsService.queryToGoods(model.getName(), page, rows);
         pageMap.put("rows", providerList); //存储为JSON格式，从上一节的json文件可以看出，一个key是total,一个key是rows，这里先把rows存放好
         //根据关键字查询总记录数

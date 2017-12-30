@@ -23,9 +23,10 @@ public class Whlist {
     }
 
     private Goods goods;
+
     private Warehouse warehouse;
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @ManyToOne()
     @JoinColumn(name = "goodid", nullable = true)
     public Goods getGoods() {
         return goods;
@@ -35,7 +36,7 @@ public class Whlist {
         this.goods = goods;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @ManyToOne()
     @JoinColumn(name = "wno", nullable = true)
     public Warehouse getWarehouse() {
         return warehouse;
@@ -55,34 +56,13 @@ public class Whlist {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "GOODID", nullable = true)
-    public Integer getGoodid() {
-        return goodid;
-    }
-
-    public void setGoodid(Integer goodid) {
-        this.goodid = goodid;
-    }
-
-    @Basic
-    @Column(name = "NUM", nullable = true)
+    @Column(name = "NUM", nullable = false)
     public Integer getNum() {
         return num;
     }
 
     public void setNum(Integer num) {
         this.num = num;
-    }
-
-    @Basic
-    @Column(name = "WNO", nullable = true)
-    public Integer getWno() {
-        return wno;
-    }
-
-    public void setWno(Integer wno) {
-        this.wno = wno;
     }
 
     @Override
@@ -121,8 +101,26 @@ public class Whlist {
         this.warehouse = warehouse;
     }
 
+    public Whlist(Integer goodid, Integer num, Integer wno, Integer min) {
+        this.goodid = goodid;
+        this.num = num;
+        this.wno = wno;
+        this.min = min;
+    }
+
+    public Whlist(Integer num, Integer min) {
+        this.num = num;
+        this.min = min;
+    }
+
     public Whlist() {
 
+    }
+
+    public Whlist(int id, Integer num, Integer min) {
+        this.id = id;
+        this.num = num;
+        this.min = min;
     }
 
     @Override

@@ -28,4 +28,6 @@ public class WhlistServiceImpl extends BaseServiceImpl<Whlist> implements Whlist
     public void deleteWhlist(int id) {
         whlistDao.deleteWhlist(id);
     }
+
+
 }

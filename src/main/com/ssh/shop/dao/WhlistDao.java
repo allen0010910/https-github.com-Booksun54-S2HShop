@@ -15,4 +15,5 @@ public interface WhlistDao extends BaseDao<Whlist> {
 
     //根据关键字查询总记录数
     public Long getCountAll(int wno);
+
 }

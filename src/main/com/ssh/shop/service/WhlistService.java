@@ -15,4 +15,5 @@ public interface WhlistService extends BaseService<Whlist> {
     public Long getCountAll(int wno);
 
     public void deleteWhlist(int id);
+
 }

@@ -4,7 +4,7 @@ window.onload = function () {
     var now = 1;
 
     $.get("whlist_queryWhlist.action", {
-        page: 1, rows: 5, 'wno': wno
+        page: 1, rows: 5, 'warehouse.id': wno
     }, function (data, status) {
         list = data;
         //alert("数据: " + JSON.stringify(list) + "\n状态: " + status);
@@ -73,10 +73,11 @@ window.onload = function () {
                 + "<td>" +
                 "<div class=\"tpl-table-black-operation\">\n" +
                 "<a href=\"javascript:;\" onclick= editWhlist('" +
-                list.rows[i].id + "','" + list.rows[i].name + "','" +
-                list.rows[i].address + "')>" +
+                list.rows[i].id + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].min + "','" + list.rows[i].goods.id + "','" +
+                +list.rows[i].warehouse.id + "')>" +
                 "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                 "</a>\n" +
+
 
                 "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delWhlist('" + list.rows[i].id + "')>\n" +
                 "<i class=\"am-icon-trash\"></i> 删除\n" +
@@ -105,18 +106,36 @@ $(document).ready(function () {
     $('#doc-prompt-toggle').on('click', function () {
         //alert("123");
 
-        $('#addname').val("");
-        $('#addaddress').val("");
+        $.get("goods_queryGoods.action",
+            {
+                'name': null
+            },
+            function (data, status) {
+                //alert("数据: \n" + JSON.stringify(data) + "\n状态: " + status);
+                $('#selectgood').empty();
+                for (var i = 0; i < data.rows.length; i++) {
+                    $("#selectgood").append("<option value=" + data.rows[i].id + ">" + data.rows[i].name + "</option>");
+                }
+            });
 
+        $('#num_add').val("");
+        $('#min_add').val("");
+        $('#wno_add').val(wno);
+        //alert($("#wno_add").val());
         $('#my-prompt').modal({
             relatedTarget: this,
             onConfirm: function (e) {
-                //alert(e.data[2])
+                alert(e.data);
+                alert($("#selectgood option:selected").val());
 
-                $.post("Whlist_saveWhlist.action",
+
+                $.post("whlist_saveWhlist.action",
                     {
-                        'name': e.data[0],
-                        'address': e.data[1],
+                        'num': e.data[0],
+                        'min': e.data[1],
+                        'goods.id': $("#selectgood option:selected").val(),
+                        "warehouse.id": $("#wno_add").val()
+
                     },
                     function (data, status) {
                         //alert("数据: \n" + data + "\n状态: " + status);
@@ -135,6 +154,7 @@ $(document).ready(function () {
         });
     });
 
+
     $("#search").click(function () {
         var text = $("#searchtext").val();
         var list;
@@ -142,7 +162,7 @@ $(document).ready(function () {
         //getWhlist();
 
         $.get("whlist_searchbyname.action", {
-            page: 1, rows: 5, 'wno': wno, "goods.name": text
+            page: 1, rows: 5, 'warehouse.id': wno, "goods.name": text
         }, function (data, status) {
 
             list = data;
@@ -192,7 +212,6 @@ $(document).ready(function () {
 
             for (var i = 0; i < list.rows.length; i++) {
 
-
                 s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].id + "' /></td><td>" + i + "</td><td>" + list.rows[i].id +
                     "</td>+<td>" + list.rows[i].goods.name + "</td><td>" +
                     list.rows[i].num + "</td>" +
@@ -203,10 +222,11 @@ $(document).ready(function () {
                     + "<td>" +
                     "<div class=\"tpl-table-black-operation\">\n" +
                     "<a href=\"javascript:;\" onclick= editWhlist('" +
-                    list.rows[i].id + "','" + list.rows[i].name + "','" +
-                    list.rows[i].address + "')>" +
+                    list.rows[i].id + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].min + "','" + list.rows[i].goods.id + "','" +
+                    +list.rows[i].warehouse.id + "')>" +
                     "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                     "</a>\n" +
+
 
                     "<a href=\"javascript:;\" class=\"tpl-table-black-operation-del\" onclick=delWhlist('" + list.rows[i].id + "')>\n" +
                     "<i class=\"am-icon-trash\"></i> 删除\n" +
@@ -271,7 +291,7 @@ $(document).ready(function () {
 function getWhlist(noww) {
     var list;
     $.get("whlist_queryWhlist.action", {
-        page: noww, rows: 5, 'wno': wno
+        page: noww, rows: 5, 'warehouse.id': wno
     }, function (data, status) {
 
         //alert("数据: " + JSON.stringify(list) + "\n状态: " + status);
@@ -336,8 +356,8 @@ function getWhlist(noww) {
                 + "<td>" +
                 "<div class=\"tpl-table-black-operation\">\n" +
                 "<a href=\"javascript:;\" onclick= editWhlist('" +
-                list.rows[i].id + "','" + list.rows[i].name + "','" +
-                list.rows[i].address + "')>" +
+                list.rows[i].id + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].min + "','" + list.rows[i].goods.id + "','" +
+                +list.rows[i].warehouse.id + "')>" +
                 "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                 "</a>\n" +
 
@@ -379,23 +399,30 @@ function delWhlist(id) {
     });
 }
 
-function editWhlist(id, name, address) {
+function editWhlist(id, name, num, min, goodid, wno) {
     // alert(id);
     // alert(pname);
     // alert(infor);
     // alert(address);
     // alert(phone);
+    alert(goodid)
+    $('#wno_edit').val(wno);
     $('#id_edit').val(id);
     $('#name_edit').val(name);
-    $('#address_edit').val(address);
+    $('#num_edit').val(num);
+    $('#min_edit').val(min);
+    $('#goodid_edit').val(goodid);
     $('#my-prompt2').modal({
         relatedTarget: this,
         onConfirm: function (e) {
-            $.post("Whlist_editWhlist.action",
+            $.post("whlist_editWhlist.action",
                 {
                     "id": $('#id_edit').val(),
                     'name': $('#name_edit').val(),
-                    'address': $('#address_edit').val()
+                    'num': $('#num_edit').val(),
+                    'warehouse.id': $('#wno_edit').val(),
+                    'min': $('#min_edit').val(),
+                    'goods.id': $('#goodid_edit').val()
                 },
                 function (data, status) {
                     //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);

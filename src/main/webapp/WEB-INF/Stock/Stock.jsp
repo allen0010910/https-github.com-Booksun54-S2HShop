@@ -325,12 +325,20 @@
     <div class="am-modal-dialog">
         <div class="am-modal-hd">新增销售信息:</div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库名称</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库名称" id="addname">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="商品" id="addgoods">
         </div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库地址</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库地址" id="addaddress">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品数量</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="商品名数量" id="addnum">
+        </div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">销售单价</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="销售单价" id="addsellprice">
+        </div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="仓库地址" id="addwa">
         </div>
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>
