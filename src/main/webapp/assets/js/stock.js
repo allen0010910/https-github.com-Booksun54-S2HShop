@@ -71,6 +71,7 @@ window.onload = function () {
                 + "<td>" +
                 list.rows[i].whlist.warehouse.name + "</td>"
                 + "<td>" + list.rows[i].date + "</td>" +
+                "<td>" +
                 "<div class=\"tpl-table-black-operation\">\n" +
                 "<a href=\"javascript:;\" onclick= editStock('" +
                 list.rows[i].id + "','" + list.rows[i].name + "','" +
