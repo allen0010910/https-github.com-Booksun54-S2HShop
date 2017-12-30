@@ -28,6 +28,7 @@ public class testOrders {
             System.out.println("不为空");
             for (Orders pr : list) {
                 System.out.println(pr.toString());
+                pr.getWhlist().getWarehouse().toString();
             }
         }
     }

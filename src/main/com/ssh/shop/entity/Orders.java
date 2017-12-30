@@ -14,6 +14,30 @@ public class Orders {
     private Integer userid;
     private Integer pno;
     private Double sum;
+    private Integer wlno;
+
+    private Goods goods;
+    private Whlist whlist;
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "goodsid", nullable = true)
+    public Goods getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Goods goods) {
+        this.goods = goods;
+    }
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "wlno", nullable = true)
+    public Whlist getWhlist() {
+        return whlist;
+    }
+
+    public void setWhlist(Whlist whlist) {
+        this.whlist = whlist;
+    }
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -131,7 +155,7 @@ public class Orders {
 
     }
 
-    public Orders(int id, Integer goodsid, Integer num, Timestamp date, Double price, Integer userid, Integer pno, Double sum) {
+    public Orders(int id, Integer goodsid, Integer num, Timestamp date, Double price, Integer userid, Integer pno, Double sum, Integer wlno, Goods goods, Whlist whlist) {
         this.id = id;
         this.goodsid = goodsid;
         this.num = num;
@@ -140,6 +164,9 @@ public class Orders {
         this.userid = userid;
         this.pno = pno;
         this.sum = sum;
+        this.wlno = wlno;
+        this.goods = goods;
+        this.whlist = whlist;
     }
 
     @Override
@@ -153,6 +180,9 @@ public class Orders {
                 ", userid=" + userid +
                 ", pno=" + pno +
                 ", sum=" + sum +
+                ", wlno=" + wlno +
+                ", goods=" + goods +
+                ", whlist=" + whlist +
                 '}';
     }
 }

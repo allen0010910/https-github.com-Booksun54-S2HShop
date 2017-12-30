@@ -17,15 +17,30 @@ public class Stock {
     private Integer num;
     private Double sellprice;
     private Integer userid;
+    private Integer wlno;
 
-    public Stock(int id, Timestamp date, Integer goodsid, Double money, Integer num, Double sellprice, Integer userid) {
-        this.id = id;
-        this.date = date;
-        this.goodsid = goodsid;
-        this.money = money;
-        this.num = num;
-        this.sellprice = sellprice;
-        this.userid = userid;
+
+    private Goods goods;
+    private Whlist whlist;
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "goodsid", nullable = true)
+    public Goods getGoods() {
+        return goods;
+    }
+
+    public void setGoods(Goods goods) {
+        this.goods = goods;
+    }
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @JoinColumn(name = "wlno", nullable = true)
+    public Whlist getWhlist() {
+        return whlist;
+    }
+
+    public void setWhlist(Whlist whlist) {
+        this.whlist = whlist;
     }
 
     @Id
@@ -126,6 +141,19 @@ public class Stock {
         if (userid != null ? !userid.equals(stock.userid) : stock.userid != null) return false;
 
         return true;
+    }
+
+    public Stock(int id, Timestamp date, Integer goodsid, Double money, Integer num, Double sellprice, Integer userid, Integer wlno, Goods goods, Whlist whlist) {
+        this.id = id;
+        this.date = date;
+        this.goodsid = goodsid;
+        this.money = money;
+        this.num = num;
+        this.sellprice = sellprice;
+        this.userid = userid;
+        this.wlno = wlno;
+        this.goods = goods;
+        this.whlist = whlist;
     }
 
     @Override
