@@ -4,6 +4,7 @@ import main.com.ssh.shop.dao.StockDao;
 import main.com.ssh.shop.entity.Stock;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 @Repository("stockDao")
@@ -22,5 +23,11 @@ public class StockDaoImpl extends BaseDaoImpl<Stock> implements StockDao {
         String hql;
         hql = "select count(c) from Stock c";
         return (Long) getSession().createQuery(hql).uniqueResult();
+    }
+
+    @Override
+    public void updateStock(int id, int num, Double sellprice, Double money, Date date) {
+        String hql = "update Stock s set s.num =:num ,s.sellprice =:sellprice,s.money =:money ,s.date =:date where id=:id";
+        getSession().createQuery(hql).setInteger("id", id).setInteger("num", num).setDouble("sellprice", sellprice).setDouble("money", money).setDate("date", date).executeUpdate();
     }
 }

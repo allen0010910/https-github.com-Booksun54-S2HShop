@@ -4,6 +4,7 @@ import main.com.ssh.shop.entity.Stock;
 import main.com.ssh.shop.service.StockService;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service("stockService")
@@ -17,5 +18,10 @@ public class StockServiceImpl extends BaseServiceImpl<Stock> implements StockSer
     @Override
     public Long getCount() {
         return stockDao.getCount();
+    }
+
+    @Override
+    public void updateStock(int id, int num, Double sellprice, Double money, Date date) {
+        stockDao.updateStock(id, num, sellprice, money, date);
     }
 }

@@ -45,6 +45,10 @@ public class WhlistAction extends BaseAction<Whlist> {
 
     public String queryWhlist() {
         //用来存储分页的数据
+        if (page == null || rows == null) {
+            page = 0;
+            rows = 0;
+        }
         pageMap = new HashMap<String, Object>();
         System.out.println("仓库ID:" + model.getWarehouse().getId());
         //根据关键字和分页的参数查询相应的数据。这个方法在Service中写过了，完成级联查询
@@ -62,6 +66,7 @@ public class WhlistAction extends BaseAction<Whlist> {
 
         return "jsonMap";
     }
+
 
     public String searchbyname() {
         pageMap = new HashMap<String, Object>();

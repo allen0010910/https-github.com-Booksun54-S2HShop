@@ -20,7 +20,7 @@ public class Orders {
     private Whlist whlist;
     private Provider provider;
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @ManyToOne()
     @JoinColumn(name = "pno", nullable = true)
     public Provider getProvider() {
         return provider;
@@ -30,7 +30,7 @@ public class Orders {
         this.provider = provider;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @ManyToOne()
     @JoinColumn(name = "goodsid", nullable = true)
     public Goods getGoods() {
         return goods;
@@ -40,7 +40,7 @@ public class Orders {
         this.goods = goods;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @ManyToOne()
     @JoinColumn(name = "wlno", nullable = true)
     public Whlist getWhlist() {
         return whlist;
@@ -58,16 +58,6 @@ public class Orders {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    @Basic
-    @Column(name = "GOODSID", nullable = true)
-    public Integer getGoodsid() {
-        return goodsid;
-    }
-
-    public void setGoodsid(Integer goodsid) {
-        this.goodsid = goodsid;
     }
 
     @Basic

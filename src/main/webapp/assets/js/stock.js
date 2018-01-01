@@ -74,8 +74,8 @@ window.onload = function () {
                 "<td>" +
                 "<div class=\"tpl-table-black-operation\">\n" +
                 "<a href=\"javascript:;\" onclick= editStock('" +
-                list.rows[i].id + "','" + list.rows[i].name + "','" +
-                list.rows[i].address + "')>" +
+                list.rows[i].id + "','" + list.rows[i].whlist.warehouse.name + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].sellprice + "','" +
+                list.rows[i].date + "')>" +
                 "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                 "</a>\n" +
 
@@ -106,18 +106,36 @@ $(document).ready(function () {
     $('#doc-prompt-toggle').on('click', function () {
         //alert("123");
 
-        $('#addname').val("");
-        $('#addaddress').val("");
+        $.get("warehouse_queryWarehouse.action",
+            {
+                'name': null
+            },
+            function (data, status) {
+                //alert("数据: \n" + JSON.stringify(data) + "\n状态: " + status);
+                $('#selectwa').empty();
+                for (var i = 0; i < data.rows.length; i++) {
+                    $("#selectwa").append("<option value=" + data.rows[i].id + ">" + data.rows[i].name + "</option>");
+                }
+            });
+
+        $('#addnum').val("");
+        $('#addsellprice').val("");
 
         $('#my-prompt').modal({
             relatedTarget: this,
             onConfirm: function (e) {
-                //alert(e.data[2])
-
+                alert(e.data);
+                alert($("#selectgood option:selected").val());
+                alert($("#selectwa option:selected").val());
+                alert($('#my-startDate').text());
+                alert($("#selectgood option:selected").attr("wno"))
                 $.post("stock_saveStock.action",
                     {
-                        'name': e.data[0],
-                        'address': e.data[1],
+                        'num': e.data[0],
+                        'sellprice': e.data[1],
+                        'goods.id': $("#selectgood option:selected").val(),
+                        'date': $('#my-startDate').text(),
+                        'whlist.id': $("#selectgood option:selected").attr("wno")
                     },
                     function (data, status) {
                         //alert("数据: \n" + data + "\n状态: " + status);
@@ -142,7 +160,7 @@ $(document).ready(function () {
         //alert(text);
         //getStock();
 
-        $.get("Stock_searchbyname.action", {
+        $.get("stock_searchbyname.action", {
             page: 1, rows: 5, 'wno': wno, "goods.name": text
         }, function (data, status) {
 
@@ -195,17 +213,18 @@ $(document).ready(function () {
 
 
                 s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].id + "' /></td><td>" + i + "</td><td>" + list.rows[i].id +
-                    "</td>+<td>" + list.rows[i].goods.name + "</td><td>" +
+                    "</td>+<td>" + list.rows[i].goods.name + "</td>" + "<td>" +
                     list.rows[i].num + "</td>" +
                     "<td>" +
-                    list.rows[i].price + "</td>" + "<td>" + list.rows[i].money + "</td>"
+                    list.rows[i].sellprice + "</td>" + "<td>" + list.rows[i].money + "</td>"
                     + "<td>" +
                     list.rows[i].whlist.warehouse.name + "</td>"
-                    + "<td>" + "<td>" + list.rows[i].date + "</td>" +
+                    + "<td>" + list.rows[i].date + "</td>" +
+                    "<td>" +
                     "<div class=\"tpl-table-black-operation\">\n" +
                     "<a href=\"javascript:;\" onclick= editStock('" +
-                    list.rows[i].id + "','" + list.rows[i].name + "','" +
-                    list.rows[i].address + "')>" +
+                    list.rows[i].id + "','" + list.rows[i].whlist.warehouse.name + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].sellprice + "','" +
+                    list.rows[i].date + "')>" +
                     "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                     "</a>\n" +
 
@@ -214,7 +233,7 @@ $(document).ready(function () {
                     "</a>\n" +
                     "</div>\n" +
                     "</td></tr>";
-                // alert(s);
+                // alert(s);11
                 $("#test").append(s);
 
             }
@@ -272,7 +291,7 @@ $(document).ready(function () {
 function getStock(noww) {
     var list;
     $.get("stock_queryStock.action", {
-        page: noww, rows: 5, 'wno': wno
+        page: noww, rows: 5
     }, function (data, status) {
 
         //alert("数据: " + JSON.stringify(list) + "\n状态: " + status);
@@ -328,17 +347,18 @@ function getStock(noww) {
         for (var i = 0; i < list.rows.length; i++) {
             //alert(list.rows);
             s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].id + "' /></td><td>" + i + "</td><td>" + list.rows[i].id +
-                "</td>+<td>" + list.rows[i].goods.name + "</td><td>" +
+                "</td>+<td>" + list.rows[i].goods.name + "</td>" + "<td>" +
                 list.rows[i].num + "</td>" +
                 "<td>" +
-                list.rows[i].price + "</td>" + "<td>" + list.rows[i].money + "</td>"
+                list.rows[i].sellprice + "</td>" + "<td>" + list.rows[i].money + "</td>"
                 + "<td>" +
                 list.rows[i].whlist.warehouse.name + "</td>"
-                + "<td>" + "<td>" + list.rows[i].date + "</td>" +
+                + "<td>" + list.rows[i].date + "</td>" +
+                "<td>" +
                 "<div class=\"tpl-table-black-operation\">\n" +
                 "<a href=\"javascript:;\" onclick= editStock('" +
-                list.rows[i].id + "','" + list.rows[i].name + "','" +
-                list.rows[i].address + "')>" +
+                list.rows[i].id + "','" + list.rows[i].whlist.warehouse.name + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].sellprice + "','" +
+                list.rows[i].date + "')>" +
                 "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                 "</a>\n" +
 
@@ -347,8 +367,9 @@ function getStock(noww) {
                 "</a>\n" +
                 "</div>\n" +
                 "</td></tr>";
-            // alert(s);
+            // alert(s);11
             $("#test").append(s);
+            1
 
         }
 
@@ -356,13 +377,13 @@ function getStock(noww) {
 }
 
 function delStock(id) {
-    alert($('#id_delete').val());
+    //alert($('#id_delete').val());
     $('#id_delete').val(id);
-    alert($('#id_delete').val());
+    //alert($('#id_delete').val());
     $('#my-confirm').modal({
         relatedTarget: this,
         onConfirm: function (options) {
-            alert($('#id_delete').val());
+            //alert($('#id_delete').val());
             $.post("stock_deleteStock.action",
                 {
                     "id": $('#id_delete').val()
@@ -380,23 +401,31 @@ function delStock(id) {
     });
 }
 
-function editStock(id, name, address) {
+function editStock(id, wa, goodname, num, sellprice, date) {
     // alert(id);
     // alert(pname);
     // alert(infor);
     // alert(address);
     // alert(phone);
     $('#id_edit').val(id);
-    $('#name_edit').val(name);
-    $('#address_edit').val(address);
+    $('#editwa').val(wa);
+    $('#editgoods').val(goodname);
+    $('#editnum').val(num);
+    $('#editsellprice').val(sellprice);
+    $('#my-startDateedit').text(date);
+    //alert($('#my-startDateedit').text());
+    //alert(date);
+
     $('#my-prompt2').modal({
         relatedTarget: this,
         onConfirm: function (e) {
+            alert($('#my-startDateedit').val());
             $.post("stock_editStock.action",
                 {
                     "id": $('#id_edit').val(),
-                    'name': $('#name_edit').val(),
-                    'address': $('#address_edit').val()
+                    "num": $('#editnum').val(),
+                    "sellprice": $('#editsellprice').val(),
+                    'date': $('#my-startDateedit').text()
                 },
                 function (data, status) {
                     //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
@@ -407,7 +436,88 @@ function editStock(id, name, address) {
         // closeOnConfirm: false,
         onCancel: function () {
             alert('算逑，不弄了');
+            var $alert = $('#my-alertedit');
+            $alert.hide();
         }
     });
 
 }
+
+$(function () {
+    var startDate = new Date(2017, 12, 20);
+    var endDate = new Date();
+    //alert(endDate);
+    var $alert = $('#my-alert');
+    $('#my-start').datepicker().on('changeDate.datepicker.amui', function (event) {
+        if (event.date.valueOf() > endDate.valueOf()) {
+            $alert.find('p').text('日期应小于等于今日日期！').end().show();
+        } else {
+            $alert.hide();
+            startDate = new Date(event.date);
+            $('#my-startDate').text($('#my-start').data('date'));
+        }
+        $(this).datepicker('close');
+    });
+    /*
+    $('#my-end').datepicker().
+    on('changeDate.datepicker.amui', function(event) {
+        if (event.date.valueOf() < startDate.valueOf()) {
+            $alert.find('p').text('结束日期应大于开始日期！').end().show();
+        } else {
+            $alert.hide();
+            endDate = new Date(event.date);
+            $('#my-endDate').text($('#my-end').data('date'));
+        }
+        $(this).datepicker('close');
+    });
+    */
+});
+
+$('#selectwa').change(function () {
+    $('#selectgood').empty();
+    //alert("123");
+    var good = $("#selectwa option:selected").val();
+    alert(good);
+    $.get("whlist_queryWhlist.action",
+        {
+            'warehouse.id': good
+        },
+        function (data, status) {
+            //alert("数据: \n" + JSON.stringify(data) + "\n状态: " + status);
+            $('#selectgood').empty();
+            for (var i = 0; i < data.rows.length; i++) {
+                $("#selectgood").append("<option value=" + data.rows[i].goods.id + " " + "wno=" + data.rows[i].id + ">" + data.rows[i].goods.name + "");
+            }
+        });
+});
+
+$(function () {
+    var startDate = new Date($('#my-startDateedit').val());
+    //alert(startDate);
+    var endDate = new Date();
+    //alert(endDate);
+    var $alert = $('#my-alertedit');
+    $('#my-startedit').datepicker().on('changeDate.datepicker.amui', function (event) {
+        if (event.date.valueOf() > endDate.valueOf()) {
+            $alert.find('p').text('日期应小于等于今日日期！').end().show();
+        } else {
+            $alert.hide();
+            startDate = new Date(event.date);
+            $('#my-startDateedit').text($('#my-startedit').data('date'));
+        }
+        $(this).datepicker('close');
+    });
+    /*
+    $('#my-end').datepicker().
+    on('changeDate.datepicker.amui', function(event) {
+        if (event.date.valueOf() < startDate.valueOf()) {
+            $alert.find('p').text('结束日期应大于开始日期！').end().show();
+        } else {
+            $alert.hide();
+            endDate = new Date(event.date);
+            $('#my-endDate').text($('#my-end').data('date'));
+        }
+        $(this).datepicker('close');
+    });
+    */
+});

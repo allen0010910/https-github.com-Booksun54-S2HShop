@@ -21,7 +21,10 @@ public class ProviderAction extends BaseAction<Provider> {
     public String queryProvider() {
         //用来存储分页的数据
         pageMap = new HashMap<String, Object>();
-
+        if (page == null || rows == null) {
+            page = 0;
+            rows = 0;
+        }
         //根据关键字和分页的参数查询相应的数据。这个方法我们在Service中写过了，当时完成级联查询
         //System.out.println("page:"+page+"rows:"+rows+"model:"+model.toString());
         List<Provider> providerList = providerService.queryToProvider(model.getPname(), page, rows);

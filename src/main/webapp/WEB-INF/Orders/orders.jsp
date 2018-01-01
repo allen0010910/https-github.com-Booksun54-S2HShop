@@ -324,14 +324,50 @@
 
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">新增进货信息:</div>
+        <div class="am-modal-hd">新增订单信息:</div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库名称</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库名称" id="addname">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库</label>
+            <select data-am-selected id="selectwa">
+
+            </select>
+        </div>
+
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品</label>
+            <select data-am-selected id="selectgood">
+
+            </select>
+        </div>
+
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">供应商</label>
+            <select data-am-selected id="selectpno">
+
+            </select>
         </div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库地址</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库地址" id="addaddress">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">价格</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="价格" id="addprice">
+        </div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">数量</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="数量" id="addnum">
+        </div>
+
+        <div class="am-g">
+            <div class="am-alert am-alert-danger" id="my-alert" style="display: none">
+                <p>日期应小于等于今日日期！</p>
+            </div>
+            <div class="am-u-sm-6">
+                <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">日期</label>
+                <button type="button" class="am-btn am-btn-default am-margin-right" id="my-start">日期</button>
+                <span id="my-startDate">2017-12-20</span>
+            </div>
+            <!--
+            <div class="am-u-sm-6">
+                <button type="button" class="am-btn am-btn-default am-margin-right" id="my-end">结束日期</button><span id="my-endDate">2014-12-25</span>
+            </div>
+            -->
         </div>
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>
@@ -342,14 +378,44 @@
 
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt2">
     <div class="am-modal-dialog">
-        <div class="am-modal-hd">修改进货信息:</div>
+        <div class="am-modal-hd">修改订单信息:</div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库名称</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库名称" id="name_edit">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="仓库" id="editwa" disabled="disabled">
+        </div>
+
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="商品" id="editgoods" disabled="disabled">
+        </div>
+
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">供应商</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="供应商" id="editpno" disabled="disabled">
         </div>
         <div class="am-modal-bd">
-            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库地址</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库地址" id="address_edit">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">价格</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="价格" id="editprice">
+        </div>
+        <div class="am-modal-bd">
+            <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">数量</label>
+            <input type="text" class="am-modal-prompt-input" placeholder="数量" id="editnum">
+        </div>
+        <input type="hidden" class="am-modal-prompt-input" placeholder="id" id="id_edit">
+        <div class="am-g">
+            <div class="am-alert am-alert-danger" id="my-alertedit" style="display: none">
+                <p>日期应小于等于今日日期！</p>
+            </div>
+            <div class="am-u-sm-6">
+                <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">日期</label>
+                <button type="button" class="am-btn am-btn-default am-margin-right" id="my-startedit">日期</button>
+                <span id="my-startDateedit">2017-12-20</span>
+            </div>
+            <!--
+            <div class="am-u-sm-6">
+                <button type="button" class="am-btn am-btn-default am-margin-right" id="my-end">结束日期</button><span id="my-endDate">2014-12-25</span>
+            </div>
+            -->
         </div>
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>

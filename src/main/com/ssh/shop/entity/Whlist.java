@@ -56,7 +56,7 @@ public class Whlist {
         this.id = id;
     }
 
-    @Column(name = "NUM", nullable = false)
+    @Column(name = "NUM", nullable = true)
     public Integer getNum() {
         return num;
     }
@@ -121,6 +121,10 @@ public class Whlist {
         this.id = id;
         this.num = num;
         this.min = min;
+    }
+
+    public Whlist(int id) {
+        this.id = id;
     }
 
     @Override

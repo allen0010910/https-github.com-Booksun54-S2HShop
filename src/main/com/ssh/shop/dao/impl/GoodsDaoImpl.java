@@ -17,16 +17,23 @@ public class GoodsDaoImpl extends BaseDaoImpl<Goods> implements GoodsDao {
         if (!name.equals("") && !name.equals(" ")) {
             hql = "from Goods as p where p.name like :name";
             //System.out.println("1");
+            if (page != 0 && size != 0) {
+                return getSession().createQuery(hql).
+                        setString("name", "%" + name + "%").
+                        setFirstResult((page - 1) * size).
+                        setMaxResults(size).list();
+            }
             return getSession().createQuery(hql).
-                    setString("name", "%" + name + "%").
-                    setFirstResult((page - 1) * size).
-                    setMaxResults(size).list();
+                    setString("name", "%" + name + "%").list();
         } else {
             hql = "from Goods";
             System.out.println("2");
-            return getSession().createQuery(hql).
-                    setFirstResult((page - 1) * size).
-                    setMaxResults(size).list();
+            if (page != 0 && size != 0) {
+                return getSession().createQuery(hql).
+                        setFirstResult((page - 1) * size).
+                        setMaxResults(size).list();
+            }
+            return getSession().createQuery(hql).list();
         }
 
     }

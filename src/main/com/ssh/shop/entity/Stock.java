@@ -23,7 +23,7 @@ public class Stock {
     private Goods goods;
     private Whlist whlist;
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @ManyToOne()
     @JoinColumn(name = "goodsid", nullable = true)
     public Goods getGoods() {
         return goods;
@@ -33,7 +33,7 @@ public class Stock {
         this.goods = goods;
     }
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = true)
+    @ManyToOne()
     @JoinColumn(name = "wlno", nullable = true)
     public Whlist getWhlist() {
         return whlist;
@@ -61,16 +61,6 @@ public class Stock {
 
     public void setDate(Timestamp date) {
         this.date = date;
-    }
-
-
-    @Column(name = "GOODSID", nullable = true)
-    public Integer getGoodsid() {
-        return goodsid;
-    }
-
-    public void setGoodsid(Integer goodsid) {
-        this.goodsid = goodsid;
     }
 
 
@@ -113,6 +103,9 @@ public class Stock {
                 ", num=" + num +
                 ", sellprice=" + sellprice +
                 ", userid=" + userid +
+                ", wlno=" + wlno +
+                ", goods=" + goods +
+                ", whlist=" + whlist +
                 '}';
     }
 

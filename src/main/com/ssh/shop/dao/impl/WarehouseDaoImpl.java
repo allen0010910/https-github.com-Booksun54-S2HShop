@@ -15,10 +15,14 @@ public class WarehouseDaoImpl extends BaseDaoImpl<Warehouse> implements Warehous
         if (!name.equals("") && !name.equals(" ")) {
             hql = "from Warehouse as p where p.name like :name";
             //System.out.println("1");
+            if (page != 0 && size != 0) {
+                return getSession().createQuery(hql).
+                        setString("name", "%" + name + "%").
+                        setFirstResult((page - 1) * size).
+                        setMaxResults(size).list();
+            }
             return getSession().createQuery(hql).
-                    setString("name", "%" + name + "%").
-                    setFirstResult((page - 1) * size).
-                    setMaxResults(size).list();
+                    setString("name", "%" + name + "%").list();
         } else {
             hql = "from Warehouse ";
             //System.out.println("2");

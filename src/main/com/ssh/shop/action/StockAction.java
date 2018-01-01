@@ -1,6 +1,9 @@
 package main.com.ssh.shop.action;
 
+import main.com.ssh.shop.entity.Goods;
 import main.com.ssh.shop.entity.Stock;
+import main.com.ssh.shop.entity.User;
+import main.com.ssh.shop.entity.Warehouse;
 import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -19,6 +22,10 @@ public class StockAction extends BaseAction<Stock> {
 
     public String queryStock() {
         //用来存储分页的数据
+        if (page == null || rows == null) {
+            page = 0;
+            rows = 0;
+        }
         pageMap = new HashMap<String, Object>();
         List<Stock> stockList = stockService.queryToStock(page, rows);
         pageMap.put("rows", stockList);
@@ -27,5 +34,25 @@ public class StockAction extends BaseAction<Stock> {
         return "jsonMap";
     }
 
+    public void saveStock() {
+
+        System.out.println("保存:" + model.toString() + "warehouseID:" + model.getWhlist().getId() + "Goods name:" + model.getGoods().getId());
+        System.out.println(model.toString());
+        model.setMoney(model.getSellprice() * model.getNum());
+        User user = (User) session.get("user");
+        System.out.println("用户id" + user.toString());
+        model.setUserid(user.getID());
+        stockService.save(model);
+    }
+
+    public void deleteStock() {
+        stockService.delete(model.getId());
+    }
+
+    public void editStock() {
+        System.out.println(model.toString());
+        Double money = model.getSellprice() * model.getNum();
+        stockService.updateStock(model.getId(), model.getNum(), model.getSellprice(), money, model.getDate());
+    }
 }
 

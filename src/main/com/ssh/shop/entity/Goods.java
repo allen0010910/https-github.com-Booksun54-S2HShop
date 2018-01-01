@@ -43,6 +43,9 @@ public class Goods {
         this.price = price;
     }
 
+    public Goods(int id) {
+        this.id = id;
+    }
 
     @Id
     @Column(name = "ID", nullable = false)

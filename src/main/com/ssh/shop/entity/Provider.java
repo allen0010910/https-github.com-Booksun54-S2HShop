@@ -119,4 +119,8 @@ public class Provider {
         result = 31 * result + (address != null ? address.hashCode() : 0);
         return result;
     }
+
+    public Provider(int pno) {
+        this.pno = pno;
+    }
 }
