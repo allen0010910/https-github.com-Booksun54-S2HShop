@@ -1,9 +1,4 @@
 function check() {
-    if (msg.username.value.length > 6 || msg.username.value.length < 4) {
-        alert("请输入4~6位字符的名称!");
-        msg.username.focus();
-        return false;
-    }
 
     if (msg.password.value != msg.password2.value) {
         alert("请保证输入的两次密码相同!");
@@ -12,17 +7,16 @@ function check() {
     }
 
     //发送数据去后台
-    register(msg.username.value, msg.password.value);
+    register(msg.password.value);
     return true;
 }
 
-function register(rname, rpassword) {
+function register(rpassword) {
 
-    $.post("user_confirmation.action",
+    $.post("user_updatepwd.action",
         {
-            'userid': rname,
-            'password': rpassword,
-
+            'id': id,
+            'password': rpassword
         },
         function (data, status) {
             //局部刷新页面

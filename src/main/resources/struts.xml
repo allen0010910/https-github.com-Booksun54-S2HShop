@@ -21,9 +21,21 @@
             <result name="login">/index.jsp</result>
             <result name="error" type="dispatcher">/index.jsp</result>
             <result name="success">/WEB-INF/main/main.jsp</result>
+            <result name="pwd">/WEB-INF/user/pwd.jsp</result>
             <result name="register">/WEB-INF/user/register.jsp</result>
             <result name="headPortrait">/WEB-INF/user/headPortrait.jsp</result>
-
+            <result name="toMain" type="redirectAction">user_toMain.action</result>
+            <result name="jsonMap" type="json">
+                <!-- 要转换成json对象的数据 -->
+                <param name="root">pageMap</param>
+                <!-- 配置黑名单，过滤不需要的选项 ，支持正则表达式
+                json格式：{total:3,rows:[{account:{id:2,login:"user",name:"客服A",pass:"user"},hot:true,id:3,…}]}
+                -->
+                <param name="excludeProperties">
+                    <!-- rows[0].account.pass-->
+                    <!-- 这里显示不了正则表达式， CSDN的一个bug，我接个图放下面 -->
+                </param>
+            </result>
 
             <interceptor-ref name="defaultStack"></interceptor-ref>
             <interceptor-ref name="checklogin"></interceptor-ref>

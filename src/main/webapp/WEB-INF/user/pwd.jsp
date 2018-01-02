@@ -1,10 +1,11 @@
 <%--
   Created by IntelliJ IDEA.
-  User: T.T
-  Date: 2017/12/23
-  Time: 17:17
+  User: booksun
+  Date: 2018/1/2
+  Time: 22:44
   To change this template use File | Settings | File Templates.
 --%>
+
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <c:set value="${pageContext.request.contextPath }" var="shop"/>
@@ -14,8 +15,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>管理员添加页面</title>
-    <meta name="description" content="管理员添加页面">
+    <title>管理员密码修改</title>
+    <meta name="description" content="管理员密码修改">
     <meta name="keywords" content="index">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="renderer" content="webkit">
@@ -49,9 +50,9 @@
     </div>
     <div class="tpl-login">
         <div class="tpl-login-content">
-            <div class="tpl-login-title">注册用户</div>
+            <div class="tpl-login-title">修改密码</div>
             <span class="tpl-login-content-info">
-                  创建一个新的用户
+                  修改密码
               </span>
 
             <%--<c:if test="${not empty tip}">--%>
@@ -76,11 +77,7 @@
 
 
             <form class="am-form tpl-form-line-form" id="msg">
-                <div class="am-form-group">
-                    <input type="text" class="tpl-form-input" id="username" placeholder="用户名" required minlength="4"
-                           maxlength="6">
-                    <span style="color: #8fdf82">*用户名长度4~6位</span>
-                </div>
+
 
                 <div class="am-form-group">
                     <input type="password" class="tpl-form-input" id="password" placeholder="请输入密码" required
@@ -111,7 +108,11 @@
 </div>
 <script src="${shop}/assets/js/amazeui.min.js"></script>
 <script src="${shop}/assets/js/app.js"></script>
-<script src="${shop}/assets/js/register.js"></script>
+<script src="${shop}/assets/js/pwd.js"></script>
+<script>
+    var id =
+    ${sessionScope.user.id}
+</script>
 
 </body>
 

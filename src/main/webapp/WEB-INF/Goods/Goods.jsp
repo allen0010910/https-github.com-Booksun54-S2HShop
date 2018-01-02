@@ -203,7 +203,7 @@
         <div class="tpl-sidebar-user-panel">
             <div class="tpl-user-panel-slide-toggleable">
                 <div class="tpl-user-panel-profile-picture">
-                    <img src="${shop}/assets/img/user04.png" alt="">
+                    <img src="${sessionScope.user.pic}" alt="">
                 </div>
                 <span class="user-panel-logged-in-text">
               <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>

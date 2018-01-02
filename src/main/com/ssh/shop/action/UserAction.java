@@ -35,6 +35,10 @@ public class UserAction extends BaseAction<User> {
         return "register";
     }
 
+    public String pwd() {
+        return "pwd";
+    }
+
     public String headPortrait() {
         return "headPortrait";
     }
@@ -115,13 +119,19 @@ public class UserAction extends BaseAction<User> {
 
     public String confirmation(){
         User user = userService.getUser(model.getUserid());
+        pageMap = new HashMap<String, Object>();
         if(user!=null){
-            session.put("useriderror", "用户名已存在！");
-            return "register";
+            //session.put("useriderror", "用户名已存在！");
+            pageMap.put("tip", "管理员已存在!");
+            pageMap.put("check", false);
         }else{
+            model.setPic("pic\\71c42a9c-1338-4734-8845-94e7c98d1b22.jpg");
             userService.save(model);
-            return "success";
+            pageMap.put("tip", "管理员添加成功!");
+            pageMap.put("check", true);
+
         }
+        return "jsonMap";
     }
 
     public String changeImage() {
@@ -136,5 +146,22 @@ public class UserAction extends BaseAction<User> {
         userService.update(user);
         return "success";
     }
+
+    public String updatepwd() {
+        pageMap = new HashMap<String, Object>();
+        try {
+            User user = (User) session.get("user");
+            user.setPassword(model.getPassword());
+            userService.update(user);
+            pageMap.put("tip", "修改密码成功!");
+            pageMap.put("check", true);
+        } catch (Exception e) {
+            pageMap.put("tip", "修改密码失败!");
+            pageMap.put("check", false);
+        }
+        return "jsonMap";
+    }
+
+
 
 }

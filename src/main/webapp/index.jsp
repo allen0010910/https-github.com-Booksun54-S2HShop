@@ -54,13 +54,14 @@
 
             <form class="am-form tpl-form-line-form" action="user_login.action" method="post">
                 <div class="am-form-group">
-                    <input type="text" class="tpl-form-input" id="userid" name="userid" placeholder="请输入账号" required>
+                    <input type="text" class="tpl-form-input" id="userid" name="userid" placeholder="请输入账号" required
+                           minlength="4" max="6">
 
                 </div>
 
                 <div class="am-form-group">
                     <input type="password" class="tpl-form-input" id="password" name="password" placeholder="请输入密码"
-                           required>
+                           required minlength="3" maxlength="6">
 
                 </div>
 

@@ -208,7 +208,7 @@
         <div class="tpl-sidebar-user-panel">
             <div class="tpl-user-panel-slide-toggleable">
                 <div class="tpl-user-panel-profile-picture">
-                    <img src="${shop}/assets/img/user04.png" alt="">
+                    <img src="${sessionScope.user.pic}" alt="">
                 </div>
                 <span class="user-panel-logged-in-text">
               <i class="am-icon-circle-o am-text-success tpl-user-panel-status-icon"></i>
@@ -323,6 +323,7 @@
 </div>
 </div>
 
+<form>
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
     <div class="am-modal-dialog">
         <div class="am-modal-hd">新增仓库信息:</div>
@@ -332,7 +333,7 @@
         </div>
         <div class="am-modal-bd">
             <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库地址</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库地址" id="addaddress">
+            <textarea class="am-modal-prompt-input" placeholder="仓库地址" id="addaddress"></textarea>
         </div>
         <div class="am-modal-footer">
             <span class="am-modal-btn" data-am-modal-cancel>取消</span>
@@ -340,17 +341,19 @@
         </div>
     </div>
 </div>
-
+</form>
+<form>
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt2">
     <div class="am-modal-dialog">
         <div class="am-modal-hd">修改仓库信息:</div>
         <div class="am-modal-bd">
             <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库名称</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库名称" id="name_edit">
+            <input type="text" class="am-modal-prompt-input" placeholder="仓库名称" id="name_edit" maxlength="20" required>
         </div>
         <div class="am-modal-bd">
             <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">仓库地址</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="仓库地址" id="address_edit">
+            <textarea class="am-modal-prompt-input" placeholder="仓库地址" id="address_edit" maxlength="200"
+                      required></textarea>
         </div>
         <input type="hidden" class="am-modal-prompt-input" placeholder="id" id="id_edit">
         <div class="am-modal-footer">
@@ -359,7 +362,7 @@
         </div>
     </div>
 </div>
-
+</form>
 <div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
     <div class="am-modal-dialog">
         <div class="am-modal-hd">删除仓库信息</div>
