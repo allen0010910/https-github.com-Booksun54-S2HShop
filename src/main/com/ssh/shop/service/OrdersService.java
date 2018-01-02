@@ -15,4 +15,7 @@ public interface OrdersService extends BaseService<Orders> {
 
     //更新Orders部分属性
     public void updateOrders(int id, int num, Double price, Double money, Date date);
+
+    //通过id获取Stock对象
+    public Orders getOrdersByid(int id);
 }

@@ -1,3 +1,8 @@
+# S2HShop V0.11 2018/1/2
+      （1）完成orders和stock功能与whlist的级联更新操作，（如：订单插入数据后库存会相应增加）
+      （2）修改pom.xml 添加poi的包
+      （3）完成order和stock根据id查询数据的功能，完成whlist库存的增加商品库存和减少库存的功能
+    
 # S2HShop V0.1 2018/1/1
       （1）完成orders、stock 订单和销售功能增、删、查、改的实现（未进行关联操作）
       （2）完成orders、stock部分 update部分字段方法的方法

@@ -43,4 +43,16 @@ public class WhlistDaoImpl extends BaseDaoImpl<Whlist> implements WhlistDao {
         return (Long) getSession().createQuery(hql).setInteger("wno", wno).uniqueResult(); //返回一条记录:总记录数
     }
 
+    @Override
+    public void updateWlBytype(int type, int num, int wlno) {
+        String hql;
+        if (type == 1) {
+            hql = "update Whlist  as c set c.num = c.num+:num where c.id=:wlno";
+            getSession().createQuery(hql).setInteger("num", num).setInteger("wlno", wlno).executeUpdate();
+        } else {
+            hql = "update Whlist  as c set c.num = c.num-:num where c.id=:wlno";
+            getSession().createQuery(hql).setInteger("num", num).setInteger("wlno", wlno).executeUpdate();
+        }
+    }
+
 }

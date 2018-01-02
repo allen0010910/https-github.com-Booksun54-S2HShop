@@ -15,4 +15,8 @@ public interface StockService extends BaseService<Stock> {
     //更新Stock部分属性
     public void updateStock(int id, int num, Double sellprice, Double money, Date date);
 
+    //通过id获取Stock对象
+    public Stock getStockByid(int id);
+
+
 }

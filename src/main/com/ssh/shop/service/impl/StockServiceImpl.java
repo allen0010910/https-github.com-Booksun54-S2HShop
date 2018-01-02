@@ -24,4 +24,9 @@ public class StockServiceImpl extends BaseServiceImpl<Stock> implements StockSer
     public void updateStock(int id, int num, Double sellprice, Double money, Date date) {
         stockDao.updateStock(id, num, sellprice, money, date);
     }
+
+    @Override
+    public Stock getStockByid(int id) {
+        return stockDao.getStockByid(id);
+    }
 }

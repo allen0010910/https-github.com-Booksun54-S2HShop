@@ -36,4 +36,10 @@ public class testWhlistDao {
             System.out.println(w.toString());
         }
     }
+
+
+    @Test
+    public void testDao3() {
+        whlistDao.updateWlBytype(0, 10, 1);
+    }
 }

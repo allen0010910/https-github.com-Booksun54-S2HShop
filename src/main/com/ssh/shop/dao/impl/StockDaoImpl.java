@@ -30,4 +30,10 @@ public class StockDaoImpl extends BaseDaoImpl<Stock> implements StockDao {
         String hql = "update Stock s set s.num =:num ,s.sellprice =:sellprice,s.money =:money ,s.date =:date where id=:id";
         getSession().createQuery(hql).setInteger("id", id).setInteger("num", num).setDouble("sellprice", sellprice).setDouble("money", money).setDate("date", date).executeUpdate();
     }
+
+    @Override
+    public Stock getStockByid(int id) {
+        String hql = "from Stock s where s.id=:id";
+        return (Stock) getSession().createQuery(hql).setInteger("id", id).uniqueResult();
+    }
 }

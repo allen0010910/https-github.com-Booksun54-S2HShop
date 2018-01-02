@@ -16,4 +16,7 @@ public interface WhlistDao extends BaseDao<Whlist> {
     //根据关键字查询总记录数
     public Long getCountAll(int wno);
 
+    //销售或者订单类更新仓库库存数量
+    public void updateWlBytype(int type, int num, int wlno);
+
 }

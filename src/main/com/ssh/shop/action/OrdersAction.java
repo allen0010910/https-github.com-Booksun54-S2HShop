@@ -39,16 +39,31 @@ public class OrdersAction extends BaseAction<Orders> {
         model.setSum(model.getPrice() * model.getPrice());
         User user = (User) session.get("user");
         model.setUserid(user.getID());
+        whlistService.updateWlBytype(1, model.getNum(), model.getWhlist().getId());
         ordersService.save(model);
     }
 
     public void deleteOrders() {
+        Orders orders = ordersService.getOrdersByid(model.getId());
+        whlistService.updateWlBytype(0, orders.getNum(), orders.getWhlist().getId());
         ordersService.delete(model.getId());
     }
 
     public void editOrders() {
         System.out.println(model.toString());
         Double sum = model.getPrice() * model.getNum();
+        Orders orders = ordersService.getOrdersByid(model.getId());
+        int before = orders.getNum();
+        //System.out.println("brfore"+before+"after"+model.getNum());
+        if (before - model.getNum() != 0) {
+            System.out.println("库存更新!");
+            if (before - model.getNum() > 0) {
+                whlistService.updateWlBytype(0, before - model.getNum(), model.getWhlist().getId());
+            } else {
+
+                whlistService.updateWlBytype(1, model.getNum() - before, model.getWhlist().getId());
+            }
+        }
         ordersService.updateOrders(model.getId(), model.getNum(), model.getPrice(), sum, model.getDate());
     }
 }

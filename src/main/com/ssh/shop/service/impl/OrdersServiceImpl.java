@@ -23,4 +23,9 @@ public class OrdersServiceImpl extends BaseServiceImpl<Orders> implements Orders
     public void updateOrders(int id, int num, Double price, Double money, Date date) {
         ordersDao.updateOrders(id, num, price, money, date);
     }
+
+    @Override
+    public Orders getOrdersByid(int id) {
+        return ordersDao.getOrdersByid(id);
+    }
 }

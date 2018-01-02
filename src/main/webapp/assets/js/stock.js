@@ -74,8 +74,8 @@ window.onload = function () {
                 "<td>" +
                 "<div class=\"tpl-table-black-operation\">\n" +
                 "<a href=\"javascript:;\" onclick= editStock('" +
-                list.rows[i].id + "','" + list.rows[i].whlist.warehouse.name + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].sellprice + "','" +
-                list.rows[i].date + "')>" +
+                list.rows[i].id + "','" + list.rows[i].whlist.warehouse.name + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].sellprice + "','" + list.rows[i].date + "','" +
+                list.rows[i].whlist.id + "')>" +
                 "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                 "</a>\n" +
 
@@ -223,8 +223,8 @@ $(document).ready(function () {
                     "<td>" +
                     "<div class=\"tpl-table-black-operation\">\n" +
                     "<a href=\"javascript:;\" onclick= editStock('" +
-                    list.rows[i].id + "','" + list.rows[i].whlist.warehouse.name + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].sellprice + "','" +
-                    list.rows[i].date + "')>" +
+                    list.rows[i].id + "','" + list.rows[i].whlist.warehouse.name + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].sellprice + "','" + list.rows[i].date + "','" +
+                    list.rows[i].whlist.id + "')>" +
                     "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                     "</a>\n" +
 
@@ -357,8 +357,8 @@ function getStock(noww) {
                 "<td>" +
                 "<div class=\"tpl-table-black-operation\">\n" +
                 "<a href=\"javascript:;\" onclick= editStock('" +
-                list.rows[i].id + "','" + list.rows[i].whlist.warehouse.name + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].sellprice + "','" +
-                list.rows[i].date + "')>" +
+                list.rows[i].id + "','" + list.rows[i].whlist.warehouse.name + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].sellprice + "','" + list.rows[i].date + "','" +
+                list.rows[i].whlist.id + "')>" +
                 "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                 "</a>\n" +
 
@@ -401,7 +401,7 @@ function delStock(id) {
     });
 }
 
-function editStock(id, wa, goodname, num, sellprice, date) {
+function editStock(id, wa, goodname, num, sellprice, date, wlno) {
     // alert(id);
     // alert(pname);
     // alert(infor);
@@ -413,6 +413,7 @@ function editStock(id, wa, goodname, num, sellprice, date) {
     $('#editnum').val(num);
     $('#editsellprice').val(sellprice);
     $('#my-startDateedit').text(date);
+    $('#id_wlno').val(wlno);
     //alert($('#my-startDateedit').text());
     //alert(date);
 
@@ -425,7 +426,8 @@ function editStock(id, wa, goodname, num, sellprice, date) {
                     "id": $('#id_edit').val(),
                     "num": $('#editnum').val(),
                     "sellprice": $('#editsellprice').val(),
-                    'date': $('#my-startDateedit').text()
+                    'date': $('#my-startDateedit').text(),
+                    'whlist.id': $('#id_wlno').val()
                 },
                 function (data, status) {
                     //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);

@@ -37,4 +37,10 @@ public class testStockDao {
         Long i = stockDao.getCount();
         System.out.println("测试数据：" + i);
     }
+
+    @Test
+    public void testStockbyidDao() {
+        Stock stock = stockDao.getStockByid(1);
+        System.out.println("测试数据：" + stock.toString());
+    }
 }

@@ -402,6 +402,7 @@
             <input type="text" class="am-modal-prompt-input" placeholder="数量" id="editnum">
         </div>
         <input type="hidden" class="am-modal-prompt-input" placeholder="id" id="id_edit">
+        <input type="hidden" class="am-modal-prompt-input" placeholder="id" id="wlno_edit">
         <div class="am-g">
             <div class="am-alert am-alert-danger" id="my-alertedit" style="display: none">
                 <p>日期应小于等于今日日期！</p>

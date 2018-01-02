@@ -16,4 +16,7 @@ public interface WhlistService extends BaseService<Whlist> {
 
     public void deleteWhlist(int id);
 
+    //销售或者订单类更新仓库库存数量
+    public void updateWlBytype(int type, int num, int wlno);
+
 }

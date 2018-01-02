@@ -75,7 +75,7 @@ window.onload = function () {
                 "<div class=\"tpl-table-black-operation\">\n" +
                 "<a href=\"javascript:;\" onclick= editOrders('" +
                 list.rows[i].id + "','" + list.rows[i].whlist.warehouse.name + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].price + "','" + list.rows[i].date + "','" +
-                list.rows[i].provider.pname + "')>" +
+                list.rows[i].provider.pname + "','" + list.rows[i].whlist.id + "')>" +
                 "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                 "</a>\n" +
 
@@ -227,7 +227,6 @@ $(document).ready(function () {
 
             for (var i = 0; i < list.rows.length; i++) {
 
-
                 s = "<tr><td><input type=\"checkbox\" name='check' value='" + list.rows[i].id + "' /></td><td>" + i + "</td><td>" + list.rows[i].id +
                     "</td>+<td>" + list.rows[i].goods.name + "</td><td>" +
                     list.rows[i].num + "</td>" +
@@ -240,7 +239,7 @@ $(document).ready(function () {
                     "<div class=\"tpl-table-black-operation\">\n" +
                     "<a href=\"javascript:;\" onclick= editOrders('" +
                     list.rows[i].id + "','" + list.rows[i].whlist.warehouse.name + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].price + "','" + list.rows[i].date + "','" +
-                    list.rows[i].provider.pname + "')>" +
+                    list.rows[i].provider.pname + "','" + list.rows[i].whlist.id + "')>" +
                     "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                     "</a>\n" +
 
@@ -375,7 +374,7 @@ function getOrders(noww) {
                 "<div class=\"tpl-table-black-operation\">\n" +
                 "<a href=\"javascript:;\" onclick= editOrders('" +
                 list.rows[i].id + "','" + list.rows[i].whlist.warehouse.name + "','" + list.rows[i].goods.name + "','" + list.rows[i].num + "','" + list.rows[i].price + "','" + list.rows[i].date + "','" +
-                list.rows[i].provider.pname + "')>" +
+                list.rows[i].provider.pname + "','" + list.rows[i].whlist.id + "')>" +
                 "<i class=\"am-icon-pencil\"></i> 编辑\n" +
                 "</a>\n" +
 
@@ -417,7 +416,7 @@ function delOrders(id) {
     });
 }
 
-function editOrders(id, wa, goodname, num, price, date, pno) {
+function editOrders(id, wa, goodname, num, price, date, pno, wlno) {
     // alert(id);
     // alert(pname);
     // alert(infor);
@@ -425,6 +424,7 @@ function editOrders(id, wa, goodname, num, price, date, pno) {
     // alert(phone);
 
     $('#id_edit').val(id);
+    $('#wlno_edit').val(wlno);
     $('#editwa').val(wa);
     $('#editgoods').val(goodname);
     //alert(goodname);
@@ -444,7 +444,8 @@ function editOrders(id, wa, goodname, num, price, date, pno) {
                     "id": $('#id_edit').val(),
                     "num": $('#editnum').val(),
                     "price": $('#editprice').val(),
-                    'date': $('#my-startDateedit').text()
+                    'date': $('#my-startDateedit').text(),
+                    "whlist.id": $('#wlno_edit').val()
                 },
                 function (data, status) {
                     //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);

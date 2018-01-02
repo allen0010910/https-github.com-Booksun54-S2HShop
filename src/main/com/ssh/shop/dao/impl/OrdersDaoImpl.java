@@ -30,4 +30,10 @@ public class OrdersDaoImpl extends BaseDaoImpl<Orders> implements OrdersDao {
         getSession().createQuery(hql).setInteger("id", id).setInteger("num", num).setDouble("price", price).
                 setDouble("sum", money).setDate("date", date).executeUpdate();
     }
+
+    @Override
+    public Orders getOrdersByid(int id) {
+        String hql = "from Orders o where o.id=:id";
+        return (Orders) getSession().createQuery(hql).setInteger("id", id).uniqueResult();
+    }
 }

@@ -54,20 +54,13 @@
 
             <form class="am-form tpl-form-line-form" action="user_login.action" method="post">
                 <div class="am-form-group">
-                    <input type="text" class="tpl-form-input" id="userid" name="userid" placeholder="请输入账号">
+                    <input type="text" class="tpl-form-input" id="userid" name="userid" placeholder="请输入账号" required>
 
                 </div>
 
                 <div class="am-form-group">
-                    <input type="password" class="tpl-form-input" id="password" name="password" placeholder="请输入密码">
-
-                </div>
-                <div class="am-form-group tpl-login-remember-me">
-                    <input id="remember-me" type="checkbox">
-                    <label for="remember-me">
-
-                        记住密码
-                    </label>
+                    <input type="password" class="tpl-form-input" id="password" name="password" placeholder="请输入密码"
+                           required>
 
                 </div>
 
