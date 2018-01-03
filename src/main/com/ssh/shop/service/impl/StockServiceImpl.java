@@ -16,6 +16,11 @@ public class StockServiceImpl extends BaseServiceImpl<Stock> implements StockSer
     }
 
     @Override
+    public List<Stock> queryToStock() {
+        return stockDao.queryToStockDao();
+    }
+
+    @Override
     public Long getCount() {
         return stockDao.getCount();
     }

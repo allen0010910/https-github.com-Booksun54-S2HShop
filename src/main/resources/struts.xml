@@ -58,6 +58,7 @@
             </result>
 
             <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="checklogin"></interceptor-ref>
         </action>
 
         <action name="warehouse_*" class="main.com.ssh.shop.action.WarehosueAction" method="{1}">
@@ -76,6 +77,7 @@
             </result>
 
             <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="checklogin"></interceptor-ref>
         </action>
 
         <action name="goods_*" class="main.com.ssh.shop.action.GoodsAction" method="{1}">
@@ -94,7 +96,9 @@
                 </param>
             </result>
 
+
             <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="checklogin"></interceptor-ref>
         </action>
 
         <action name="whlist_*" class="main.com.ssh.shop.action.WhlistAction" method="{1}">
@@ -113,6 +117,7 @@
             </result>
 
             <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="checklogin"></interceptor-ref>
         </action>
 
         <action name="stock_*" class="main.com.ssh.shop.action.StockAction" method="{1}">
@@ -131,6 +136,7 @@
             </result>
 
             <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="checklogin"></interceptor-ref>
         </action>
 
 
@@ -150,14 +156,30 @@
             </result>
 
             <interceptor-ref name="defaultStack"></interceptor-ref>
+            <interceptor-ref name="checklogin"></interceptor-ref>
         </action>
 
         <action name="getmenu" class="main.com.ssh.shop.action.MenuAction" method="getMenu">
             <result name="jsonList" type="json">
                 <param name="root">jsonList</param>
             </result>
+            <interceptor-ref name="checklogin"></interceptor-ref>
 
+        </action>
 
+        <action name="fileDownload_*" class="main.com.ssh.shop.action.downloadAction" method="{1}">
+            <result name="success" type="stream">
+                <!-- 下载文件的类型，如果你不知道是什么格式，可以去 tomcat\conf\web.xml下找 -->
+                <param name="contentType">application/vnd.ms-excel</param>
+                <!-- 返回流 excelStream为action中的流变量名称 -->
+                <param name="inputName">excelStream</param>
+                <!-- attachment 这个位置的参数挺特殊的，可以设置成下载时，是否出现个下载提示框，或者直接下载之类的。
+                fileName指定生成的文件名字(适合动态生成文件名，比如做报表时，一般都要说是几月的统计数据之类)为action中变量-->
+                <param name="contentDisposition">
+                    attachment;filename=${excelFileName}
+                </param>
+                <param name="bufferSize">1024</param>
+            </result>
         </action>
 
 

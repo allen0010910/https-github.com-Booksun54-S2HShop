@@ -16,6 +16,7 @@ import org.springframework.stereotype.Controller;
 
 
 import javax.annotation.Resource;
+import java.io.InputStream;
 import java.lang.reflect.ParameterizedType;
 import java.util.List;
 import java.util.Map;

@@ -49,13 +49,6 @@
 
                 </span>
             </div>
-            <!-- 搜索 -->
-            <div class="am-fl tpl-header-search">
-                <form class="tpl-header-search-form" action="javascript:;">
-                    <button class="tpl-header-search-btn am-icon-search"></button>
-                    <input class="tpl-header-search-box" type="text" placeholder="搜索内容...">
-                </form>
-            </div>
             <!-- 其它功能-->
             <div class="am-fr tpl-header-navbar">
                 <ul>
@@ -173,7 +166,7 @@
 
                     <!-- 退出 -->
                     <li class="am-text-sm">
-                        <a href="javascript:;">
+                        <a href="user_logout.action">
                             <span class="am-icon-sign-out"></span> 退出
                         </a>
                     </li>
@@ -228,14 +221,16 @@
         <div class="container-fluid am-cf">
             <div class="row">
                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-9">
-                    <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 部件首页
-                        <small>Amaze UI</small>
+                    <div class="page-header-heading"><span class="am-icon-home page-header-heading-icon"></span> 超市管理首页
+                        <small>shoppingmall</small>
                     </div>
-                    <p class="page-header-description">Amaze UI 含近 20 个 CSS 组件、20 余 JS 组件，更有多个包含不同主题的 Web 组件。</p>
-                </div>
-                <div class="am-u-lg-3 tpl-index-settings-button">
-                    <button type="button" class="page-header-button"><span class="am-icon-paint-brush"></span> 设置
-                    </button>
+
+                    <a class="page-header-button" href="fileDownload_exportNetworkDeviceList.action"><span
+                            class="am-icon-paint-brush"></span> 导出商品信息excel</a>
+                    <a class="page-header-button" href="fileDownload_exportStockList.action"><span
+                            class="am-icon-paint-brush"></span> 导出销售信息excel</a>
+
+                    <p class="page-header-description">管理、分享</p>
                 </div>
             </div>
 
@@ -255,10 +250,6 @@
                             <div class="am-fl">
                                 <div class="widget-fluctuation-period-text">
                                     ￥61746.45
-                                    <button class="widget-fluctuation-tpl-btn">
-                                        <i class="am-icon-calendar"></i>
-                                        更多月份
-                                    </button>
                                 </div>
                             </div>
                             <div class="am-fr am-cf">
@@ -358,16 +349,16 @@
                 <div class="am-u-sm-12 am-u-md-12 am-u-lg-4 widget-margin-bottom-lg ">
                     <div class="tpl-user-card am-text-center widget-body-lg">
                         <div class="tpl-user-card-title">
-                            禁言小张
+                            小张
                         </div>
                         <div class="achievement-subheading">
                             月度最佳员工
                         </div>
                         <img class="achievement-image" src="${shop}/assets/img/user07.png" alt="">
                         <div class="achievement-description">
-                            禁言小张在
-                            <strong>30天内</strong> 禁言了
-                            <strong>200多</strong>人。
+                            小张在
+                            <strong>30天内</strong> 销售了
+                            <strong>2000多</strong>商品。
                         </div>
                     </div>
                 </div>

@@ -162,6 +162,11 @@ public class UserAction extends BaseAction<User> {
         return "jsonMap";
     }
 
+    public String logout() {
+        session.remove("user");
+        return "login";
+    }
+
 
 
 }

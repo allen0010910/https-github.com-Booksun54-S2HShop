@@ -1,9 +1,15 @@
 package main.com.ssh.shop.action;
 
 import main.com.ssh.shop.entity.Goods;
+import main.com.ssh.shop.entity.Whlist;
 import main.com.ssh.shop.service.GoodsService;
 import org.apache.log4j.Logger;
+import org.apache.poi.hssf.usermodel.*;
 
+import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -60,4 +66,6 @@ public class GoodsAction extends BaseAction<Goods> {
         goodsService.update(model);
         return "toGoods";
     }
+
+
 }

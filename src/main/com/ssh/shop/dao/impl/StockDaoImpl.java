@@ -19,6 +19,13 @@ public class StockDaoImpl extends BaseDaoImpl<Stock> implements StockDao {
     }
 
     @Override
+    public List<Stock> queryToStockDao() {
+        String hql;
+        hql = "from Stock ";
+        return getSession().createQuery(hql).list();
+    }
+
+    @Override
     public Long getCount() {
         String hql;
         hql = "select count(c) from Stock c";

@@ -10,6 +10,7 @@ public interface StockService extends BaseService<Stock> {
 
     public List<Stock> queryToStock(int page, int size);//实现分页
 
+    public List<Stock> queryToStock();//实现分页
     public Long getCount();
 
     //更新Stock部分属性

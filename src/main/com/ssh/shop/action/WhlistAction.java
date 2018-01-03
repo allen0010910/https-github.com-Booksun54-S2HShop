@@ -3,9 +3,11 @@ package main.com.ssh.shop.action;
 import main.com.ssh.shop.entity.Warehouse;
 import main.com.ssh.shop.entity.Whlist;
 import org.apache.log4j.Logger;
+import org.apache.poi.hssf.usermodel.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 
@@ -103,5 +105,6 @@ public class WhlistAction extends BaseAction<Whlist> {
         System.out.println(model.toString());
         whlistService.update(model);
     }
+
 
 }
