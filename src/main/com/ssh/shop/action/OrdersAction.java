@@ -33,14 +33,20 @@ public class OrdersAction extends BaseAction<Orders> {
         return "jsonMap";
     }
 
-    public void saveOrders() {
-
+    public String saveOrders() {
+        pageMap = new HashMap<String, Object>();
         System.out.println("保存:" + model.toString() + "warehouseID:" + model.getWhlist().getId() + "Goods name:" + model.getGoods().getName());
         model.setSum(model.getPrice() * model.getPrice());
         User user = (User) session.get("user");
         model.setUserid(user.getID());
-        whlistService.updateWlBytype(1, model.getNum(), model.getWhlist().getId());
-        ordersService.save(model);
+        try {
+            whlistService.updateWlBytype(1, model.getNum(), model.getWhlist().getId());
+            ordersService.save(model);
+            pageMap.put("tip", "添加进货信息成功!");
+        } catch (Exception e) {
+            pageMap.put("tip", "添加进货信息失败!");
+        }
+        return "jsonMap";
     }
 
     public void deleteOrders() {
@@ -49,22 +55,30 @@ public class OrdersAction extends BaseAction<Orders> {
         ordersService.delete(model.getId());
     }
 
-    public void editOrders() {
+    public String editOrders() {
         System.out.println(model.toString());
         Double sum = model.getPrice() * model.getNum();
         Orders orders = ordersService.getOrdersByid(model.getId());
         int before = orders.getNum();
         //System.out.println("brfore"+before+"after"+model.getNum());
-        if (before - model.getNum() != 0) {
-            System.out.println("库存更新!");
-            if (before - model.getNum() > 0) {
-                whlistService.updateWlBytype(0, before - model.getNum(), model.getWhlist().getId());
-            } else {
+        pageMap = new HashMap<String, Object>();
+        try {
+            if (before - model.getNum() != 0) {
+                System.out.println("库存更新!");
+                if (before - model.getNum() > 0) {
+                    whlistService.updateWlBytype(0, before - model.getNum(), model.getWhlist().getId());
+                } else {
 
-                whlistService.updateWlBytype(1, model.getNum() - before, model.getWhlist().getId());
+                    whlistService.updateWlBytype(1, model.getNum() - before, model.getWhlist().getId());
+                }
             }
+            ordersService.updateOrders(model.getId(), model.getNum(), model.getPrice(), sum, model.getDate());
+            pageMap.put("tip", "修改进货信息成功!");
+
+        } catch (Exception e) {
+            pageMap.put("tip", "修改进货信息失败，库存不够请进货!");
         }
-        ordersService.updateOrders(model.getId(), model.getNum(), model.getPrice(), sum, model.getDate());
+        return "jsonMap";
     }
 
     public String searchbyid() {

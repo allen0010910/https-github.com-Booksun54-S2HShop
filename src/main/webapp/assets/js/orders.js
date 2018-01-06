@@ -130,37 +130,42 @@ $(document).ready(function () {
                 }
             });
 
-        $('#addname').val("");
-        $('#addsellprice').val("");
+        $('#addnum').val("");
+        $('#addprice').val("");
 
         $('#my-prompt').modal({
             relatedTarget: this,
             onConfirm: function (e) {
                 //alert(e.data[2])
-                alert(e.data);
-                alert($("#selectgood option:selected").val());
-                alert($("#selectwa option:selected").val());
-                alert($('#my-startDate').text());
-                alert($("#selectgood option:selected").attr("wno"));
-                alert($("#selectpno option:selected"));
-                $.post("orders_saveOrders.action",
-                    {
-                        'provider.pno': $("#selectpno option:selected").val(),
-                        'num': e.data[1],
-                        'price': e.data[0],
-                        'goods.id': $("#selectgood option:selected").val(),
-                        'date': $('#my-startDate').text(),
-                        'whlist.id': $("#selectgood option:selected").attr("wno")
+                //alert(e.data);
+                //alert($("#selectgood option:selected").val());
+                //alert($("#selectwa option:selected").val());
+                //alert($('#my-startDate').text());
+                //alert($("#selectgood option:selected").attr("wno"));
+                //alert($("#selectpno option:selected"));
+                if ($('#addprice').val().length != 0 && $('#addnum').val().length != 0 && !isNaN($('#addprice').val()) && !isNaN($('#addnum').val())) {
+                    $.post("orders_saveOrders.action",
+                        {
+                            'provider.pno': $("#selectpno option:selected").val(),
+                            'num': e.data[1],
+                            'price': e.data[0],
+                            'goods.id': $("#selectgood option:selected").val(),
+                            'date': $('#my-startDate').text(),
+                            'whlist.id': $("#selectgood option:selected").attr("wno")
 
-                    },
-                    function (data, status) {
-                        //alert("数据: \n" + data + "\n状态: " + status);
-                        if (status == 'success') {
-                            alert("插入成功!");
-                            getOrders(1);
-                        }
+                        },
+                        function (data, status) {
+                            //alert("数据: \n" + data + "\n状态: " + status);
+                            alert(data.tip);
+                            if (status == 'success') {
+                                alert("插入成功!");
+                                getOrders(1);
+                            }
 
-                    });
+                        });
+                } else {
+                    alert("字段不正确!");
+                }
 
                 //alert('你输入的是：' + e.data[0] || '')
             },
@@ -437,21 +442,26 @@ function editOrders(id, wa, goodname, num, price, date, pno, wlno) {
     $('#my-prompt2').modal({
         relatedTarget: this,
         onConfirm: function (e) {
-            alert($('#id_edit').val());
+            //alert($('#id_edit').val());
             //alert($('#my-startDateedit').text());
-            $.post("orders_editOrders.action",
-                {
-                    "id": $('#id_edit').val(),
-                    "num": $('#editnum').val(),
-                    "price": $('#editprice').val(),
-                    'date': $('#my-startDateedit').text(),
-                    "whlist.id": $('#wlno_edit').val()
-                },
-                function (data, status) {
-                    //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
-                    alert(data.status);
-                    getOrders(1);
-                });
+            if ($('#editprice').val().length != 0 && $('#editnum').val().length != 0 && !isNaN($('#editprice').val()) && !isNaN($('#editnum').val())) {
+                $.post("orders_editOrders.action",
+                    {
+                        "id": $('#id_edit').val(),
+                        "num": $('#editnum').val(),
+                        "price": $('#editprice').val(),
+                        'date': $('#my-startDateedit').text(),
+                        "whlist.id": $('#wlno_edit').val()
+                    },
+                    function (data, status) {
+                        //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
+                        alert(data.tip);
+                        alert(data.status);
+                        getOrders(1);
+                    });
+            } else {
+                alert("字段不正确！");
+            }
         },
         // closeOnConfirm: false,
         onCancel: function () {
@@ -525,7 +535,7 @@ $('#selectwa').change(function () {
     $('#selectgood').empty();
     //alert("123");
     var good = $("#selectwa option:selected").val();
-    alert(good);
+    //alert(good);
     $.get("whlist_queryWhlist.action",
         {
             'warehouse.id': good

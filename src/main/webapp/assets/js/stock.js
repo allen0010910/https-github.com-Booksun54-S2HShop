@@ -124,32 +124,37 @@ $(document).ready(function () {
         $('#my-prompt').modal({
             relatedTarget: this,
             onConfirm: function (e) {
-                alert(e.data);
-                alert($("#selectgood option:selected").val());
-                alert($("#selectwa option:selected").val());
-                alert($('#my-startDate').text());
-                alert($("#selectgood option:selected").attr("wno"))
-                $.post("stock_saveStock.action",
-                    {
-                        'num': e.data[0],
-                        'sellprice': e.data[1],
-                        'goods.id': $("#selectgood option:selected").val(),
-                        'date': $('#my-startDate').text(),
-                        'whlist.id': $("#selectgood option:selected").attr("wno")
-                    },
-                    function (data, status) {
-                        //alert("数据: \n" + data + "\n状态: " + status);
-                        if (status == 'success') {
-                            alert("插入成功!");
-                            getStock(1);
-                        }
+                //alert(e.data);
+                //alert($("#selectgood option:selected").val());
+                //alert($("#selectwa option:selected").val());
+                //alert($('#my-startDate').text());
+                //alert($("#selectgood option:selected").attr("wno"))
+                if ($('#addsellprice').val().length != 0 && $('#addnum').val().length != 0 && !isNaN($('#addsellprice').val()) && !isNaN($('#addnum').val())) {
+                    $.post("stock_saveStock.action",
+                        {
+                            'num': e.data[0],
+                            'sellprice': e.data[1],
+                            'goods.id': $("#selectgood option:selected").val(),
+                            'date': $('#my-startDate').text(),
+                            'whlist.id': $("#selectgood option:selected").attr("wno")
+                        },
+                        function (data, status) {
+                            //alert("数据: \n" + data + "\n状态: " + status);
+                            alert(data.tip);
+                            if (status == 'success') {
+                                //alert("插入成功!");
+                                getStock(1);
+                            }
 
-                    });
+                        });
+                } else {
+                    alert("字段不正确!");
+                }
 
                 //alert('你输入的是：' + e.data[0] || '')
             },
             onCancel: function (e) {
-                alert('取消添加仓库信息!');
+                alert('取消添加销售信息!');
             }
         });
     });
@@ -389,7 +394,8 @@ function delStock(id) {
                 },
                 function (data, status) {
                     //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
-                    alert(data.status);
+                    alert("删除成功!");
+                    //alert(data.status);
                     getStock(1);
                 });
         },
@@ -419,20 +425,26 @@ function editStock(id, wa, goodname, num, sellprice, date, wlno) {
     $('#my-prompt2').modal({
         relatedTarget: this,
         onConfirm: function (e) {
-            alert($('#my-startDateedit').val());
-            $.post("stock_editStock.action",
-                {
-                    "id": $('#id_edit').val(),
-                    "num": $('#editnum').val(),
-                    "sellprice": $('#editsellprice').val(),
-                    'date': $('#my-startDateedit').text(),
-                    'whlist.id': $('#id_wlno').val()
-                },
-                function (data, status) {
-                    //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
-                    alert(data.status);
-                    getStock(1);
-                });
+            //alert($('#my-startDateedit').val());
+            if ($('#editsellprice').val().length != 0 && $('#editnum').val().length != 0 && !isNaN($('#editsellprice').val()) && !isNaN($('#editnum').val())) {
+                $.post("stock_editStock.action",
+                    {
+                        "id": $('#id_edit').val(),
+                        "num": $('#editnum').val(),
+                        "sellprice": $('#editsellprice').val(),
+                        'date': $('#my-startDateedit').text(),
+                        'whlist.id': $('#id_wlno').val()
+                    },
+                    function (data, status) {
+                        //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
+                        //alert(data.status);
+                        alert(data.tip);
+                        getStock(1);
+                    });
+            } else {
+                alert("字段不正确！");
+            }
+
         },
         // closeOnConfirm: false,
         onCancel: function () {
@@ -478,7 +490,7 @@ $('#selectwa').change(function () {
     $('#selectgood').empty();
     //alert("123");
     var good = $("#selectwa option:selected").val();
-    alert(good);
+    //alert(good);
     $.get("whlist_queryWhlist.action",
         {
             'warehouse.id': good

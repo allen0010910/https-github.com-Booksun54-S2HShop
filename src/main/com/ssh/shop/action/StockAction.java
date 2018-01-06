@@ -1,9 +1,6 @@
 package main.com.ssh.shop.action;
 
-import main.com.ssh.shop.entity.Goods;
-import main.com.ssh.shop.entity.Stock;
-import main.com.ssh.shop.entity.User;
-import main.com.ssh.shop.entity.Warehouse;
+import main.com.ssh.shop.entity.*;
 import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -36,17 +33,20 @@ public class StockAction extends BaseAction<Stock> {
 
     public void saveStock() {
 
-        try {
+        pageMap = new HashMap<String, Object>();
+
             System.out.println("保存:" + model.toString() + "warehouseID:" + model.getWhlist().getId() + "Goods name:" + model.getGoods().getId());
             System.out.println(model.toString());
             model.setMoney(model.getSellprice() * model.getNum());
             User user = (User) session.get("user");
             System.out.println("用户id" + user.toString());
             model.setUserid(user.getID());
+        try {
             whlistService.updateWlBytype(0, model.getNum(), model.getWhlist().getId());
             stockService.save(model);
+            pageMap.put("tip", "添加销售信息成功!");
         } catch (Exception e) {
-
+            pageMap.put("tip", "添加销售信息失败，库存不够请进货!");
         }
     }
 
@@ -60,17 +60,23 @@ public class StockAction extends BaseAction<Stock> {
         System.out.println(model.toString());
         Double money = model.getSellprice() * model.getNum();
         Stock stock = stockService.getStockByid(model.getId());
+        pageMap = new HashMap<String, Object>();
         int before = stock.getNum();
         //System.out.println("brfore"+before+"after"+model.getNum());
-        if (before - model.getNum() != 0) {
-            System.out.println("库存更新!");
-            if (before - model.getNum() > 0) {
-                whlistService.updateWlBytype(1, before - model.getNum(), model.getWhlist().getId());
-            } else {
-                whlistService.updateWlBytype(0, model.getNum() - before, model.getWhlist().getId());
+        try {
+            if (before - model.getNum() != 0) {
+                System.out.println("库存更新!");
+                if (before - model.getNum() > 0) {
+                    whlistService.updateWlBytype(1, before - model.getNum(), model.getWhlist().getId());
+                } else {
+                    whlistService.updateWlBytype(0, model.getNum() - before, model.getWhlist().getId());
+                }
             }
+            stockService.updateStock(model.getId(), model.getNum(), model.getSellprice(), money, model.getDate());
+            pageMap.put("tip", "修改销售信息成功!");
+        } catch (Exception e) {
+            pageMap.put("tip", "修改销售信息失败，库存不够请进货!");
         }
-        stockService.updateStock(model.getId(), model.getNum(), model.getSellprice(), money, model.getDate());
     }
 
     public String searchbyid() {
