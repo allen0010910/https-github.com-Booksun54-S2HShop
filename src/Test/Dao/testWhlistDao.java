@@ -42,4 +42,11 @@ public class testWhlistDao {
     public void testDao3() {
         whlistDao.updateWlBytype(0, 10, 1);
     }
+
+    @Test
+    public void testDao4() {
+
+        Whlist whlist = whlistDao.searchbygoodsid(42, 3);
+        System.out.println(whlist.toString());
+    }
 }

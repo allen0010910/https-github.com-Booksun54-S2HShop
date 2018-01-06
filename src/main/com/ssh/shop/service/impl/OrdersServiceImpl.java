@@ -20,6 +20,11 @@ public class OrdersServiceImpl extends BaseServiceImpl<Orders> implements Orders
     }
 
     @Override
+    public Long getCount(int id) {
+        return ordersDao.getCount(id);
+    }
+
+    @Override
     public void updateOrders(int id, int num, Double price, Double money, Date date) {
         ordersDao.updateOrders(id, num, price, money, date);
     }
@@ -27,5 +32,10 @@ public class OrdersServiceImpl extends BaseServiceImpl<Orders> implements Orders
     @Override
     public Orders getOrdersByid(int id) {
         return ordersDao.getOrdersByid(id);
+    }
+
+    @Override
+    public List<Orders> searchbyid(int id, int page, int size) {
+        return ordersDao.searchbyid(id, page, size);
     }
 }

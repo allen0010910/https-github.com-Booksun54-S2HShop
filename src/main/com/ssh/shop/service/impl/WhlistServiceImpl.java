@@ -34,5 +34,10 @@ public class WhlistServiceImpl extends BaseServiceImpl<Whlist> implements Whlist
         whlistDao.updateWlBytype(type, num, wlno);
     }
 
+    @Override
+    public Whlist searchbygoodsid(int id, int wno) {
+        return whlistDao.searchbygoodsid(id, wno);
+    }
+
 
 }

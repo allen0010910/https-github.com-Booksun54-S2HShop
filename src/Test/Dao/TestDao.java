@@ -65,6 +65,12 @@ public class TestDao {
     }
 
     @Test //测试Hibernate和Spring整合后
+    public void testgoods2() {
+        Goods goods = goodsDao.queryToGoods(61);
+        System.out.println(goods.toString());
+    }
+
+    @Test //测试Hibernate和Spring整合后
     public void testcreateUser() {
         userDao.save(new User("root", "123"));
         User user = userDao.getUser("root");

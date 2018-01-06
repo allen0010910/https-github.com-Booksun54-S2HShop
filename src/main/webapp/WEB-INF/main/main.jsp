@@ -230,7 +230,7 @@
                     <a class="page-header-button" href="fileDownload_exportStockList.action"><span
                             class="am-icon-paint-brush"></span> 导出销售信息excel</a>
 
-                    <p class="page-header-description">管理、分享</p>
+                    <p class="page-header-description">管理、分享、喜悦</p>
                 </div>
             </div>
 

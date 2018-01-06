@@ -125,26 +125,31 @@ $(document).ready(function () {
         $('#my-prompt').modal({
             relatedTarget: this,
             onConfirm: function (e) {
-                alert(e.data);
-                alert($("#selectgood option:selected").val());
+                //alert(e.data);
+                //alert($("#selectgood option:selected").val());
+                if ($('#num_add').val().length != 0 && $('#min_add').val().length != 0 && $('#wno_add').val().length != 0 && !isNaN($('#num_add').val()) && !isNaN($('#min_add').val())) {
+                    //alert(isNaN( $('#min_add').val()));
+                    $.post("whlist_saveWhlist.action",
+                        {
+                            'num': e.data[0],
+                            'min': e.data[1],
+                            'goods.id': $("#selectgood option:selected").val(),
+                            "warehouse.id": $("#wno_add").val()
 
+                        },
+                        function (data, status) {
+                            //alert("数据: \n" + data + "\n状态: " + status);
+                            alert(data.tip);
+                            if (status == 'success') {
+                                //alert("插入成功!");
+                                getWhlist(1);
+                            }
 
-                $.post("whlist_saveWhlist.action",
-                    {
-                        'num': e.data[0],
-                        'min': e.data[1],
-                        'goods.id': $("#selectgood option:selected").val(),
-                        "warehouse.id": $("#wno_add").val()
+                        });
+                } else {
+                    alert("字段填写错误!");
+                }
 
-                    },
-                    function (data, status) {
-                        //alert("数据: \n" + data + "\n状态: " + status);
-                        if (status == 'success') {
-                            alert("插入成功!");
-                            getWhlist(1);
-                        }
-
-                    });
 
                 //alert('你输入的是：' + e.data[0] || '')
             },
@@ -405,7 +410,7 @@ function editWhlist(id, name, num, min, goodid, wno) {
     // alert(infor);
     // alert(address);
     // alert(phone);
-    alert(goodid)
+    //alert(goodid)
     $('#wno_edit').val(wno);
     $('#id_edit').val(id);
     $('#name_edit').val(name);
@@ -415,20 +420,26 @@ function editWhlist(id, name, num, min, goodid, wno) {
     $('#my-prompt2').modal({
         relatedTarget: this,
         onConfirm: function (e) {
-            $.post("whlist_editWhlist.action",
-                {
-                    "id": $('#id_edit').val(),
-                    'name': $('#name_edit').val(),
-                    'num': $('#num_edit').val(),
-                    'warehouse.id': $('#wno_edit').val(),
-                    'min': $('#min_edit').val(),
-                    'goods.id': $('#goodid_edit').val()
-                },
-                function (data, status) {
-                    //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
-                    alert(data.status);
-                    getWhlist(1);
-                });
+
+            if ($('#num_edit').val().length != 0 && $('#min_edit').val().length != 0 && $('#wno_edit').val().length != 0 && !isNaN($('#num_edit').val()) && !isNaN($('#min_edit').val())) {
+                $.post("whlist_editWhlist.action",
+                    {
+                        "id": $('#id_edit').val(),
+                        'name': $('#name_edit').val(),
+                        'num': $('#num_edit').val(),
+                        'warehouse.id': $('#wno_edit').val(),
+                        'min': $('#min_edit').val(),
+                        'goods.id': $('#goodid_edit').val()
+                    },
+                    function (data, status) {
+                        //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
+                        alert(data.status);
+                        getWhlist(1);
+                    });
+            } else {
+                alert("字段填写错误!");
+            }
+
         },
         // closeOnConfirm: false,
         onCancel: function () {

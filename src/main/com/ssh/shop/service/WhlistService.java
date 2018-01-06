@@ -19,4 +19,6 @@ public interface WhlistService extends BaseService<Whlist> {
     //销售或者订单类更新仓库库存数量
     public void updateWlBytype(int type, int num, int wlno);
 
+    public Whlist searchbygoodsid(int id, int wno);
+
 }

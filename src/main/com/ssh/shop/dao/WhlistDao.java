@@ -11,6 +11,8 @@ public interface WhlistDao extends BaseDao<Whlist> {
 
     public List<Whlist> searchbyname(String name, int wno, int page, int size);
 
+    public Whlist searchbygoodsid(int id, int wno);
+
     public void deleteWhlist(int id);
 
     //根据关键字查询总记录数

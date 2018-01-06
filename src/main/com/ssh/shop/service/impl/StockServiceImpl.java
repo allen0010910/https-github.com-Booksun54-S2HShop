@@ -26,6 +26,11 @@ public class StockServiceImpl extends BaseServiceImpl<Stock> implements StockSer
     }
 
     @Override
+    public Long getCount(int id) {
+        return stockDao.getCount(id);
+    }
+
+    @Override
     public void updateStock(int id, int num, Double sellprice, Double money, Date date) {
         stockDao.updateStock(id, num, sellprice, money, date);
     }
@@ -33,5 +38,10 @@ public class StockServiceImpl extends BaseServiceImpl<Stock> implements StockSer
     @Override
     public Stock getStockByid(int id) {
         return stockDao.getStockByid(id);
+    }
+
+    @Override
+    public List<Stock> searchbyid(int id, int page, int size) {
+        return stockDao.searchbyid(id, page, size);
     }
 }

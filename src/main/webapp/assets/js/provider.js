@@ -109,23 +109,27 @@ $(document).ready(function () {
             relatedTarget: this,
             onConfirm: function (e) {
                 //alert(e.data[2])
+                if ($('#addpname').val().length != 0 && $('#addphone').val().length != 0 && $('#addaddress').val().length != 0 && $('#addinfor').val().length != 0) {
+                    $.post("provider_saveProvider.action",
+                        {
+                            'pno': 1,
+                            'pname': e.data[0],
+                            'phone': e.data[1],
+                            'infor': e.data[2],
+                            'address': e.data[3]
+                        },
+                        function (data, status) {
+                            //alert("数据: \n" + data + "\n状态: " + status);
+                            if (status == 'success') {
+                                alert("插入成功!");
+                                getProvider(1);
+                            }
 
-                $.post("provider_saveProvider.action",
-                    {
-                        'pno': 1,
-                        'pname': e.data[0],
-                        'phone': e.data[1],
-                        'infor': e.data[2],
-                        'address': e.data[3]
-                    },
-                    function (data, status) {
-                        //alert("数据: \n" + data + "\n状态: " + status);
-                        if (status == 'success') {
-                            alert("插入成功!");
-                            getProvider(1);
-                        }
+                        });
+                } else {
+                    alert("字段填写错误!");
+                }
 
-                    });
 
                 //alert('你输入的是：' + e.data[0] || '')
             },
@@ -359,14 +363,14 @@ function delprovider(id) {
     $('#my-confirm').modal({
         relatedTarget: this,
         onConfirm: function (options) {
-            alert($('#gid').val());
+            //alert($('#gid').val());
             $.post("provider_deleteProvider.action",
                 {
                     'pno': $('#pid').val()
                 },
                 function (data, status) {
                     //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
-                    alert(data.status);
+                    //alert(data.status);
                     getProvider(1);
                 });
         },
@@ -392,19 +396,25 @@ function editProvider(pno, pname, infor, address, phone) {
     $('#my-prompt2').modal({
         relatedTarget: this,
         onConfirm: function (e) {
-            $.post("provider_editProvider.action",
-                {
-                    "pno": $('#edit_pid').val(),
-                    'pname': $('#pname_edit').val(),
-                    'phone': $('#phone_edit').val(),
-                    'infor': $('#infor_edit').val(),
-                    'address': $('#address_edit').val()
-                },
-                function (data, status) {
-                    //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
-                    alert(data.status);
-                    getProvider(1);
-                });
+            if ($('#pname_edit').val().length != 0 && $('#phone_edit').val().length != 0 && $('#address_edit').val().length != 0 && $('#infor_edit').val().length != 0) {
+
+                $.post("provider_editProvider.action",
+                    {
+                        "pno": $('#edit_pid').val(),
+                        'pname': $('#pname_edit').val(),
+                        'phone': $('#phone_edit').val(),
+                        'infor': $('#infor_edit').val(),
+                        'address': $('#address_edit').val()
+                    },
+                    function (data, status) {
+                        //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
+                        alert(data.status);
+                        getProvider(1);
+                    });
+            } else {
+                alert("填写字段有误！");
+            }
+
         },
         // closeOnConfirm: false,
         onCancel: function () {

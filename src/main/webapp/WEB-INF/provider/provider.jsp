@@ -317,7 +317,7 @@
     </div>
 </div>
 </div>
-
+<form id="form1">
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt">
     <div class="am-modal-dialog">
         <div class="am-modal-hd">新增供应商信息:</div>
@@ -343,25 +343,26 @@
         </div>
     </div>
 </div>
-
+</form>
+<form id="form2">
 <div class="am-modal am-modal-prompt" tabindex="-1" id="my-prompt2">
     <div class="am-modal-dialog">
         <div class="am-modal-hd">修改供应商信息:</div>
         <div class="am-modal-bd">
             <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">供应商名称</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="供应商名称" id="pname_edit">
+            <input type="text" class="am-modal-prompt-input" placeholder="供应商名称" id="pname_edit" name="name" required>
         </div>
         <div class="am-modal-bd">
             <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">联系电话</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="联系电话" id="phone_edit">
+            <input type="text" class="am-modal-prompt-input" placeholder="联系电话" id="phone_edit" name="phone" required>
         </div>
         <div class="am-modal-bd">
             <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">描述信息</label>
-            <textarea class="am-modal-prompt-input" placeholder="描述信息" id="infor_edit"></textarea>
+            <textarea class="am-modal-prompt-input" placeholder="描述信息" id="infor_edit" required name="str"></textarea>
         </div>
         <div class="am-modal-bd">
             <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">地址</label>
-            <input type="text" class="am-modal-prompt-input" placeholder="地址" id="address_edit">
+            <input type="text" class="am-modal-prompt-input" placeholder="地址" id="address_edit" name="address" required>
         </div>
         <input type="hidden" class="am-modal-prompt-input" id="edit_pid" value="">
         <div class="am-modal-footer">
@@ -370,6 +371,8 @@
         </div>
     </div>
 </div>
+</form>
+
 
 <div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
     <div class="am-modal-dialog">
@@ -393,6 +396,8 @@
 <script src="${shop}/assets/js/dataTables.responsive.min.js"></script>
 <script src="${shop}/assets/js/app.js"></script>
 <script src="${shop}/assets/js/provider.js"></script>
+<script src="${shop}/assets/js/jquery.validate.min.js"></script>
+<script src="${shop}/assets/js/messages_zh.js"></script>
 
 </body>
 

@@ -1,5 +1,6 @@
 package main.com.ssh.shop.action;
 
+import main.com.ssh.shop.entity.Goods;
 import main.com.ssh.shop.entity.Warehouse;
 import main.com.ssh.shop.entity.Whlist;
 import org.apache.log4j.Logger;
@@ -81,7 +82,7 @@ public class WhlistAction extends BaseAction<Whlist> {
         }
         List<Whlist> whlistList = whlistService.searchbyname(model.getGoods().getName(), model.getWarehouse().getId(), page, rows);
         pageMap.put("rows", whlistList); //存储为JSON格式，从上一节的json文件可以看出，一个key是total,一个key是rows，这里先把rows存放好
-        //根据关键字查询总记录数
+        //根据关键字查询总记录数z
         Long total = whlistService.getCountAll(model.getWarehouse().getId()); //
 //      System.out.println(total);
         pageMap.put("total", total); //存储为JSON格式，再把total存放好
@@ -93,12 +94,21 @@ public class WhlistAction extends BaseAction<Whlist> {
         whlistService.deleteWhlist(model.getId());
     }
 
-    public void saveWhlist() {
+    public String saveWhlist() {
+        pageMap = new HashMap<String, Object>();
+        Goods goods = goodsService.queryToGoods(model.getGoods().getId());
+        Whlist whlist = whlistService.searchbygoodsid(model.getGoods().getId(), model.getWarehouse().getId());
+        if (whlist != null) {
+            pageMap.put("tip", "库存信息已存在!");
+        } else {
+            System.out.println("保存:" + model.toString() + "warehouseID:" + model.getWarehouse().getId());
+            Warehouse warehouse = new Warehouse(model.getWarehouse().getId());
+            model.setWarehouse(warehouse);
+            whlistService.save(model);
+            pageMap.put("tip", "库存信息添加成功!");
+        }
 
-        System.out.println("保存:" + model.toString() + "warehouseID:" + model.getWarehouse().getId());
-        Warehouse warehouse = new Warehouse(model.getWarehouse().getId());
-        model.setWarehouse(warehouse);
-        whlistService.save(model);
+        return "jsonMap";
     }
 
     public void editWhlist() {

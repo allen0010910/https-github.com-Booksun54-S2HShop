@@ -47,23 +47,33 @@ public class GoodsAction extends BaseAction<Goods> {
 
     public String saveGoods() throws Exception {
         //fileUpload工具类被抽取了，uploadFile方法直接接受一个fileImage对象，返回新的图片名
-        String pic = fileUpload.uploadFile(fileImage);
-        System.out.println(fileImage.getFile().getName());
+        if (fileImage != null && !fileImage.equals(" ")) {
+            String pic = fileUpload.uploadFile(fileImage);
+            System.out.println(fileImage.getFile().getName());
 
-        System.out.println();
-        model.setPic("pic\\" + pic);
-        System.out.println(model.toString());
+            System.out.println();
+            model.setPic("pic\\" + pic);
+            System.out.println(model.toString());
+        } else {
+            model.setPic(null);
+        }
         //商品信息入库
         goodsService.save(model);
         return "toGoods";
     }
 
     public String updateGoods() {
-        String pic = fileUpload.uploadFile(fileImage);
-        model.setPic("pic\\" + pic);
-        System.out.println(model);
-        //更新商品
-        goodsService.update(model);
+        System.out.println(fileImage);
+        if (fileImage != null && !fileImage.equals(" ")) {
+            String pic = fileUpload.uploadFile(fileImage);
+            model.setPic("pic\\" + pic);
+            System.out.println(model);
+            //更新商品
+            goodsService.update(model);
+        } else {
+            goodsService.updateGoods(model.getId(), model.getName(), model.getSamary(), model.getPrice(), model.getType());
+        }
+
         return "toGoods";
     }
 

@@ -51,4 +51,17 @@ public class GoodsDaoImpl extends BaseDaoImpl<Goods> implements GoodsDao {
                 .setString("name", "%" + name + "%")
                 .uniqueResult(); //返回一条记录:总记录数
     }
+
+    @Override
+    public void updateGoods(int id, String name, String samary, Double price, String type) {
+        String hql = "update Goods s set s.name=:name,s.samary=:samary,s.price=:price,s.type=:type where id=:id";
+        getSession().createQuery(hql).setInteger("id", id).setString("name", name).setString("samary", samary).setString("type", type).setDouble("price", price).executeUpdate();
+    }
+
+    @Override
+    public Goods queryToGoods(int id) {
+        String hql;
+        hql = "from Goods s where s.id=:id";
+        return (Goods) getSession().createQuery(hql).setInteger("id", id).uniqueResult();
+    }
 }

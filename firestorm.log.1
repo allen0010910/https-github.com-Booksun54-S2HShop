@@ -1,295 +1,3 @@
-DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity main.com.ssh.shop.entity.Whlist [FORCE]: select whlist0_.ID as ID1_7_0_, whlist0_.goodid as goodid4_7_0_, whlist0_.Min as Min2_7_0_, whlist0_.NUM as NUM3_7_0_, whlist0_.wno as wno5_7_0_ from WHLIST whlist0_ where whlist0_.ID=? for update
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@600f5704]
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : goods
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@606f81b5]
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : min
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : num
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : warehouse
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5e1fc42f]
-DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
-DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
-DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=main.com.ssh.shop.entity.Whlist)
-    - Returns
-       - EntityReturnImpl(entity=main.com.ssh.shop.entity.Whlist, querySpaceUid=<gen:0>, path=main.com.ssh.shop.entity.Whlist)
-          - EntityAttributeFetchImpl(entity=main.com.ssh.shop.entity.Goods, querySpaceUid=<gen:1>, path=main.com.ssh.shop.entity.Whlist.goods)
-          - EntityAttributeFetchImpl(entity=main.com.ssh.shop.entity.Warehouse, querySpaceUid=<gen:2>, path=main.com.ssh.shop.entity.Whlist.warehouse)
-    - QuerySpaces
-       - EntityQuerySpaceImpl(uid=<gen:0>, entity=main.com.ssh.shop.entity.Whlist)
-          - SQL table alias mapping - whlist0_
-          - alias suffix - 0_
-          - suffixed key columns - {ID1_7_0_}
-
-DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity main.com.ssh.shop.entity.Whlist [PESSIMISTIC_READ]: select whlist0_.ID as ID1_7_0_, whlist0_.goodid as goodid4_7_0_, whlist0_.Min as Min2_7_0_, whlist0_.NUM as NUM3_7_0_, whlist0_.wno as wno5_7_0_ from WHLIST whlist0_ where whlist0_.ID=? lock in share mode
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@44b21f9f]
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : goods
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@6296474f]
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : min
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : num
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : warehouse
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4288d98e]
-DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
-DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
-DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=main.com.ssh.shop.entity.Whlist)
-    - Returns
-       - EntityReturnImpl(entity=main.com.ssh.shop.entity.Whlist, querySpaceUid=<gen:0>, path=main.com.ssh.shop.entity.Whlist)
-          - EntityAttributeFetchImpl(entity=main.com.ssh.shop.entity.Goods, querySpaceUid=<gen:1>, path=main.com.ssh.shop.entity.Whlist.goods)
-          - EntityAttributeFetchImpl(entity=main.com.ssh.shop.entity.Warehouse, querySpaceUid=<gen:2>, path=main.com.ssh.shop.entity.Whlist.warehouse)
-    - QuerySpaces
-       - EntityQuerySpaceImpl(uid=<gen:0>, entity=main.com.ssh.shop.entity.Whlist)
-          - SQL table alias mapping - whlist0_
-          - alias suffix - 0_
-          - suffixed key columns - {ID1_7_0_}
-
-DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity main.com.ssh.shop.entity.Whlist [PESSIMISTIC_WRITE]: select whlist0_.ID as ID1_7_0_, whlist0_.goodid as goodid4_7_0_, whlist0_.Min as Min2_7_0_, whlist0_.NUM as NUM3_7_0_, whlist0_.wno as wno5_7_0_ from WHLIST whlist0_ where whlist0_.ID=? for update
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@169268a7]
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : goods
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@78a0ff63]
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : min
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : num
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : warehouse
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@7c601d50]
-DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
-DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
-DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=main.com.ssh.shop.entity.Whlist)
-    - Returns
-       - EntityReturnImpl(entity=main.com.ssh.shop.entity.Whlist, querySpaceUid=<gen:0>, path=main.com.ssh.shop.entity.Whlist)
-          - EntityAttributeFetchImpl(entity=main.com.ssh.shop.entity.Goods, querySpaceUid=<gen:1>, path=main.com.ssh.shop.entity.Whlist.goods)
-          - EntityAttributeFetchImpl(entity=main.com.ssh.shop.entity.Warehouse, querySpaceUid=<gen:2>, path=main.com.ssh.shop.entity.Whlist.warehouse)
-    - QuerySpaces
-       - EntityQuerySpaceImpl(uid=<gen:0>, entity=main.com.ssh.shop.entity.Whlist)
-          - SQL table alias mapping - whlist0_
-          - alias suffix - 0_
-          - suffixed key columns - {ID1_7_0_}
-
-DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity main.com.ssh.shop.entity.Whlist [PESSIMISTIC_FORCE_INCREMENT]: select whlist0_.ID as ID1_7_0_, whlist0_.goodid as goodid4_7_0_, whlist0_.Min as Min2_7_0_, whlist0_.NUM as NUM3_7_0_, whlist0_.wno as wno5_7_0_ from WHLIST whlist0_ where whlist0_.ID=? for update
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@79b2852b]
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : goods
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4d499d65]
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : min
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : num
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : warehouse
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@313f8301]
-DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
-DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
-DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=main.com.ssh.shop.entity.Whlist)
-    - Returns
-       - EntityReturnImpl(entity=main.com.ssh.shop.entity.Whlist, querySpaceUid=<gen:0>, path=main.com.ssh.shop.entity.Whlist)
-          - EntityAttributeFetchImpl(entity=main.com.ssh.shop.entity.Goods, querySpaceUid=<gen:1>, path=main.com.ssh.shop.entity.Whlist.goods)
-          - EntityAttributeFetchImpl(entity=main.com.ssh.shop.entity.Warehouse, querySpaceUid=<gen:2>, path=main.com.ssh.shop.entity.Whlist.warehouse)
-    - QuerySpaces
-       - EntityQuerySpaceImpl(uid=<gen:0>, entity=main.com.ssh.shop.entity.Whlist)
-          - SQL table alias mapping - whlist0_
-          - alias suffix - 0_
-          - suffixed key columns - {ID1_7_0_}
-
-DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity main.com.ssh.shop.entity.Whlist [OPTIMISTIC]: select whlist0_.ID as ID1_7_0_, whlist0_.goodid as goodid4_7_0_, whlist0_.Min as Min2_7_0_, whlist0_.NUM as NUM3_7_0_, whlist0_.wno as wno5_7_0_ from WHLIST whlist0_ where whlist0_.ID=?
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:0> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@5cc9d3d0]
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : goods
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:1> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@661d88a]
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : min
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : num
-DEBUG main org.hibernate.persister.walking.spi.MetamodelGraphWalker - Visiting attribute path : warehouse
-DEBUG main org.hibernate.loader.plan.build.internal.spaces.QuerySpacesImpl - Adding QuerySpace : uid = <gen:2> -> org.hibernate.loader.plan.build.internal.spaces.EntityQuerySpaceImpl@4b0b64cc]
-DEBUG main org.hibernate.loader.plan.build.internal.FetchStyleLoadPlanBuildingAssociationVisitationStrategy - Building LoadPlan...
-DEBUG main org.hibernate.loader.plan.exec.internal.LoadQueryJoinAndFetchProcessor - processing queryspace <gen:0>
-DEBUG main org.hibernate.loader.plan.build.spi.LoadPlanTreePrinter - LoadPlan(entity=main.com.ssh.shop.entity.Whlist)
-    - Returns
-       - EntityReturnImpl(entity=main.com.ssh.shop.entity.Whlist, querySpaceUid=<gen:0>, path=main.com.ssh.shop.entity.Whlist)
-          - EntityAttributeFetchImpl(entity=main.com.ssh.shop.entity.Goods, querySpaceUid=<gen:1>, path=main.com.ssh.shop.entity.Whlist.goods)
-          - EntityAttributeFetchImpl(entity=main.com.ssh.shop.entity.Warehouse, querySpaceUid=<gen:2>, path=main.com.ssh.shop.entity.Whlist.warehouse)
-    - QuerySpaces
-       - EntityQuerySpaceImpl(uid=<gen:0>, entity=main.com.ssh.shop.entity.Whlist)
-          - SQL table alias mapping - whlist0_
-          - alias suffix - 0_
-          - suffixed key columns - {ID1_7_0_}
-
-DEBUG main org.hibernate.loader.entity.plan.EntityLoader - Static select for entity main.com.ssh.shop.entity.Whlist [OPTIMISTIC_FORCE_INCREMENT]: select whlist0_.ID as ID1_7_0_, whlist0_.goodid as goodid4_7_0_, whlist0_.Min as Min2_7_0_, whlist0_.NUM as NUM3_7_0_, whlist0_.wno as wno5_7_0_ from WHLIST whlist0_ where whlist0_.ID=?
-DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_MERGE on entity main.com.ssh.shop.entity.Whlist: select whlist0_.ID as ID1_7_0_, whlist0_.goodid as goodid4_7_0_, whlist0_.Min as Min2_7_0_, whlist0_.NUM as NUM3_7_0_, whlist0_.wno as wno5_7_0_ from WHLIST whlist0_ where whlist0_.ID=?
-DEBUG main org.hibernate.loader.Loader - Static select for action ACTION_REFRESH on entity main.com.ssh.shop.entity.Whlist: select whlist0_.ID as ID1_7_0_, whlist0_.goodid as goodid4_7_0_, whlist0_.Min as Min2_7_0_, whlist0_.NUM as NUM3_7_0_, whlist0_.wno as wno5_7_0_ from WHLIST whlist0_ where whlist0_.ID=?
-DEBUG main org.hibernate.internal.SessionFactoryRegistry - Initializing SessionFactoryRegistry : org.hibernate.internal.SessionFactoryRegistry@4fa822ad
-DEBUG main org.hibernate.internal.SessionFactoryRegistry - Registering SessionFactory: def7c29e-1221-4bcf-b580-48b1b6d96986 (<unnamed>)
-DEBUG main org.hibernate.internal.SessionFactoryRegistry - Not binding SessionFactory to JNDI, no JNDI name configured
-DEBUG main org.hibernate.internal.SessionFactoryImpl - Instantiated session factory
-INFO main org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000228: Running hbm2ddl schema update
-INFO main org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000102: Fetching database metadata
-DEBUG main com.mchange.v2.resourcepool.BasicResourcePool - trace com.mchange.v2.resourcepool.BasicResourcePool@68dcfd52 [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@30dc1d8a)
-INFO main org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000396: Updating schema
-DEBUG main org.hibernate.cfg.Configuration - Processing hbm.xml files
-DEBUG main org.hibernate.cfg.Configuration - Process annotated classes
-DEBUG main org.hibernate.cfg.Configuration - Processing fk mappings (*ToOne and JoinedSubclass)
-DEBUG main org.hibernate.cfg.Configuration - Processing extends queue
-DEBUG main org.hibernate.cfg.Configuration - Processing extends queue
-DEBUG main org.hibernate.cfg.Configuration - Processing collection mappings
-DEBUG main org.hibernate.cfg.Configuration - Processing native query and ResultSetMapping mappings
-DEBUG main org.hibernate.cfg.Configuration - Processing association property references
-DEBUG main org.hibernate.cfg.Configuration - Creating tables' unique integer identifiers
-DEBUG main org.hibernate.cfg.Configuration - Processing foreign key constraints
-DEBUG main org.hibernate.cfg.Configuration - Resolving reference to class: main.com.ssh.shop.entity.Goods
-DEBUG main org.hibernate.cfg.Configuration - Resolving reference to class: main.com.ssh.shop.entity.Provider
-DEBUG main org.hibernate.cfg.Configuration - Resolving reference to class: main.com.ssh.shop.entity.Whlist
-DEBUG main org.hibernate.cfg.Configuration - Resolving reference to class: main.com.ssh.shop.entity.Goods
-DEBUG main org.hibernate.cfg.Configuration - Resolving reference to class: main.com.ssh.shop.entity.Whlist
-DEBUG main org.hibernate.cfg.Configuration - Resolving reference to class: main.com.ssh.shop.entity.Goods
-DEBUG main org.hibernate.cfg.Configuration - Resolving reference to class: main.com.ssh.shop.entity.Warehouse
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: shop.GOODS
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [price, name, id, pic, type, samary]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: shop.MENU
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [parent, icon, id, tit, url]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: shop.ORDERS
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date, pno, wlno, goodsid, price, num, sum, id, userid]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_6kplqs3ipve3omere7jeuritw, fk_jol6mk9n06xsda9micdhq4hh1, fk_o20yllox5k77lfee1btri2yb2]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_6kplqs3ipve3omere7jeuritw, fk_jol6mk9n06xsda9micdhq4hh1, fk_o20yllox5k77lfee1btri2yb2, primary]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: shop.PROVIDER
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [pno, address, phone, pname, infor]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: shop.STOCK
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [date, wlno, money, goodsid, num, sellprice, id, userid]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_ae3a36lcv63lngqymmm3nnbh4, fk_69vyomvecddtmqrv6s42b26xn]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_ae3a36lcv63lngqymmm3nnbh4, fk_69vyomvecddtmqrv6s42b26xn, primary]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: shop.USER
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [password, id, pic, userid]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [uk_26o4fboslhtcwvy0eug03fpk3, primary]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: shop.WAREHOUSE
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [address, min, num, name, id, goodid]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: []
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [primary]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000261: Table found: shop.WHLIST
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000037: Columns: [min, num, wno, id, goodid]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000108: Foreign keys: [fk_gytxgj9vokfm1jgv6eb6ym9dd, fk_7xvk1gl189wq1wjool61353h4]
-INFO main org.hibernate.tool.hbm2ddl.TableMetadata - HHH000126: Indexes: [fk_gytxgj9vokfm1jgv6eb6ym9dd, fk_7xvk1gl189wq1wjool61353h4, primary]
-DEBUG main org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.MySQLDialect]
-DEBUG main org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.MySQLDialect]
-DEBUG main org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.MySQLDialect]
-DEBUG main org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.MySQLDialect]
-DEBUG main org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.MySQLDialect]
-DEBUG main org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.MySQLDialect]
-DEBUG main org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.MySQLDialect]
-DEBUG main org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory - Setting dialect [org.hibernate.dialect.MySQLDialect]
-INFO main org.hibernate.tool.hbm2ddl.SchemaUpdate - HHH000232: Schema update complete
-DEBUG main com.mchange.v2.async.ThreadPoolAsynchronousRunner - com.mchange.v2.async.ThreadPoolAsynchronousRunner@236134a1: Adding task to queue -- com.mchange.v2.resourcepool.BasicResourcePool$1RefurbishCheckinResourceTask@58b91d57
-DEBUG main com.mchange.v2.resourcepool.BasicResourcePool - trace com.mchange.v2.resourcepool.BasicResourcePool@68dcfd52 [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@30dc1d8a)
-DEBUG main org.hibernate.internal.NamedQueryRepository - Checking 0 named HQL queries
-DEBUG main org.hibernate.internal.NamedQueryRepository - Checking 0 named SQL queries
-DEBUG main org.hibernate.stat.internal.StatisticsInitiator - Statistics initialized [enabled=false]
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'sessionFactory'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'transactionManager'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'transactionManager'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'transactionManager' to allow for resolving potential circular references
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'sessionFactory'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'transactionManager'
-INFO main org.springframework.orm.hibernate4.HibernateTransactionManager - Using DataSource [com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2sm4zm9s1gcscbce5byr5|5af28b27, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceUseNamedDriverClass -> false, identityToken -> 2sm4zm9s1gcscbce5byr5|5af28b27, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://120.77.223.41:3306/shop?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]] of Hibernate SessionFactory for HibernateTransactionManager
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'transactionManager'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'prop'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'prop'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'prop' to allow for resolving potential circular references
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'prop'
-INFO main org.springframework.beans.factory.config.PropertiesFactoryBean - Loading properties file from class path resource [public.properties]
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'prop'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory' to allow for resolving potential circular references
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0' to allow for resolving potential circular references
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.annotation.AnnotationTransactionAttributeSource#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'advice'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'advice'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'advice' to allow for resolving potential circular references
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'transactionManager'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean '(inner bean)#35c9a231'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource - Adding transactional method [save*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT]
-DEBUG main org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource - Adding transactional method [update*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT]
-DEBUG main org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource - Adding transactional method [delete*] with attribute [PROPAGATION_REQUIRED,ISOLATION_DEFAULT]
-DEBUG main org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource - Adding transactional method [*] with attribute [PROPAGATION_SUPPORTS,ISOLATION_DEFAULT]
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean '(inner bean)#35c9a231'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Invoking afterPropertiesSet() on bean with name 'advice'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'advice'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalRequiredAnnotationProcessor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.event.internalEventListenerProcessor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.event.internalEventListenerProcessor' to allow for resolving potential circular references
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.event.internalEventListenerProcessor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'org.springframework.context.event.internalEventListenerFactory'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'org.springframework.context.event.internalEventListenerFactory' to allow for resolving potential circular references
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'org.springframework.context.event.internalEventListenerFactory'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'goodsService'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'goodsService'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
-DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Found init method on class [main.com.ssh.shop.service.impl.GoodsServiceImpl]: public void main.com.ssh.shop.service.impl.BaseServiceImpl.init()
-DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Registered init method on class [main.com.ssh.shop.service.impl.GoodsServiceImpl]: org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement@316510
-DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.GoodsServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.UserDao main.com.ssh.shop.service.impl.BaseServiceImpl.userDao
-DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.GoodsServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.MenuDao main.com.ssh.shop.service.impl.BaseServiceImpl.menuDao
-DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.GoodsServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.GoodsDao main.com.ssh.shop.service.impl.BaseServiceImpl.goodsDao
-DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.GoodsServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.OrdersDao main.com.ssh.shop.service.impl.BaseServiceImpl.ordersDao
-DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.GoodsServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.ProviderDao main.com.ssh.shop.service.impl.BaseServiceImpl.providerDao
-DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.GoodsServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.StockDao main.com.ssh.shop.service.impl.BaseServiceImpl.stockDao
-DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.GoodsServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.WarehouseDao main.com.ssh.shop.service.impl.BaseServiceImpl.warehouseDao
-DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.GoodsServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.WhlistDao main.com.ssh.shop.service.impl.BaseServiceImpl.whlistDao
-DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'goodsService' to allow for resolving potential circular references
-DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'goodsService': ResourceElement for protected main.com.ssh.shop.dao.UserDao main.com.ssh.shop.service.impl.BaseServiceImpl.userDao
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'userDao'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'userDao'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
@@ -305,7 +13,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.transaction.annotation.AnnotationTransactionAttributeSource - Adding transactional method 'UserDaoImpl.getUser' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.interceptor.TransactionInterceptor#0'
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'userDao' with 0 common interceptors and 1 specific interceptors
-DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.UserDaoImpl@5634a861]
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.UserDaoImpl@2e52fb3e]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'userDao'
 DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'goodsService': ResourceElement for protected main.com.ssh.shop.dao.MenuDao main.com.ssh.shop.service.impl.BaseServiceImpl.menuDao
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'MenuDao'
@@ -322,7 +30,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.transaction.annotation.AnnotationTransactionAttributeSource - Adding transactional method 'MenuDaoImpl.getAllMenu' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'MenuDao' with 0 common interceptors and 1 specific interceptors
-DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.MenuDaoImpl@4f4c88f9]
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.MenuDaoImpl@847f3e7]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'MenuDao'
 DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'goodsService': ResourceElement for protected main.com.ssh.shop.dao.GoodsDao main.com.ssh.shop.service.impl.BaseServiceImpl.goodsDao
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'goodsDao'
@@ -339,7 +47,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.transaction.annotation.AnnotationTransactionAttributeSource - Adding transactional method 'GoodsDaoImpl.getCount' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'goodsDao' with 0 common interceptors and 1 specific interceptors
-DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.GoodsDaoImpl@5fef2aac]
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.GoodsDaoImpl@5d39f2d8]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'goodsDao'
 DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'goodsService': ResourceElement for protected main.com.ssh.shop.dao.OrdersDao main.com.ssh.shop.service.impl.BaseServiceImpl.ordersDao
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'ordersDao'
@@ -356,7 +64,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.transaction.annotation.AnnotationTransactionAttributeSource - Adding transactional method 'OrdersDaoImpl.getCount' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'ordersDao' with 0 common interceptors and 1 specific interceptors
-DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.OrdersDaoImpl@76130a29]
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.OrdersDaoImpl@5e742e4]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'ordersDao'
 DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'goodsService': ResourceElement for protected main.com.ssh.shop.dao.ProviderDao main.com.ssh.shop.service.impl.BaseServiceImpl.providerDao
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'providerDao'
@@ -373,7 +81,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.transaction.annotation.AnnotationTransactionAttributeSource - Adding transactional method 'ProviderDaoImpl.getCount' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'providerDao' with 0 common interceptors and 1 specific interceptors
-DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.ProviderDaoImpl@3451f01d]
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.ProviderDaoImpl@4e868ef5]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'providerDao'
 DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'goodsService': ResourceElement for protected main.com.ssh.shop.dao.StockDao main.com.ssh.shop.service.impl.BaseServiceImpl.stockDao
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'stockDao'
@@ -390,7 +98,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.transaction.annotation.AnnotationTransactionAttributeSource - Adding transactional method 'StockDaoImpl.getCount' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'stockDao' with 0 common interceptors and 1 specific interceptors
-DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.StockDaoImpl@1cfc2538]
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.StockDaoImpl@67a056f1]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'stockDao'
 DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'goodsService': ResourceElement for protected main.com.ssh.shop.dao.WarehouseDao main.com.ssh.shop.service.impl.BaseServiceImpl.warehouseDao
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'warehouseDao'
@@ -407,7 +115,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.transaction.annotation.AnnotationTransactionAttributeSource - Adding transactional method 'WarehouseDaoImpl.getCount' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'warehouseDao' with 0 common interceptors and 1 specific interceptors
-DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.WarehouseDaoImpl@5d342959]
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.WarehouseDaoImpl@6f099cef]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'warehouseDao'
 DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'goodsService': ResourceElement for protected main.com.ssh.shop.dao.WhlistDao main.com.ssh.shop.service.impl.BaseServiceImpl.whlistDao
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'whlistDao'
@@ -424,7 +132,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.transaction.annotation.AnnotationTransactionAttributeSource - Adding transactional method 'WhlistDaoImpl.queryToWhlist' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'whlistDao' with 0 common interceptors and 1 specific interceptors
-DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.WhlistDaoImpl@53e76c11]
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.dao.impl.WhlistDaoImpl@5c20ffa8]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'whlistDao'
 DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Invoking init method on bean 'goodsService': public void main.com.ssh.shop.service.impl.BaseServiceImpl.init()
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
@@ -433,7 +141,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'advice'
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'goodsService' with 0 common interceptors and 2 specific interceptors
-DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.service.impl.GoodsServiceImpl@49d30c6f]
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.service.impl.GoodsServiceImpl@5cbb84b1]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'goodsService'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'menuService'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'menuService'
@@ -475,7 +183,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'menuService' with 0 common interceptors and 2 specific interceptors
-DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.service.impl.MenuServiceImpl@208f0007]
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.service.impl.MenuServiceImpl@1869f114]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'menuService'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'ordersService'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'ordersService'
@@ -514,7 +222,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'ordersService' with 0 common interceptors and 2 specific interceptors
-DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.service.impl.OrdersServiceImpl@39c96e48]
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.service.impl.OrdersServiceImpl@6090f3ca]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'ordersService'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'providerService'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'providerService'
@@ -553,7 +261,7 @@ DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory 
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
 DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'providerService' with 0 common interceptors and 2 specific interceptors
-DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.service.impl.ProviderServiceImpl@40d23c82]
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.service.impl.ProviderServiceImpl@f9b5552]
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'providerService'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'stockService'
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'stockService'
@@ -582,3 +290,270 @@ DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Proc
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'providerDao'
 DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'stockService': ResourceElement for protected main.com.ssh.shop.dao.StockDao main.com.ssh.shop.service.impl.BaseServiceImpl.stockDao
 DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'stockDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'stockService': ResourceElement for protected main.com.ssh.shop.dao.WarehouseDao main.com.ssh.shop.service.impl.BaseServiceImpl.warehouseDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'warehouseDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'stockService': ResourceElement for protected main.com.ssh.shop.dao.WhlistDao main.com.ssh.shop.service.impl.BaseServiceImpl.whlistDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'whlistDao'
+DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Invoking init method on bean 'stockService': public void main.com.ssh.shop.service.impl.BaseServiceImpl.init()
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'stockService' with 0 common interceptors and 2 specific interceptors
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.service.impl.StockServiceImpl@bdecc21]
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'stockService'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'userService'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'userService'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Found init method on class [main.com.ssh.shop.service.impl.UserServiceImpl]: public void main.com.ssh.shop.service.impl.BaseServiceImpl.init()
+DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Registered init method on class [main.com.ssh.shop.service.impl.UserServiceImpl]: org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement@316510
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.UserServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.UserDao main.com.ssh.shop.service.impl.BaseServiceImpl.userDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.UserServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.MenuDao main.com.ssh.shop.service.impl.BaseServiceImpl.menuDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.UserServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.GoodsDao main.com.ssh.shop.service.impl.BaseServiceImpl.goodsDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.UserServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.OrdersDao main.com.ssh.shop.service.impl.BaseServiceImpl.ordersDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.UserServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.ProviderDao main.com.ssh.shop.service.impl.BaseServiceImpl.providerDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.UserServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.StockDao main.com.ssh.shop.service.impl.BaseServiceImpl.stockDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.UserServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.WarehouseDao main.com.ssh.shop.service.impl.BaseServiceImpl.warehouseDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.UserServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.WhlistDao main.com.ssh.shop.service.impl.BaseServiceImpl.whlistDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'userService' to allow for resolving potential circular references
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'userService': ResourceElement for protected main.com.ssh.shop.dao.UserDao main.com.ssh.shop.service.impl.BaseServiceImpl.userDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'userDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'userService': ResourceElement for protected main.com.ssh.shop.dao.MenuDao main.com.ssh.shop.service.impl.BaseServiceImpl.menuDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'MenuDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'userService': ResourceElement for protected main.com.ssh.shop.dao.GoodsDao main.com.ssh.shop.service.impl.BaseServiceImpl.goodsDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'goodsDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'userService': ResourceElement for protected main.com.ssh.shop.dao.OrdersDao main.com.ssh.shop.service.impl.BaseServiceImpl.ordersDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'ordersDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'userService': ResourceElement for protected main.com.ssh.shop.dao.ProviderDao main.com.ssh.shop.service.impl.BaseServiceImpl.providerDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'providerDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'userService': ResourceElement for protected main.com.ssh.shop.dao.StockDao main.com.ssh.shop.service.impl.BaseServiceImpl.stockDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'stockDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'userService': ResourceElement for protected main.com.ssh.shop.dao.WarehouseDao main.com.ssh.shop.service.impl.BaseServiceImpl.warehouseDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'warehouseDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'userService': ResourceElement for protected main.com.ssh.shop.dao.WhlistDao main.com.ssh.shop.service.impl.BaseServiceImpl.whlistDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'whlistDao'
+DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Invoking init method on bean 'userService': public void main.com.ssh.shop.service.impl.BaseServiceImpl.init()
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'userService' with 0 common interceptors and 2 specific interceptors
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.service.impl.UserServiceImpl@201aa8c1]
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'userService'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'warehouseService'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'warehouseService'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Found init method on class [main.com.ssh.shop.service.impl.WarehouseServiceImpl]: public void main.com.ssh.shop.service.impl.BaseServiceImpl.init()
+DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Registered init method on class [main.com.ssh.shop.service.impl.WarehouseServiceImpl]: org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement@316510
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WarehouseServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.UserDao main.com.ssh.shop.service.impl.BaseServiceImpl.userDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WarehouseServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.MenuDao main.com.ssh.shop.service.impl.BaseServiceImpl.menuDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WarehouseServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.GoodsDao main.com.ssh.shop.service.impl.BaseServiceImpl.goodsDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WarehouseServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.OrdersDao main.com.ssh.shop.service.impl.BaseServiceImpl.ordersDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WarehouseServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.ProviderDao main.com.ssh.shop.service.impl.BaseServiceImpl.providerDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WarehouseServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.StockDao main.com.ssh.shop.service.impl.BaseServiceImpl.stockDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WarehouseServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.WarehouseDao main.com.ssh.shop.service.impl.BaseServiceImpl.warehouseDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WarehouseServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.WhlistDao main.com.ssh.shop.service.impl.BaseServiceImpl.whlistDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'warehouseService' to allow for resolving potential circular references
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'warehouseService': ResourceElement for protected main.com.ssh.shop.dao.UserDao main.com.ssh.shop.service.impl.BaseServiceImpl.userDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'userDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'warehouseService': ResourceElement for protected main.com.ssh.shop.dao.MenuDao main.com.ssh.shop.service.impl.BaseServiceImpl.menuDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'MenuDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'warehouseService': ResourceElement for protected main.com.ssh.shop.dao.GoodsDao main.com.ssh.shop.service.impl.BaseServiceImpl.goodsDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'goodsDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'warehouseService': ResourceElement for protected main.com.ssh.shop.dao.OrdersDao main.com.ssh.shop.service.impl.BaseServiceImpl.ordersDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'ordersDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'warehouseService': ResourceElement for protected main.com.ssh.shop.dao.ProviderDao main.com.ssh.shop.service.impl.BaseServiceImpl.providerDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'providerDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'warehouseService': ResourceElement for protected main.com.ssh.shop.dao.StockDao main.com.ssh.shop.service.impl.BaseServiceImpl.stockDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'stockDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'warehouseService': ResourceElement for protected main.com.ssh.shop.dao.WarehouseDao main.com.ssh.shop.service.impl.BaseServiceImpl.warehouseDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'warehouseDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'warehouseService': ResourceElement for protected main.com.ssh.shop.dao.WhlistDao main.com.ssh.shop.service.impl.BaseServiceImpl.whlistDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'whlistDao'
+DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Invoking init method on bean 'warehouseService': public void main.com.ssh.shop.service.impl.BaseServiceImpl.init()
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'warehouseService' with 0 common interceptors and 2 specific interceptors
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.service.impl.WarehouseServiceImpl@3a095ec0]
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'warehouseService'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'whlistService'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'whlistService'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Found init method on class [main.com.ssh.shop.service.impl.WhlistServiceImpl]: public void main.com.ssh.shop.service.impl.BaseServiceImpl.init()
+DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Registered init method on class [main.com.ssh.shop.service.impl.WhlistServiceImpl]: org.springframework.beans.factory.annotation.InitDestroyAnnotationBeanPostProcessor$LifecycleElement@316510
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WhlistServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.UserDao main.com.ssh.shop.service.impl.BaseServiceImpl.userDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WhlistServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.MenuDao main.com.ssh.shop.service.impl.BaseServiceImpl.menuDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WhlistServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.GoodsDao main.com.ssh.shop.service.impl.BaseServiceImpl.goodsDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WhlistServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.OrdersDao main.com.ssh.shop.service.impl.BaseServiceImpl.ordersDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WhlistServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.ProviderDao main.com.ssh.shop.service.impl.BaseServiceImpl.providerDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WhlistServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.StockDao main.com.ssh.shop.service.impl.BaseServiceImpl.stockDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WhlistServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.WarehouseDao main.com.ssh.shop.service.impl.BaseServiceImpl.warehouseDao
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.service.impl.WhlistServiceImpl]: ResourceElement for protected main.com.ssh.shop.dao.WhlistDao main.com.ssh.shop.service.impl.BaseServiceImpl.whlistDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'whlistService' to allow for resolving potential circular references
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'whlistService': ResourceElement for protected main.com.ssh.shop.dao.UserDao main.com.ssh.shop.service.impl.BaseServiceImpl.userDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'userDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'whlistService': ResourceElement for protected main.com.ssh.shop.dao.MenuDao main.com.ssh.shop.service.impl.BaseServiceImpl.menuDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'MenuDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'whlistService': ResourceElement for protected main.com.ssh.shop.dao.GoodsDao main.com.ssh.shop.service.impl.BaseServiceImpl.goodsDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'goodsDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'whlistService': ResourceElement for protected main.com.ssh.shop.dao.OrdersDao main.com.ssh.shop.service.impl.BaseServiceImpl.ordersDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'ordersDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'whlistService': ResourceElement for protected main.com.ssh.shop.dao.ProviderDao main.com.ssh.shop.service.impl.BaseServiceImpl.providerDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'providerDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'whlistService': ResourceElement for protected main.com.ssh.shop.dao.StockDao main.com.ssh.shop.service.impl.BaseServiceImpl.stockDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'stockDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'whlistService': ResourceElement for protected main.com.ssh.shop.dao.WarehouseDao main.com.ssh.shop.service.impl.BaseServiceImpl.warehouseDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'warehouseDao'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'whlistService': ResourceElement for protected main.com.ssh.shop.dao.WhlistDao main.com.ssh.shop.service.impl.BaseServiceImpl.whlistDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'whlistDao'
+DEBUG main org.springframework.context.annotation.CommonAnnotationBeanPostProcessor - Invoking init method on bean 'whlistService': public void main.com.ssh.shop.service.impl.BaseServiceImpl.init()
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.aop.aspectj.autoproxy.AspectJAwareAdvisorAutoProxyCreator - Creating implicit proxy for bean 'whlistService' with 0 common interceptors and 2 specific interceptors
+DEBUG main org.springframework.aop.framework.JdkDynamicAopProxy - Creating JDK dynamic proxy: target source is SingletonTargetSource for target object [main.com.ssh.shop.service.impl.WhlistServiceImpl@1d782abe]
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'whlistService'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'goodsDao'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'MenuDao'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'ordersDao'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'providerDao'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'stockDao'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'userDao'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'warehouseDao'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'whlistDao'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating shared instance of singleton bean 'fileUpload'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Creating instance of bean 'fileUpload'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Registered injected element on class [main.com.ssh.shop.util.FileUploadUtil]: AutowiredMethodElement for public void main.com.ssh.shop.util.FileUploadUtil.setFilePath(java.lang.String)
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Eagerly caching bean 'fileUpload' to allow for resolving potential circular references
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'fileUpload': AutowiredMethodElement for public void main.com.ssh.shop.util.FileUploadUtil.setFilePath(java.lang.String)
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'prop'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Finished creating instance of bean 'fileUpload'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importAwareProcessor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.annotation.ConfigurationClassPostProcessor.enhancedConfigurationProcessor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionalEventListenerFactory'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+DEBUG main org.springframework.context.support.GenericApplicationContext - Unable to locate LifecycleProcessor with name 'lifecycleProcessor': using default [org.springframework.context.support.DefaultLifecycleProcessor@21325036]
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'lifecycleProcessor'
+DEBUG main org.springframework.core.env.PropertySourcesPropertyResolver - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemProperties]
+DEBUG main org.springframework.core.env.PropertySourcesPropertyResolver - Searching for key 'spring.liveBeansView.mbeanDomain' in [systemEnvironment]
+DEBUG main org.springframework.core.env.PropertySourcesPropertyResolver - Could not find key 'spring.liveBeansView.mbeanDomain' in any property source. Returning [null]
+DEBUG main org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate - Storing ApplicationContext in cache under key [[MergedContextConfiguration@1ed4004b testClass = testWhlistDao, locations = '{classpath:beans.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]]
+DEBUG main org.springframework.test.context.cache - Spring test ApplicationContext cache statistics: [DefaultContextCache@4cd1c1dc size = 1, parentContextCount = 0, hitCount = 0, missCount = 1]
+DEBUG main org.springframework.beans.factory.annotation.InjectionMetadata - Processing injected element of bean 'Test.Dao.testWhlistDao': ResourceElement for private main.com.ssh.shop.dao.WhlistDao Test.Dao.testWhlistDao.whlistDao
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'whlistDao'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.transaction.config.internalTransactionAdvisor'
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'org.springframework.aop.support.DefaultBeanFactoryPointcutAdvisor#0'
+DEBUG main org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test method: context [DefaultTestContext@4566e5bd testClass = testWhlistDao, testInstance = Test.Dao.testWhlistDao@5025a98f, testMethod = testDao4@testWhlistDao, testException = [null], mergedContextConfiguration = [MergedContextConfiguration@1ed4004b testClass = testWhlistDao, locations = '{classpath:beans.xml}', classes = '{}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{}', contextLoader = 'org.springframework.test.context.support.DelegatingSmartContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null].
+DEBUG main org.springframework.transaction.annotation.AnnotationTransactionAttributeSource - Adding transactional method 'WhlistDaoImpl.searchbygoodsid' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+DEBUG main org.springframework.beans.factory.support.DefaultListableBeanFactory - Returning cached instance of singleton bean 'transactionManager'
+DEBUG main org.springframework.orm.hibernate4.HibernateTransactionManager - Creating new transaction with name [main.com.ssh.shop.dao.impl.WhlistDaoImpl.searchbygoodsid]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT
+DEBUG main org.springframework.orm.hibernate4.HibernateTransactionManager - Opened new Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@10876a6 updates=org.hibernate.engine.spi.ExecutableList@71870da7 deletions=org.hibernate.engine.spi.ExecutableList@6dd91637 orphanRemovals=org.hibernate.engine.spi.ExecutableList@45792847 collectionCreations=org.hibernate.engine.spi.ExecutableList@706cb08 collectionRemovals=org.hibernate.engine.spi.ExecutableList@4e25147a collectionUpdates=org.hibernate.engine.spi.ExecutableList@6b68cb27 collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@675ffd1d unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])] for Hibernate transaction
+DEBUG main org.springframework.orm.hibernate4.HibernateTransactionManager - Preparing JDBC Connection of Hibernate Session [SessionImpl(PersistenceContext[entityKeys=[],collectionKeys=[]];ActionQueue[insertions=org.hibernate.engine.spi.ExecutableList@10876a6 updates=org.hibernate.engine.spi.ExecutableList@71870da7 deletions=org.hibernate.engine.spi.ExecutableList@6dd91637 orphanRemovals=org.hibernate.engine.spi.ExecutableList@45792847 collectionCreations=org.hibernate.engine.spi.ExecutableList@706cb08 collectionRemovals=org.hibernate.engine.spi.ExecutableList@4e25147a collectionUpdates=org.hibernate.engine.spi.ExecutableList@6b68cb27 collectionQueuedOps=org.hibernate.engine.spi.ExecutableList@675ffd1d unresolvedInsertDependencies=UnresolvedEntityInsertActions[]])]
+DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtaining JDBC connection
+DEBUG main com.mchange.v2.resourcepool.BasicResourcePool - trace com.mchange.v2.resourcepool.BasicResourcePool@315f43d5 [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@6d1cd73)
+DEBUG main org.hibernate.engine.jdbc.internal.LogicalConnectionImpl - Obtained JDBC connection
+DEBUG main org.hibernate.engine.transaction.spi.AbstractTransactionImpl - begin
+DEBUG main org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction - initial autocommit status: true
+DEBUG main org.hibernate.engine.transaction.internal.jdbc.JdbcTransaction - disabling autocommit
+DEBUG main org.springframework.orm.hibernate4.HibernateTransactionManager - Exposing Hibernate transaction as JDBC transaction [com.mchange.v2.c3p0.impl.NewProxyConnection@51e0301d]
+DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - parse() - HQL: from main.com.ssh.shop.entity.Whlist as w where w.warehouse.id =:wno and w.goods.id=:id
+DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- HQL AST ---
+ \-[QUERY] Node: 'query'
+    +-[SELECT_FROM] Node: 'SELECT_FROM'
+    |  \-[FROM] Node: 'from'
+    |     \-[RANGE] Node: 'RANGE'
+    |        +-[DOT] Node: '.'
+    |        |  +-[DOT] Node: '.'
+    |        |  |  +-[DOT] Node: '.'
+    |        |  |  |  +-[DOT] Node: '.'
+    |        |  |  |  |  +-[DOT] Node: '.'
+    |        |  |  |  |  |  +-[IDENT] Node: 'main'
+    |        |  |  |  |  |  \-[IDENT] Node: 'com'
+    |        |  |  |  |  \-[IDENT] Node: 'ssh'
+    |        |  |  |  \-[IDENT] Node: 'shop'
+    |        |  |  \-[IDENT] Node: 'entity'
+    |        |  \-[IDENT] Node: 'Whlist'
+    |        \-[ALIAS] Node: 'w'
+    \-[WHERE] Node: 'where'
+       \-[AND] Node: 'and'
+          +-[EQ] Node: '='
+          |  +-[DOT] Node: '.'
+          |  |  +-[DOT] Node: '.'
+          |  |  |  +-[IDENT] Node: 'w'
+          |  |  |  \-[IDENT] Node: 'warehouse'
+          |  |  \-[IDENT] Node: 'id'
+          |  \-[COLON] Node: ':'
+          |     \-[IDENT] Node: 'wno'
+          \-[EQ] Node: '='
+             +-[DOT] Node: '.'
+             |  +-[DOT] Node: '.'
+             |  |  +-[IDENT] Node: 'w'
+             |  |  \-[IDENT] Node: 'goods'
+             |  \-[IDENT] Node: 'id'
+             \-[COLON] Node: ':'
+                \-[IDENT] Node: 'id'
+
+DEBUG main org.hibernate.hql.internal.ast.ErrorCounter - throwQueryException() : no errors
+DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select << begin [level=1, statement=select]
+DEBUG main org.hibernate.hql.internal.ast.tree.FromElement - FromClause{level=1} : main.com.ssh.shop.entity.Whlist (w) -> whlist0_
+DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : w -> whlist0_.ID
+DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : warehouse -> org.hibernate.type.ManyToOneType(main.com.ssh.shop.entity.Warehouse)
+DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - dereferenceShortcut() : property id in main.com.ssh.shop.entity.Whlist does not require a join.
+DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - Unresolved property path is now 'warehouse.id'
+DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : w.warehouse -> whlist0_.wno
+DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : warehouse.id -> org.hibernate.type.IntegerType@1e81f160
+DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : w.warehouse.id -> whlist0_.wno
+DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : w -> whlist0_.ID
+DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : goods -> org.hibernate.type.ManyToOneType(main.com.ssh.shop.entity.Goods)
+DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - dereferenceShortcut() : property id in main.com.ssh.shop.entity.Whlist does not require a join.
+DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - Unresolved property path is now 'goods.id'
+DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : w.goods -> whlist0_.goodid
+DEBUG main org.hibernate.hql.internal.ast.tree.DotNode - getDataType() : goods.id -> org.hibernate.type.IntegerType@1e81f160
+DEBUG main org.hibernate.hql.internal.ast.tree.FromReferenceNode - Resolved : w.goods.id -> whlist0_.goodid
+DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select : finishing up [level=1, statement=select]
+DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - processQuery() :  ( SELECT ( FromClause{level=1} WHLIST whlist0_ ) ( where ( and ( = ( whlist0_.wno ( whlist0_.wno whlist0_.ID warehouse ) id ) ? ) ( = ( whlist0_.goodid ( whlist0_.goodid whlist0_.ID goods ) id ) ? ) ) ) )
+DEBUG main org.hibernate.hql.internal.ast.HqlSqlWalker - Derived SELECT clause created.
+DEBUG main org.hibernate.hql.internal.ast.util.JoinProcessor - Using FROM fragment [WHLIST whlist0_]
+DEBUG main org.hibernate.hql.internal.antlr.HqlSqlBaseWalker - select >> end [level=1, statement=select]
+DEBUG main org.hibernate.hql.internal.ast.QueryTranslatorImpl - --- SQL AST ---
+ \-[SELECT] QueryNode: 'SELECT'  querySpaces (WHLIST)
+    +-[SELECT_CLAUSE] SelectClause: '{derived select clause}'
+    |  +-[SELECT_EXPR] SelectExpressionImpl: 'whlist0_.ID as ID1_7_' {FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=w,role=null,tableName=WHLIST,tableAlias=whlist0_,origin=null,columns={,className=main.com.ssh.shop.entity.Whlist}}}
+    |  \-[SQL_TOKEN] SqlFragment: 'whlist0_.goodid as goodid4_7_, whlist0_.Min as Min2_7_, whlist0_.NUM as NUM3_7_, whlist0_.wno as wno5_7_'
+    +-[FROM] FromClause: 'from' FromClause{level=1, fromElementCounter=1, fromElements=1, fromElementByClassAlias=[w], fromElementByTableAlias=[whlist0_], fromElementsByPath=[], collectionJoinFromElementsByPath=[], impliedElements=[]}
+    |  \-[FROM_FRAGMENT] FromElement: 'WHLIST whlist0_' FromElement{explicit,not a collection join,not a fetch join,fetch non-lazy properties,classAlias=w,role=null,tableName=WHLIST,tableAlias=whlist0_,origin=null,columns={,className=main.com.ssh.shop.entity.Whlist}}
+    \-[WHERE] SqlNode: 'where'
+       \-[AND] SqlNode: 'and'
+          +-[EQ] BinaryLogicOperatorNode: '='
+          |  +-[DOT] DotNode: 'whlist0_.wno' {propertyName=id,dereferenceType=PRIMITIVE,getPropertyPath=warehouse.id,path=w.warehouse.id,tableAlias=whlist0_,className=main.com.ssh.shop.entity.Whlist,classAlias=w}
+          |  |  +-[DOT] DotNode: 'whlist0_.wno' {propertyName=id,dereferenceType=UNKNOWN,getPropertyPath=warehouse.id,path=w.warehouse,tableAlias=whlist0_,className=main.com.ssh.shop.entity.Whlist,classAlias=w}
+          |  |  |  +-[ALIAS_REF] IdentNode: 'whlist0_.ID' {alias=w, className=main.com.ssh.shop.entity.Whlist, tableAlias=whlist0_}
+          |  |  |  \-[IDENT] IdentNode: 'warehouse' {originalText=warehouse}
+          |  |  \-[IDENT] IdentNode: 'id' {originalText=id}
+          |  \-[NAMED_PARAM] ParameterNode: '?' {name=wno, expectedType=org.hibernate.type.IntegerType@1e81f160}
+          \-[EQ] BinaryLogicOperatorNode: '='
+             +-[DOT] DotNode: 'whlist0_.goodid' {propertyName=id,dereferenceType=PRIMITIVE,getPropertyPath=goods.id,path=w.goods.id,tableAlias=whlist0_,className=main.com.ssh.shop.entity.Whlist,classAlias=w}
+             |  +-[DOT] DotNode: 'whlist0_.goodid' {propertyName=id,dereferenceType=UNKNOWN,getPropertyPath=goods.id,path=w.goods,tableAlias=whlist0_,className=main.com.ssh.shop.entity.Whlist,classAlias=w}
+             |  |  +-[ALIAS_REF] IdentNode: 'whlist0_.ID' {alias=w, className=main.com.ssh.shop.entity.Whlist, tableAlias=whlist0_}
+             |  |  \-[IDENT] IdentNode: 'goods' {originalText=goods}
+             |  \-[IDENT] IdentNode: 'id' {originalText=id}
+             \-[NAMED_PARAM] ParameterNode: '?' {name=id, expectedType=org.hibernate.type.IntegerType@1e81f160}
+

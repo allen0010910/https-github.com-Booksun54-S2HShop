@@ -159,9 +159,8 @@ $(document).ready(function () {
         var list;
         //alert(text);
         //getStock();
-
-        $.get("stock_searchbyname.action", {
-            page: 1, rows: 5, 'wno': wno, "goods.name": text
+        $.get("stock_searchbyid.action", {
+            page: 1, rows: 5, 'id': text
         }, function (data, status) {
 
             list = data;
@@ -523,3 +522,7 @@ $(function () {
     });
     */
 });
+
+$('#searchall').click(function () {
+    getStock(1);
+})

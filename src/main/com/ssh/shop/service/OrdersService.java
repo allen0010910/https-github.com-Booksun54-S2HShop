@@ -13,9 +13,14 @@ public interface OrdersService extends BaseService<Orders> {
     //根据关键字查询总记录数
     public Long getCount();
 
+    //根据关键字查询总记录数
+    public Long getCount(int id);
+
     //更新Orders部分属性
     public void updateOrders(int id, int num, Double price, Double money, Date date);
 
     //通过id获取Stock对象
     public Orders getOrdersByid(int id);
+
+    public List<Orders> searchbyid(int id, int page, int size);
 }

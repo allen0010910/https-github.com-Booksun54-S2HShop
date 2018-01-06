@@ -1,5 +1,5 @@
 function check(){
-    alert("6666666");
+    //alert("6666666");
     alert(msg.addimage.value);
     if(msg.addimage.value == null){
         alert("请选择图片!");

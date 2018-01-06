@@ -15,6 +15,16 @@ public class GoodsServiceImpl extends BaseServiceImpl<Goods> implements GoodsSer
     }
 
     @Override
+    public Goods queryToGoods(int id) {
+        return goodsDao.queryToGoods(id);
+    }
+
+    @Override
+    public void updateGoods(int id, String name, String samary, Double price, String type) {
+        goodsDao.updateGoods(id, name, samary, price, type);
+    }
+
+    @Override
     public Long getCount(String name) {
         return goodsDao.getCount(name);
     }

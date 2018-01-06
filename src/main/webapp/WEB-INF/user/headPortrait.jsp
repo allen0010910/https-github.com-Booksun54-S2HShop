@@ -225,6 +225,7 @@
     <!-- 内容区域 -->
     <div class="tpl-content-wrapper">
 
+
         <div class="tpl-login">
             <div class="tpl-login-content">
                 <div class="tpl-login-title">更换管理员头像</div>
@@ -243,6 +244,9 @@
                                 class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn"
                                 onclick="return check();">确定更换
                         </button>
+                        <input type="button"
+                               class="am-btn am-btn-primary  am-btn-block tpl-btn-bg-color-success  tpl-login-btn"
+                               name="Submit" value="返回" onclick="javascript:history.go(-1)"/>
 
                     </div>
                 </form>

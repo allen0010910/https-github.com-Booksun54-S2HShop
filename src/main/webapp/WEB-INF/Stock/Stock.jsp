@@ -247,6 +247,10 @@
                                                     id="deleteall"><span
                                                     class="am-icon-trash-o"></span> 删除
                                             </button>
+                                            <button type="button" class="am-btn am-btn-default "
+                                                    id="searchall"><span
+                                                    class="am-icon"></span> 查看所有
+                                            </button>
                                         </div>
                                     </div>
                                 </div>

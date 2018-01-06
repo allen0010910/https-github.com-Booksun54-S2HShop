@@ -114,20 +114,25 @@ $(document).ready(function () {
             relatedTarget: this,
             onConfirm: function (e) {
                 //alert(e.data[2])
+                if ($('#addname').val().length != 0 && $('#addaddress').val().length != 0) {
 
-                $.post("warehouse_saveWarehouse.action",
-                    {
-                        'name': e.data[0],
-                        'address': e.data[1],
-                    },
-                    function (data, status) {
-                        //alert("数据: \n" + data + "\n状态: " + status);
-                        if (status == 'success') {
-                            alert("插入成功!");
-                            getWarehouse(1);
-                        }
+                    $.post("warehouse_saveWarehouse.action",
+                        {
+                            'name': e.data[0],
+                            'address': e.data[1],
+                        },
+                        function (data, status) {
+                            //alert("数据: \n" + data + "\n状态: " + status);
+                            if (status == 'success') {
+                                alert("插入成功!");
+                                getWarehouse(1);
+                            }
 
-                    });
+                        });
+
+                } else {
+                    alert("字段填写错误!");
+                }
 
                 //alert('你输入的是：' + e.data[0] || '')
             },
@@ -396,17 +401,23 @@ function editWarehouse(id, name, address) {
     $('#my-prompt2').modal({
         relatedTarget: this,
         onConfirm: function (e) {
-            $.post("warehouse_editWarehouse.action",
-                {
-                    "id": $('#id_edit').val(),
-                    'name': $('#name_edit').val(),
-                    'address': $('#address_edit').val()
-                },
-                function (data, status) {
-                    //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
-                    alert(data.status);
-                    getWarehouse(1);
-                });
+            if ($('#id_edit').val().length != 0 && $('#name_edit').val().length != 0 && $('#address_edit').val().length != 0) {
+
+                $.post("warehouse_editWarehouse.action",
+                    {
+                        "id": $('#id_edit').val(),
+                        'name': $('#name_edit').val(),
+                        'address': $('#address_edit').val()
+                    },
+                    function (data, status) {
+                        //alert("数据: " + JSON.stringify(data) + "\n状态: " + status);
+                        alert(data.status);
+                        getWarehouse(1);
+                    });
+            } else {
+                alert("字段填写错误!");
+            }
+
         },
         // closeOnConfirm: false,
         onCancel: function () {

@@ -327,23 +327,25 @@
             <div class="am-modal-hd">新增商品信息:</div>
             <div class="am-modal-bd">
                 <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品图片</label>
-                <input type="file" name="fileImage.upload" id="addimage"/>
+                <input type="file" name="fileImage.upload" id="addimage" required accept="image/*"/>
             </div>
             <div class="am-modal-bd">
                 <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品名称</label>
-                <input type="text" class="am-modal-prompt-input" name="name" placeholder="商品名称" id="addname">
+                <input type="text" class="am-modal-prompt-input" name="name" placeholder="商品名称" id="addname" required>
             </div>
             <div class="am-modal-bd">
                 <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品描述</label>
-                <input type="text" class="am-modal-prompt-input" name="samary" placeholder="商品描述" id="addsamary">
+                <input type="text" class="am-modal-prompt-input" name="samary" placeholder="商品描述" id="addsamary"
+                       required>
             </div>
             <div class="am-modal-bd">
                 <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品类别</label>
-                <input type="text" class="am-modal-prompt-input" name="type" placeholder="商品类别" id="addtype">
+                <input type="text" class="am-modal-prompt-input" name="type" placeholder="商品类别" id="addtype" required>
             </div>
             <div class="am-modal-bd">
                 <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品定价</label>
-                <input type="text" class="am-modal-prompt-input" name="price" placeholder="商品定价" id="addprice">
+                <input type="number" class="am-modal-prompt-input" name="price" placeholder="商品定价" id="addprice"
+                       required>
             </div>
             <div class="am-modal-footer">
                 <span class="am-modal-btn" data-am-modal-cancel>取消</span>
@@ -361,23 +363,25 @@
         <form action="goods_updateGoods.action" enctype="multipart/form-data" method="post" id="form2">
             <div class="am-modal-bd">
                 <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品图片</label>
-                <input type="file" name="fileImage.upload" id="editimage"/>
+                <input type="file" name="fileImage.upload" id="editimage" accept="image/*"/>
             </div>
             <div class="am-modal-bd">
                 <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品名称</label>
-                <input type="text" class="am-modal-prompt-input" placeholder="商品名称" id="editname" name="name">
+                <input type="text" class="am-modal-prompt-input" placeholder="商品名称" id="editname" name="name" required>
             </div>
             <div class="am-modal-bd">
                 <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品描述</label>
-                <input type="text" class="am-modal-prompt-input" placeholder="商品描述" id="editsamary" name="samary">
+                <input type="text" class="am-modal-prompt-input" placeholder="商品描述" id="editsamary" name="samary"
+                       required>
             </div>
             <div class="am-modal-bd">
                 <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品类别</label>
-                <input type="text" class="am-modal-prompt-input" placeholder="商品类别" id="edittype" name="type">
+                <input type="text" class="am-modal-prompt-input" placeholder="商品类别" id="edittype" name="type" required>
             </div>
             <div class="am-modal-bd">
                 <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">商品定价</label>
-                <input type="text" class="am-modal-prompt-input" placeholder="商品定价" id="editprice" name="price">
+                <input type="number" class="am-modal-prompt-input" placeholder="商品定价" id="editprice" name="price"
+                       required>
             </div>
             <div class="am-modal-bd">
                 <input type="hidden" class="am-modal-prompt-input" placeholder="商品定价" id="editid" name="id">
@@ -411,6 +415,8 @@
 <script src="${shop}/assets/js/amazeui.datatables.min.js"></script>
 <script src="${shop}/assets/js/dataTables.responsive.min.js"></script>
 <script src="${shop}/assets/js/app.js"></script>
+<script src="${shop}/assets/js/jquery.validate.min.js"></script>
+<script src="${shop}/assets/js/messages_zh.js"></script>
 <script src="${shop}/assets/js/Goods.js"></script>
 
 </body>

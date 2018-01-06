@@ -33,6 +33,13 @@ public class StockDaoImpl extends BaseDaoImpl<Stock> implements StockDao {
     }
 
     @Override
+    public Long getCount(int id) {
+        String hql;
+        hql = "select count(c) from Stock c where c.id=:id";
+        return (Long) getSession().createQuery(hql).setInteger("id", id).uniqueResult();
+    }
+
+    @Override
     public void updateStock(int id, int num, Double sellprice, Double money, Date date) {
         String hql = "update Stock s set s.num =:num ,s.sellprice =:sellprice,s.money =:money ,s.date =:date where id=:id";
         getSession().createQuery(hql).setInteger("id", id).setInteger("num", num).setDouble("sellprice", sellprice).setDouble("money", money).setDate("date", date).executeUpdate();
@@ -42,5 +49,14 @@ public class StockDaoImpl extends BaseDaoImpl<Stock> implements StockDao {
     public Stock getStockByid(int id) {
         String hql = "from Stock s where s.id=:id";
         return (Stock) getSession().createQuery(hql).setInteger("id", id).uniqueResult();
+    }
+
+    @Override
+    public List<Stock> searchbyid(int id, int page, int size) {
+        String hql;
+        hql = "from Stock s where id=:id ";
+        return getSession().createQuery(hql).setInteger("id", id).
+                setFirstResult((page - 1) * size).
+                setMaxResults(size).list();
     }
 }

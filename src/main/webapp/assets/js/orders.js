@@ -176,8 +176,8 @@ $(document).ready(function () {
         //alert(text);
         //getOrders();
 
-        $.get("orders_searchbyname.action", {
-            page: 1, rows: 5, 'wno': wno, "goods.name": text
+        $.get("orders_searchbyid.action", {
+            page: 1, rows: 5, "id": text
         }, function (data, status) {
 
             list = data;
@@ -538,3 +538,7 @@ $('#selectwa').change(function () {
             }
         });
 });
+
+$('#searchall').click(function () {
+    getOrders(1);
+})

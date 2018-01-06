@@ -116,7 +116,17 @@ $(document).ready(function () {
             onConfirm: function (e) {
                 //alert(e.data)
                 //alert(getPath())
-
+                $("#myform").validate({
+                    messages: {
+                        "fileImage.upload": "请添加图片",
+                        name: "请添加商品名称",
+                        samary: "请添加商品描述",
+                        type: "请添加商品类型",
+                        price: "请添加商品价格"
+                    }, success: function () {
+                        alert("验证通过!");
+                    }
+                });
                 $("#myform").submit();
 
                 //alert('你输入的是：' + e.data[0] || '')
@@ -373,7 +383,7 @@ function delgoods(id) {
         },
         // closeOnConfirm: false,
         onCancel: function () {
-            alert('算逑，不弄了');
+            alert('算逑,不弄了');
         }
     });
 }
@@ -397,8 +407,8 @@ function editgoods(id, name, samary, type, price) {
     $('#my-prompt2').modal({
         relatedTarget: this,
         onConfirm: function (e) {
-            //alert($('#editsamery').val());
             $('#form2').submit();
+            //alert($('#editsamery').val());
             $('#editid').val("");
             $('#editname').val("");
             $('#editsamary').val("");

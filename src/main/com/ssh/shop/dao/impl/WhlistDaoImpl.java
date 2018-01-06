@@ -30,6 +30,13 @@ public class WhlistDaoImpl extends BaseDaoImpl<Whlist> implements WhlistDao {
     }
 
     @Override
+    public Whlist searchbygoodsid(int id, int wno) {
+        String hql;
+        hql = "from Whlist as w where w.warehouse.id =:wno and w.goods.id=:id";
+        return (Whlist) getSession().createQuery(hql).setInteger("wno", wno).setInteger("id", id).uniqueResult();
+    }
+
+    @Override
     public void deleteWhlist(int id) {
         String hql = "delete from Whlist as c where c.id = :id";
         getSession().createQuery(hql).setInteger("id", id).executeUpdate();
