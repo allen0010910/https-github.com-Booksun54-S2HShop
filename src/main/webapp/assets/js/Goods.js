@@ -272,6 +272,7 @@ $(document).ready(function () {
 });
 
 function getgoods(noww) {
+    alert(123);
     var list;
     $.get("goods_queryGoods.action", {
         page: noww, rows: 5, 'name': " "

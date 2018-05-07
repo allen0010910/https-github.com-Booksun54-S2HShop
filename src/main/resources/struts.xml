@@ -17,6 +17,7 @@
             <result name="index">WEB-INF/main/main.jsp</result>
             <result name="success">/WEB-INF/main/main.jsp</result>
         </global-results>
+
         <action name="user_*" class="main.com.ssh.shop.action.UserAction" method="{1}">
             <result name="login">/index.jsp</result>
             <result name="error" type="dispatcher">/index.jsp</result>
@@ -35,6 +36,7 @@
                     <!-- rows[0].account.pass-->
                     <!-- 这里显示不了正则表达式， CSDN的一个bug，我接个图放下面 -->
                 </param>
+
             </result>
 
             <interceptor-ref name="defaultStack"></interceptor-ref>
